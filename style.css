@@ -1,0 +1,96 @@
+:root {
+  --coral: #FF6B57;
+  --rosa: #FF9472;
+  --dorado: #FFD180;
+  --azul: #1E2A38;
+  --crema: #FFF3E0;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--azul);
+  color: var(--crema);
+}
+
+header {
+  background-color: var(--azul);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav a {
+  color: var(--crema);
+  margin: 0 1rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: var(--coral);
+}
+
+.hero {
+  background: linear-gradient(45deg, var(--rosa), var(--coral));
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-slider {
+  animation: fade 8s infinite;
+}
+
+@keyframes fade {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+section {
+  padding: 4rem 2rem;
+}
+
+.servicios, .contacto, .portafolio {
+  background-color: var(--azul);
+}
+
+h2 {
+  color: var(--dorado);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.card {
+  background-color: var(--rosa);
+  color: var(--azul);
+  margin: 1rem;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+footer {
+  background-color: var(--azul);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
