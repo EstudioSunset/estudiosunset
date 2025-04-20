@@ -50,36 +50,39 @@
     .olas {
       position: absolute;
       bottom: 0;
-      width: 200%;
+      width: 100%;
       height: 100px;
-      background: url('https://svgshare.com/i/14Xx.svg') repeat-x;
-      background-size: contain;
-      animation: olasMove 10s linear infinite;
+      background: linear-gradient(to top, #0077be 50%, transparent 50%);
+      background-size: 200% 100%;
+      animation: olasMove 6s linear infinite;
     }
     @keyframes olasMove {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
+      0% { background-position: 0 0; }
+      100% { background-position: 100% 0; }
     }
     .palmeras {
       position: absolute;
       bottom: 50px;
       left: 50%;
       transform: translateX(-50%);
-      width: 200px;
-      height: auto;
-      pointer-events: none;
+      width: 100px;
+      height: 120px;
+      background: linear-gradient(to top, #006400, #32CD32);
+      clip-path: polygon(50% 0%, 60% 20%, 70% 0%, 80% 20%, 90% 0%, 95% 30%, 80% 60%, 20% 60%, 5% 30%, 10% 0%, 20% 20%, 30% 0%, 40% 20%);
       transition: transform 0.2s ease-out;
     }
     .pajaros {
       position: absolute;
       top: 20%;
-      right: -100px;
-      width: 100px;
-      height: auto;
+      right: -50px;
+      width: 60px;
+      height: 30px;
+      background: repeating-linear-gradient(45deg, #000, #000 2px, transparent 2px, transparent 4px);
+      border-radius: 50% 50% 0 0;
       animation: vuelo 12s linear infinite;
     }
     @keyframes vuelo {
-      0% { right: -100px; top: 20%; }
+      0% { right: -60px; top: 20%; }
       50% { top: 10%; }
       100% { right: 110%; top: 20%; }
     }
@@ -107,11 +110,15 @@
   </style>
 </head>
 <body>
+  <audio autoplay loop>
+    <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_f774de8e90.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio HTML5.
+  </audio>
   <header class="hero">
     <div class="sol" onclick="animarSol()"></div>
     <div class="olas"></div>
-    <img src="https://svgshare.com/i/14Yb.svg" alt="Palmeras" class="palmeras" id="palmeras">
-    <img src="https://svgshare.com/i/14YZ.svg" alt="Pájaros" class="pajaros">
+    <div class="palmeras" id="palmeras"></div>
+    <div class="pajaros"></div>
     <h1>Convierte tu marca en la puesta de sol más vista</h1>
     <p>En Sunset Studio creamos experiencias digitales frescas y brillantes que atraen clientes como vacaciones al Caribe.</p>
     <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">Agenda tu diagnóstico gratis</button>
