@@ -76,6 +76,31 @@
       font-size: 1rem;
       color: #333;
     }
+    form {
+      max-width: 500px;
+      margin: 2rem auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    form input, form textarea {
+      width: 100%;
+      margin-bottom: 1rem;
+      padding: 0.8rem;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-family: inherit;
+    }
+    form button {
+      background: #007c91;
+      color: #fff;
+      border: none;
+      padding: 0.8rem 2rem;
+      border-radius: 50px;
+      font-weight: bold;
+      cursor: pointer;
+    }
     footer {
       text-align: center;
       font-size: 0.9rem;
@@ -118,6 +143,12 @@
     <div style="text-align:center;">
       <a class="button" href="https://calendly.com/estudiosunset/30min" target="_blank">Agendar ahora</a>
     </div>
+    <form action="https://formspree.io/f/mldjqkrw" method="POST">
+      <input type="text" name="name" placeholder="Tu nombre" required>
+      <input type="email" name="email" placeholder="Tu correo electrónico" required>
+      <textarea name="message" rows="5" placeholder="Escribe tu mensaje..." required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
   </section>
 
   <footer>
