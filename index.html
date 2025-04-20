@@ -27,6 +27,8 @@
       text-align: center;
       background: #ffcf6b;
       border-bottom: 5px solid #ff7d70;
+      position: relative;
+      overflow: hidden;
     }
     header h1 {
       font-size: 2.5rem;
@@ -107,10 +109,43 @@
       color: #555;
       padding-top: 2rem;
     }
+    .decor {
+      position: absolute;
+      top: 20px;
+      width: 80px;
+      transition: transform 0.3s ease;
+    }
+    .decor.left {
+      left: 0;
+    }
+    .decor.right {
+      right: 0;
+    }
+    .decor:hover {
+      transform: scale(1.1) rotate(2deg);
+    }
+    .decor.bird {
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% {
+        transform: translate(-50%, 0);
+      }
+      50% {
+        transform: translate(-50%, -10px);
+      }
+    }
   </style>
 </head>
 <body>
   <header>
+    <img src="/assets/palm-left.svg" class="decor left" alt="Palmera Izquierda">
+    <img src="/assets/palm-right.svg" class="decor right" alt="Palmera Derecha">
+    <img src="/assets/bird.svg" class="decor bird" alt="Gaviota">
     <h1>Bienvenido a Estudio Sunset</h1>
     <p>Convierte tu marca en la puesta de sol más vista. Creamos experiencias digitales frescas como vacaciones.</p>
     <a href="#contacto" class="button">Contáctanos</a>
@@ -120,20 +155,23 @@
     <h2>Nuestros Servicios</h2>
     <div class="products">
       <div class="card">
-        <img src="https://d1oco4z2z1fhwp.cloudfront.net/templates/default/3776/newburger_1.png" alt="Landing Pages">
+        <img src="/assets/sunrise-essential-bundle-logo.png" alt="Landing Pages">
         <h3>Landing Pages</h3>
         <p>Diseños que convierten. Pensados para captar leads y generar ventas.</p>
       </div>
       <div class="card">
-        <img src="https://d1oco4z2z1fhwp.cloudfront.net/templates/default/3776/newburger_2.png" alt="Redes Sociales">
+        <img src="/assets/sunset-growth-bundle-logo.png" alt="Redes Sociales">
         <h3>Redes Sociales</h3>
         <p>Contenido creativo, manejo de comunidad y campañas con impacto.</p>
       </div>
       <div class="card">
-        <img src="https://d1oco4z2z1fhwp.cloudfront.net/templates/default/3776/newburger_3.png" alt="Email Marketing">
+        <img src="/assets/beach-club.png" alt="Email Marketing">
         <h3>Email Marketing</h3>
         <p>Automatización, diseño atractivo y resultados medibles.</p>
       </div>
+    </div>
+    <div style="text-align:center; margin-top: 2rem;">
+      <a href="/bundles-pricing.html" class="button">Ver Paquetes</a>
     </div>
   </section>
 
@@ -152,7 +190,8 @@
   </section>
 
   <footer>
-    © 2025 Estudio Sunset · Creatividad con sabor a mar
+    © 2025 Estudio Sunset · Creatividad con sabor a mar<br>
+    <a href="/gracias.html" style="color:#007c91; text-decoration: underline;">Ir a página de agradecimiento</a>
   </footer>
 </body>
 </html>
