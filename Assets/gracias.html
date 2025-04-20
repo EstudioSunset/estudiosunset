@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gracias por tu mensaje – Estudio Sunset</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(to top, #87ceeb, #fff8e1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      color: #007c91;
+    }
+    .gracias {
+      max-width: 600px;
+      padding: 2rem;
+      background: #ffffffcc;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+    .gracias h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .gracias p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    .gracias a {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background: #ffcf6b;
+      color: #007c91;
+      font-weight: bold;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .gracias a:hover {
+      background: #f7ba3e;
+    }
+      .flor-loto {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      width: 100px;
+      height: 100px;
+      background: radial-gradient(circle at 50% 50%, #ff7d70 0%, #ffcf6b 80%, transparent 100%);
+      border-radius: 50%;
+      transform: translateX(-50%) scale(1);
+      animation: flotarLoto 4s ease-in-out infinite;
+      opacity: 0.8;
+    }
+    @keyframes flotarLoto {
+      0%, 100% { transform: translateX(-50%) translateY(0) scale(1); }
+      50% { transform: translateX(-50%) translateY(-10px) scale(1.05); }
+    }
+</head>
+<body>
+  <div class="gracias">
+    <h1>¡Gracias por escribirnos! 🌞</h1>
+    <p>Tu mensaje ha sido enviado exitosamente.<br>Nos pondremos en contacto contigo lo más pronto posible.</p>
+    <a href="/">Volver al inicio</a>
+  </div>
+  <div class="flor-loto"></div>
+</body>
+</html>
