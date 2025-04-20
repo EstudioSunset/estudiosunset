@@ -12,6 +12,54 @@
   <title>Estudio Sunset – Marketing que se siente como vacaciones</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet" />
   <style>
+    .navbar {
+  background: #007c91;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.navbar .logo {
+  font-weight: 800;
+  color: white;
+  font-size: 1.2rem;
+}
+.navbar .menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.navbar-links {
+  display: flex;
+  gap: 2rem;
+}
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+.navbar-links a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 768px) {
+  .navbar .menu-toggle {
+    display: block;
+  }
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
+  }
+  .navbar-links.active {
+    display: flex;
+  }
+}
+
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
