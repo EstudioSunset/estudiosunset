@@ -1,1 +1,6 @@
-/*  https://www.estudiosunset.com/:splat  301!
+/*  https://www.estudiosunset.com/:splat  301!# Redirigir solo si viene desde HTTP (sin HTTPS)
+http://estudiosunset.com/* https://www.estudiosunset.com/:splat 301!
+http://www.estudiosunset.com/* https://www.estudiosunset.com/:splat 301!
+
+# Redirigir sin www a www (ya en HTTPS)
+https://estudiosunset.com/* https://www.estudiosunset.com/:splat 301!
