@@ -12,6 +12,53 @@
       background: linear-gradient(to bottom, #fff8e1, #e0f7fa);
       color: #004d40;
     }
+    .navbar {
+      background: #007c91;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .navbar .logo {
+      font-weight: 800;
+      color: white;
+      font-size: 1.2rem;
+    }
+    .navbar .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      background: none;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .navbar-links {
+      display: flex;
+      gap: 2rem;
+    }
+    .navbar-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .navbar-links a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 768px) {
+      .navbar .menu-toggle {
+        display: block;
+      }
+      .navbar-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1rem;
+      }
+      .navbar-links.active {
+        display: flex;
+      }
+    }
     header, section, footer {
       padding: 2rem;
       max-width: 1100px;
@@ -81,6 +128,19 @@
   </style>
 </head>
 <body>
+  <nav class="navbar">
+    <div class="logo">Estudio Sunset</div>
+    <button class="menu-toggle" onclick="document.querySelector('.navbar-links').classList.toggle('active')">
+      &#9776;
+    </button>
+    <div class="navbar-links">
+      <a href="/index.html">Inicio</a>
+      <a href="/bundles-pricing.html">Paquetes</a>
+      <a href="/servicios.html">Servicios</a>
+      <a href="/index.html#contacto">Contacto</a>
+      <a href="/blog.html">Blog</a>
+    </div>
+  </nav>
   <header>
     <div class="overlay">
       <h1>Paquetes de Marketing Digital</h1>
