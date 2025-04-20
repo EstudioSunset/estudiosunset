@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sunset Studio – Marketing que se siente como vacaciones</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --sky: #51d0d2;
+      --sun: #ffcf6b;
+      --coral: #ff7d70;
+      --sand: #fff8e1;
+      --deep: #007c91;
+    }
+
+    /* GLOBAL */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--deep);
+      background: var(--sand);
+      line-height: 1.6;
+    }
+    h2 { font-size: 2rem; text-align: center; margin-bottom: 2rem; }
+
+    /* NAV */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: var(--deep);
+      color: var(--sand);
+    }
+    nav img { width: 50px; height: 50px; border-radius: 50%; margin-right: 1rem; }
+    nav .logo { font-size: 1.5rem; font-weight: 800; }
+    nav ul { list-style: none; display: flex; gap: 2rem; }
+    nav a { color: var(--sand); text-decoration: none; }
+
+    /* HERO */
+    header.hero {
+      min-height: 85vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                  url('https://cdn.pixabay.com/photo/2023/07/08/04/58/sunset-8113697_1280.jpg');
+      background-size: cover;
+      background-position: center;
+      color: var(--sand);
+      padding: 2rem;
+    }
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      margin-bottom: 2rem;
+      max-width: 640px;
+    }
+
+    /* BUTTONS */
+    .btn-primary {
+      background: var(--sun);
+      color: var(--deep);
+      padding: 1rem 2.5rem;
+      border: none;
+      border-radius: 50px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform .2s;
+    }
+    .btn-primary:hover { transform: scale(1.05); }
+
+    /* SECTIONS */
+    section {
+      padding: 4rem 1.5rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    /* PACKAGES */
+    #packages { background: #fff; }
+    .packages-grid {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+    .package {
+      background: var(--sand);
+      border: 2px solid var(--coral);
+      border-radius: 20px;
+      padding: 2rem;
+      text-align: center;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .package:hover { transform: translateY(-6px); box-shadow: 0 10px 20px rgba(0,0,0,.12); }
+    .package h3 { font-size: 1.6rem; margin-bottom: 1rem; }
+    .price { font-size: 2rem; font-weight: 800; color: var(--deep); margin: 1rem 0; }
+    .package ul { list-style: none; margin: 1rem 0; text-align: left; }
+    .package ul li { margin-bottom: .5rem; }
+    .package .btn-primary { width: 100%; margin-top: 1rem; }
+
+    /* PORTFOLIO */
+    #portfolio .cards {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+    .card {
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 20px rgba(0,0,0,.08);
+      transition: transform .2s;
+    }
+    .card:hover { transform: translateY(-6px); }
+    .card img { width: 100%; height: 180px; object-fit: cover; }
+    .card h3 { padding: 1rem; font-size: 1.25rem; }
+
+    /* CONTACT */
+    #contact {
+      background: var(--deep);
+      color: var(--sand);
+      border-radius: 30px;
+      margin-bottom: 4rem;
+    }
+    #contact h2 { padding-top: 2rem; }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 2rem;
+      max-width: 480px;
+      margin: auto;
+    }
+    form input, form textarea {
+      padding: 1rem;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+    }
+    form button {
+      align-self: center;
+      background: var(--sun);
+      border: none;
+      padding: 0.8rem 2.5rem;
+      border-radius: 50px;
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--deep);
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    /* FLOATING CTA */
+    #cta-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--sun);
+      color: var(--deep);
+      padding: 1rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,.15);
+      z-index: 1000;
+      transition: transform .2s;
+    }
+    #cta-float:hover { transform: scale(1.05); }
+  </style>
+</head>
+<body>
+  <!-- NAVIGATION -->
+  <nav>
+    <div style="display:flex;align-items:center;">
+      <img src="https://cdn.pixabay.com/photo/2023/07/08/04/58/sunset-8113697_1280.jpg" alt="Logo" />
+      <div class="logo">Sunset Studio</div>
+    </div>
+    <ul>
+      <li><a href="#packages">Paquetes</a></li>
+      <li><a href="#portfolio">Portafolio</a></li>
+      <li><a href="#contact">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <h1>Convierte tu marca en la puesta de sol más vista</h1>
+    <p>En Sunset Studio creamos experiencias digitales frescas y brillantes que atraen clientes como vacaciones al Caribe.</p>
+    <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">Agenda tu diagnóstico gratis</button>
+  </header>
+
+  <!-- PACKAGES / PRICING -->
+  <section id="packages">
+    <h2>Paquetes que se adaptan a tu horizonte</h2>
+    <div class="packages-grid">
+      <!-- PAQUETE 1 -->
+      <div class="package">
+        <h3>Starter Splash</h3>
+        <p class="price">$299</p>
+        <ul>
+          <li>Landing page 1 sección</li>
+          <li>Setup de redes sociales</li>
+          <li>1 campaña básica de anuncios</li>
+        </ul>
+        <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">Lo quiero</button>
+      </div>
+      <!-- PAQUETE 2 -->
+      <div class="package" style="border-color:var(--sun);">
+        <h3>Sunset Growth</h3>
+        <p class="price">$599</p>
+        <ul>
+          <li>Sitio web de 5 secciones</li>
+          <li>Gestión mensual de redes</li>
+          <li>3 campañas publicitarias</li>
+          <li>Reporte de analítica</li>
+        </ul>
+        <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">Lo quiero</button>
+      </div>
+      <!-- PAQUETE 3 -->
+      <div class="package">
+        <h3>Caribe Premium</h3>
+        <p class="price">$999</p>
+        <ul>
+          <li>Web + e‑commerce</li>
+          <li>Contenido audiovisual mensual</li>
+          <li>Gestión de anuncios ilimitada</li>
+          <li>Consultoría estratégica 24/7</li>
+        </ul>
+        <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">Lo quiero</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio">
+    <h2>Nuestro trabajo</h2>
+    <div class="cards">
+      <div class="card"><img src="https://cdn.pixabay.com/photo/2016/03/02/20/13/grocery-1232944_1280.jpg" alt="Proyecto 1"><h3>Tienda de Surf Local</h3></div>
+      <div class="card"><img src="https://cdn.pixabay.com/photo/2019/03/13/11/07/supermarket-4052658_1280.jpg" alt="Proyecto 2"><h3>Campaña Caribe 360°</h3></div>
+      <div class="card"><img src="https://cdn.pixabay.com/photo/2018/01/25/08/14/beverages-3105631_1280.jpg" alt="Proyecto 3"><h3>Branding Oasis Café</h3></div>
+    </div>
+  </section>
+
+  <!-- PROMO STRIP -->
+  <section style="background:var(--coral);color:#fff;text-align:center;">
+    <p style="max-width:760px;margin:auto;font-size:1.2rem;">
+      🎉 ¡Contrata antes del <strong>30 de mayo</strong> y recibe un video vertical GRATIS para tus redes sociales!
+    </p>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" data-netlify="true">
+    <h2>Hablemos de tu proyecto</h2>
+    <form name="lead-capture" method="POST" netlify>
+      <input type="text" name="name" placeholder="Nombre" required />
+      <input type="email" name="email" placeholder="Correo electrónico" required />
+      <textarea name="message" rows="4" placeholder="Cuéntanos tu objetivo"></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <!-- FLOATING CTA BUTTON -->
+  <button id="cta-float" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">📞 Contáctanos</button>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2025 Sunset Studio · Hecho con ☀️ + 🌊
+  </footer>
+</body>
+</html>
