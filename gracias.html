@@ -3,72 +3,195 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gracias por tu mensaje – Estudio Sunset</title>
+  <meta name="description" content="Diseño creativo y marketing digital con frescura tropical. Estudio Sunset te lleva al siguiente nivel." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Estudio Sunset – Marketing que se siente como vacaciones" />
+  <meta property="og:description" content="Tu marca al nivel del atardecer más visto. Webs, redes, campañas y más." />
+  <meta property="og:image" content="https://estudiosunset.com/assets/preview.jpg" />
+  <meta property="og:url" content="https://estudiosunset.com" />
+  <title>Estudio Sunset – Marketing que se siente como vacaciones</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet" />
   <style>
     body {
       margin: 0;
-      padding: 0;
       font-family: 'Montserrat', sans-serif;
       background: linear-gradient(to top, #87ceeb, #fff8e1);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      text-align: center;
       color: #007c91;
     }
-    .gracias {
-      max-width: 600px;
+    header, section, footer {
       padding: 2rem;
-      background: #ffffffcc;
-      border-radius: 20px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      max-width: 1200px;
+      margin: auto;
     }
-    .gracias h1 {
+    header {
+      text-align: center;
+      background: #ffcf6b;
+      border-bottom: 5px solid #ff7d70;
+      position: relative;
+      overflow: hidden;
+    }
+    header h1 {
       font-size: 2.5rem;
       margin-bottom: 1rem;
     }
-    .gracias p {
+    header p {
       font-size: 1.2rem;
-      margin-bottom: 2rem;
     }
-    .gracias a {
+    .button {
       display: inline-block;
-      padding: 1rem 2rem;
-      background: #ffcf6b;
-      color: #007c91;
-      font-weight: bold;
-      border-radius: 30px;
+      margin-top: 1.5rem;
+      padding: 0.8rem 2rem;
+      background: #007c91;
+      color: #fff;
       text-decoration: none;
-      transition: background 0.3s;
+      border-radius: 50px;
+      font-weight: bold;
     }
-    .gracias a:hover {
-      background: #f7ba3e;
+    section h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 1rem;
     }
-      .flor-loto {
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 1rem;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
+    .card img {
+      width: 100%;
+      border-radius: 20px;
+    }
+    .card h3 {
+      margin: 0.5rem 0;
+      color: #f15e10;
+    }
+    .card p {
+      font-size: 1rem;
+      color: #333;
+    }
+    form {
+      max-width: 500px;
+      margin: 2rem auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    form input, form textarea {
+      width: 100%;
+      margin-bottom: 1rem;
+      padding: 0.8rem;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-family: inherit;
+    }
+    form button {
+      background: #007c91;
+      color: #fff;
+      border: none;
+      padding: 0.8rem 2rem;
+      border-radius: 50px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #555;
+      padding-top: 2rem;
+    }
+    .decor {
       position: absolute;
-      bottom: 40px;
+      top: 20px;
+      width: 80px;
+      transition: transform 0.3s ease;
+    }
+    .decor.left {
+      left: 0;
+    }
+    .decor.right {
+      right: 0;
+    }
+    .decor:hover {
+      transform: scale(1.1) rotate(2deg);
+    }
+    .decor.bird {
+      top: 10px;
       left: 50%;
-      width: 100px;
-      height: 100px;
-      background: radial-gradient(circle at 50% 50%, #ff7d70 0%, #ffcf6b 80%, transparent 100%);
-      border-radius: 50%;
-      transform: translateX(-50%) scale(1);
-      animation: flotarLoto 4s ease-in-out infinite;
-      opacity: 0.8;
+      transform: translateX(-50%);
+      width: 60px;
+      animation: float 3s ease-in-out infinite;
     }
-    @keyframes flotarLoto {
-      0%, 100% { transform: translateX(-50%) translateY(0) scale(1); }
-      50% { transform: translateX(-50%) translateY(-10px) scale(1.05); }
+    @keyframes float {
+      0%, 100% {
+        transform: translate(-50%, 0);
+      }
+      50% {
+        transform: translate(-50%, -10px);
+      }
     }
+  </style>
 </head>
 <body>
-  <div class="gracias">
-    <h1>¡Gracias por escribirnos! 🌞</h1>
-    <p>Tu mensaje ha sido enviado exitosamente.<br>Nos pondremos en contacto contigo lo más pronto posible.</p>
-    <a href="/">Volver al inicio</a>
-  </div>
-  <div class="flor-loto"></div>
+  <header>
+    <img src="/assets/palm-left.svg" class="decor left" alt="Palmera Izquierda">
+    <img src="/assets/palm-right.svg" class="decor right" alt="Palmera Derecha">
+    <img src="/assets/bird.svg" class="decor bird" alt="Gaviota">
+    <h1>Bienvenido a Estudio Sunset</h1>
+    <p>Convierte tu marca en la puesta de sol más vista. Creamos experiencias digitales frescas como vacaciones.</p>
+    <a href="#contacto" class="button">Contáctanos</a>
+  </header>
+
+  <section>
+    <h2>Nuestros Servicios</h2>
+    <div class="products">
+      <div class="card">
+        <img src="/assets/sunrise-essential-bundle-logo.png" alt="Landing Pages">
+        <h3>Landing Pages</h3>
+        <p>Diseños que convierten. Pensados para captar leads y generar ventas.</p>
+      </div>
+      <div class="card">
+        <img src="/assets/sunset-growth-bundle-logo.png" alt="Redes Sociales">
+        <h3>Redes Sociales</h3>
+        <p>Contenido creativo, manejo de comunidad y campañas con impacto.</p>
+      </div>
+      <div class="card">
+        <img src="/assets/beach-club.png" alt="Email Marketing">
+        <h3>Email Marketing</h3>
+        <p>Automatización, diseño atractivo y resultados medibles.</p>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top: 2rem;">
+      <a href="/bundles-pricing.html" class="button">Ver Paquetes</a>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <h2>¿Listo para despegar?</h2>
+    <p style="text-align:center;">Escríbenos a <a href="mailto:info@estudiosunset.com">info@estudiosunset.com</a> o agenda tu diagnóstico.</p>
+    <div style="text-align:center;">
+      <a class="button" href="https://calendly.com/estudiosunset/30min" target="_blank">Agendar ahora</a>
+    </div>
+    <form action="https://formspree.io/f/mldjqkrw" method="POST">
+      <input type="text" name="name" placeholder="Tu nombre" required>
+      <input type="email" name="email" placeholder="Tu correo electrónico" required>
+      <textarea name="message" rows="5" placeholder="Escribe tu mensaje..." required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <footer>
+    © 2025 Estudio Sunset · Creatividad con sabor a mar<br>
+    <a href="/gracias.html" style="color:#007c91; text-decoration: underline;">Ir a página de agradecimiento</a>
+  </footer>
 </body>
 </html>
