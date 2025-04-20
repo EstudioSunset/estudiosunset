@@ -1,178 +1,143 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Precios de Paquetes – Estudio Sunset</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Comparativa de Paquetes – Estudio Sunset</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet" />
   <style>
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
-      background: linear-gradient(to bottom, #fff8e1, #e0f7fa);
+      background: #fff8e1;
       color: #004d40;
-    }
-    .navbar {
-      background: #007c91;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    .navbar .logo {
-      font-weight: 800;
-      color: white;
-      font-size: 1.2rem;
-    }
-    .navbar .menu-toggle {
-      display: none;
-      font-size: 1.5rem;
-      background: none;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-    .navbar-links {
-      display: flex;
-      gap: 2rem;
-    }
-    .navbar-links a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .navbar-links a:hover {
-      text-decoration: underline;
-    }
-    @media (max-width: 768px) {
-      .navbar .menu-toggle {
-        display: block;
-      }
-      .navbar-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        margin-top: 1rem;
-      }
-      .navbar-links.active {
-        display: flex;
-      }
     }
     header, section, footer {
       padding: 2rem;
-      max-width: 1100px;
+      max-width: 1200px;
       margin: auto;
     }
     header {
       text-align: center;
-      background: url('/assets/banner-beach-sunset.png') no-repeat center center;
-      background-size: cover;
+      background: linear-gradient(to right, #ff7643, #ffb347);
       color: white;
-      padding: 6rem 2rem;
+      padding: 4rem 2rem;
+      border-radius: 0 0 40px 40px;
     }
-    .overlay {
-      background: rgba(0,0,0,0.4);
-      padding: 2rem;
-      border-radius: 20px;
-      display: inline-block;
-    }
-    h1 {
-      margin: 0 0 1rem;
+    header h1 {
+      margin-bottom: 1rem;
       font-size: 2.5rem;
     }
-    .bundles {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      gap: 2rem;
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
       margin-top: 2rem;
     }
-    .bundle {
-      background: white;
-      border-radius: 20px;
-      padding: 2rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      width: 300px;
+    .comparison-table th,
+    .comparison-table td {
+      padding: 1rem;
+      border: 1px solid #ccc;
       text-align: center;
     }
-    .bundle img {
-      width: 100%;
-      border-radius: 10px;
-      margin-bottom: 1rem;
-    }
-    .bundle h3 {
-      color: #f15e10;
-      margin: 1rem 0 0.5rem;
-    }
-    .bundle p {
-      font-size: 0.95rem;
-      color: #333;
-      margin-bottom: 1.5rem;
-    }
-    .bundle a {
-      display: inline-block;
+    .comparison-table th {
       background: #007c91;
       color: white;
-      padding: 0.6rem 1.2rem;
-      border-radius: 50px;
-      text-decoration: none;
+    }
+    .comparison-table td:first-child {
+      text-align: left;
       font-weight: bold;
+      background: #f9f9f9;
+    }
+    .highlight {
+      background: #e0f7fa;
+    }
+    .faq {
+      margin-top: 3rem;
+    }
+    .faq h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .faq-item {
+      background: #fff;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
     }
     footer {
       text-align: center;
       font-size: 0.9rem;
       color: #555;
-      margin-top: 4rem;
+      padding-top: 2rem;
     }
   </style>
 </head>
 <body>
-  <nav class="navbar">
-    <div class="logo">Estudio Sunset</div>
-    <button class="menu-toggle" onclick="document.querySelector('.navbar-links').classList.toggle('active')">
-      &#9776;
-    </button>
-    <div class="navbar-links">
-      <a href="/index.html">Inicio</a>
-      <a href="/bundles-pricing.html">Paquetes</a>
-      <a href="/servicios.html">Servicios</a>
-      <a href="/index.html#contacto">Contacto</a>
-      <a href="/blog.html">Blog</a>
-    </div>
-  </nav>
   <header>
-    <div class="overlay">
-      <h1>Paquetes de Marketing Digital</h1>
-      <p>Elige el bundle perfecto para el momento de tu marca.</p>
-    </div>
+    <h1>Comparativa de Paquetes</h1>
+    <p>Elige el bundle ideal para tu negocio.</p>
   </header>
 
-  <section class="bundles">
-    <div class="bundle">
-      <img src="/assets/sunrise-essential-bundle-logo.png" alt="Sunrise Essentials">
-      <h3>Sunrise Essentials</h3>
-      <p>Desde $799 USD/mes<br>Ideal para emprendedores que dan sus primeros pasos digitales.</p>
-      <a href="/sunrise-essentials.html">Ver detalles</a>
-    </div>
+  <section>
+    <table class="comparison-table">
+      <tr>
+        <th>Características</th>
+        <th>Sunrise Essentials</th>
+        <th>Sunset Growth</th>
+        <th>Beach Club</th>
+      </tr>
+      <tr>
+        <td>Publicaciones al mes</td>
+        <td>8</td>
+        <td>16</td>
+        <td>30</td>
+      </tr>
+      <tr>
+        <td>Campañas de publicidad</td>
+        <td>Meta Ads</td>
+        <td>Meta + Google</td>
+        <td>Meta + Google + TikTok</td>
+      </tr>
+      <tr>
+        <td>Landing page</td>
+        <td>Incluida</td>
+        <td>Incluida</td>
+        <td>Incluida</td>
+      </tr>
+      <tr>
+        <td>Video mensual</td>
+        <td>No</td>
+        <td>Opcional</td>
+        <td>Incluido</td>
+      </tr>
+      <tr class="highlight">
+        <td>Precio desde</td>
+        <td>$799 USD</td>
+        <td>$1699 USD</td>
+        <td>$3499 USD</td>
+      </tr>
+    </table>
+  </section>
 
-    <div class="bundle">
-      <img src="/assets/sunset-growth-bundle-logo.png" alt="Sunset Growth">
-      <h3>Sunset Growth</h3>
-      <p>Desde $1,699 USD/mes<br>Para negocios en marcha que quieren escalar sus resultados.</p>
-      <a href="/sunset-growth.html">Ver detalles</a>
+  <section class="faq">
+    <h2>Preguntas Frecuentes</h2>
+    <div class="faq-item">
+      <strong>¿Puedo cambiar de plan más adelante?</strong>
+      <p>Sí, puedes escalar o reducir tu plan en cualquier momento, con aviso previo.</p>
     </div>
-
-    <div class="bundle">
-      <img src="/assets/beach-club.png" alt="Beach Club">
-      <h3>Beach Club</h3>
-      <p>Desde $3,499 USD/mes<br>El paquete premium para marcas consolidadas que quieren dominar el juego.</p>
-      <a href="/beach-club.html">Ver detalles</a>
+    <div class="faq-item">
+      <strong>¿Hay contrato mínimo?</strong>
+      <p>Sugerimos mínimo 3 meses para ver resultados reales, pero puedes cancelar con 15 días de antelación.</p>
+    </div>
+    <div class="faq-item">
+      <strong>¿Los precios incluyen IVA?</strong>
+      <p>No. Los precios son netos en USD. Se agregará el impuesto si aplica.</p>
     </div>
   </section>
 
   <footer>
-    <p>© 2025 Estudio Sunset · Todos los derechos reservados</p>
+    <p>© 2025 Estudio Sunset · Comparativa de bundles</p>
     <a href="/index.html" style="color:#007c91; text-decoration: underline;">Volver al inicio</a>
   </footer>
 </body>
