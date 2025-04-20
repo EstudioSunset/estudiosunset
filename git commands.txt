@@ -1,0 +1,11 @@
+git commands
+
+git add .
+git commit -m "Descripción de tu cambio"
+git push origin main
+
+
+git add .; git commit -m "Actualiza index con plantilla de Bee Free"; git push
+
+
+
