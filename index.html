@@ -13,52 +13,52 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet" />
   <style>
     .navbar {
-  background: #007c91;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.navbar .logo {
-  font-weight: 800;
-  color: white;
-  font-size: 1.2rem;
-}
-.navbar .menu-toggle {
-  display: none;
-  font-size: 1.5rem;
-  background: none;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-.navbar-links {
-  display: flex;
-  gap: 2rem;
-}
-.navbar-links a {
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-}
-.navbar-links a:hover {
-  text-decoration: underline;
-}
-@media (max-width: 768px) {
-  .navbar .menu-toggle {
-    display: block;
-  }
-  .navbar-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    margin-top: 1rem;
-  }
-  .navbar-links.active {
-    display: flex;
-  }
-}
+      background: #007c91;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .navbar .logo {
+      font-weight: 800;
+      color: white;
+      font-size: 1.2rem;
+    }
+    .navbar .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      background: none;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .navbar-links {
+      display: flex;
+      gap: 2rem;
+    }
+    .navbar-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .navbar-links a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 768px) {
+      .navbar .menu-toggle {
+        display: block;
+      }
+      .navbar-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1rem;
+      }
+      .navbar-links.active {
+        display: flex;
+      }
+    }
 
     body {
       margin: 0;
@@ -73,7 +73,6 @@
       margin: auto;
     }
 
-    /* 🔄 header modificado con imagen de fondo */
     header {
       text-align: center;
       background: url('/assets/banner-beach-sunset.png') no-repeat center center;
@@ -84,7 +83,6 @@
       padding: 6rem 2rem;
     }
 
-    /* 🧊 Capa para que el texto tenga contraste */
     .hero-overlay {
       background: rgba(0, 0, 0, 0.35);
       padding: 2rem;
@@ -118,24 +116,23 @@
     }
 
     .products {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: nowrap; /* <- fuerza una sola fila */
-  gap: 2rem;
-  overflow-x: auto; /* opcional si la pantalla es pequeña */
-}
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 2rem;
+      padding-bottom: 1rem;
+    }
 
-.card {
-  background: #fff;
-  border-radius: 20px;
-  padding: 1rem;
-  flex: 1 1 30%; /* hace que se adapten */
-  max-width: 30%;
-  min-width: 280px;
-  text-align: center;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-}
-
+    .card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 1rem;
+      min-width: 300px;
+      scroll-snap-align: start;
+      flex: 0 0 auto;
+      text-align: center;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
 
     .card img {
       width: 100%;
@@ -222,18 +219,6 @@
         transform: translate(-50%, -10px);
       }
     }
-    @media (max-width: 1000px) {
-  .products {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .card {
-    max-width: 90%;
-    flex: 1 1 100%;
-  }
-}
-
   </style>
 </head>
 <body>
