@@ -59,6 +59,11 @@
         display: flex;
       }
     }
+    .logo img {
+  height: 40px;
+  vertical-align: middle;
+}
+
 
     body {
       margin: 0;
@@ -223,7 +228,9 @@
 </head>
 <body>
   <nav class="navbar">
-    <div class="logo">Estudio Sunset</div>
+    <a href="/index.html" class="logo">
+      <img src="/assets/logo-estudiosunset.png" alt="Estudio Sunset Logo" style="height: 40px;" />
+    </a>
     <button class="menu-toggle" onclick="document.querySelector('.navbar-links').classList.toggle('active')">
       &#9776;
     </button>
@@ -299,9 +306,6 @@
     </div>
   </</div>
     <button onclick="scrollCarousel(1)" style="position:absolute;right:-2rem;top:40%;z-index:10;background:#007c91;color:white;border:none;padding:0.5rem 1rem;border-radius:50%;cursor:pointer;font-size:1.5rem;">▶</button>
-  </div>
-  <div style="text-align:center; margin-top: 2rem;">
-    <a href="/bundles-pricing.html" class="button">Ver Paquetes</a>
   </div>
 </section>
 
