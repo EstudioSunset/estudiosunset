@@ -18,18 +18,33 @@
       background: linear-gradient(to top, #87ceeb, #fff8e1);
       color: #007c91;
     }
+
     header, section, footer {
       padding: 2rem;
       max-width: 1200px;
       margin: auto;
     }
+
+    /* 🔄 header modificado con imagen de fondo */
     header {
       text-align: center;
-      background: #ffcf6b;
+      background: url('/assets/banner-beach-sunset.png') no-repeat center center;
+      background-size: cover;
       border-bottom: 5px solid #ff7d70;
       position: relative;
       overflow: hidden;
+      color: white;
+      padding: 6rem 2rem;
     }
+
+    /* 🧊 Capa para que el texto tenga contraste */
+    .hero-overlay {
+      background: rgba(0, 0, 0, 0.35);
+      padding: 2rem;
+      border-radius: 20px;
+      display: inline-block;
+    }
+
     header h1 {
       font-size: 2.5rem;
       margin-bottom: 1rem;
@@ -37,6 +52,7 @@
     header p {
       font-size: 1.2rem;
     }
+
     .button {
       display: inline-block;
       margin-top: 1.5rem;
@@ -47,17 +63,20 @@
       border-radius: 50px;
       font-weight: bold;
     }
+
     section h2 {
       text-align: center;
       font-size: 2rem;
       margin-bottom: 1rem;
     }
+
     .products {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 2rem;
     }
+
     .card {
       background: #fff;
       border-radius: 20px;
@@ -66,18 +85,22 @@
       text-align: center;
       box-shadow: 0 8px 16px rgba(0,0,0,0.1);
     }
+
     .card img {
       width: 100%;
       border-radius: 20px;
     }
+
     .card h3 {
       margin: 0.5rem 0;
       color: #f15e10;
     }
+
     .card p {
       font-size: 1rem;
       color: #333;
     }
+
     form {
       max-width: 500px;
       margin: 2rem auto;
@@ -86,6 +109,7 @@
       border-radius: 20px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
+
     form input, form textarea {
       width: 100%;
       margin-bottom: 1rem;
@@ -94,6 +118,7 @@
       border: 1px solid #ccc;
       font-family: inherit;
     }
+
     form button {
       background: #007c91;
       color: #fff;
@@ -103,27 +128,33 @@
       font-weight: bold;
       cursor: pointer;
     }
+
     footer {
       text-align: center;
       font-size: 0.9rem;
       color: #555;
       padding-top: 2rem;
     }
+
     .decor {
       position: absolute;
       top: 20px;
       width: 80px;
       transition: transform 0.3s ease;
     }
+
     .decor.left {
       left: 0;
     }
+
     .decor.right {
       right: 0;
     }
+
     .decor:hover {
       transform: scale(1.1) rotate(2deg);
     }
+
     .decor.bird {
       top: 10px;
       left: 50%;
@@ -131,6 +162,7 @@
       width: 60px;
       animation: float 3s ease-in-out infinite;
     }
+
     @keyframes float {
       0%, 100% {
         transform: translate(-50%, 0);
@@ -146,9 +178,13 @@
     <img src="/assets/palm-left.svg" class="decor left" alt="Palmera Izquierda">
     <img src="/assets/palm-right.svg" class="decor right" alt="Palmera Derecha">
     <img src="/assets/bird.svg" class="decor bird" alt="Gaviota">
-    <h1>Bienvenido a Estudio Sunset</h1>
-    <p>Convierte tu marca en la puesta de sol más vista. Creamos experiencias digitales frescas como vacaciones.</p>
-    <a href="#contacto" class="button">Contáctanos</a>
+    
+    <!-- 🔥 Hero overlay agregado -->
+    <div class="hero-overlay">
+      <h1>Bienvenido a Estudio Sunset</h1>
+      <p>Convierte tu marca en la puesta de sol más vista. Creamos experiencias digitales frescas como vacaciones.</p>
+      <a href="#contacto" class="button">Contáctanos</a>
+    </div>
   </header>
 
   <section>
