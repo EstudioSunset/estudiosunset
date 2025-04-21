@@ -127,6 +127,14 @@
       gap: 2rem;
       padding-bottom: 1rem;
     }
+    .products {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+.products::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
 
     .card {
       background: #fff;
@@ -327,5 +335,35 @@
     © 2025 Estudio Sunset · Creatividad con sabor a mar<br>
     <a href="/gracias.html" style="color:#007c91; text-decoration: underline;">Ir a página de agradecimiento</a>
   </footer>
+  <script>
+    const carousel = document.getElementById('carousel');
+    let autoSlideInterval;
+  
+    function scrollCarousel(direction) {
+      const cardWidth = carousel.querySelector('.card').offsetWidth + 32; // 32px = 2rem gap
+      carousel.scrollBy({
+        left: direction * cardWidth,
+        behavior: 'smooth'
+      });
+    }
+  
+    function autoSlide() {
+      scrollCarousel(1);
+    }
+  
+    function startAutoSlide() {
+      autoSlideInterval = setInterval(autoSlide, 3000); // cambia cada 3s
+    }
+  
+    function pauseAutoSlide() {
+      clearInterval(autoSlideInterval);
+    }
+  
+    function resumeAutoSlide() {
+      startAutoSlide();
+    }
+  
+    startAutoSlide(); // iniciar en cuanto cargue
+  </script>
 </body>
 </html>
