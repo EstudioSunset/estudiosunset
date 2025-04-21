@@ -340,7 +340,7 @@
     let autoSlideInterval;
   
     function scrollCarousel(direction) {
-      const cardWidth = carousel.querySelector('.card').offsetWidth + 32; // 32px = 2rem gap
+      const cardWidth = carousel.querySelector('.card').offsetWidth + 32; // 32px = gap
       carousel.scrollBy({
         left: direction * cardWidth,
         behavior: 'smooth'
@@ -348,11 +348,17 @@
     }
   
     function autoSlide() {
-      scrollCarousel(1);
+      const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
+      if (carousel.scrollLeft >= maxScrollLeft - 10) {
+        // Reinicia al inicio
+        carousel.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        scrollCarousel(1);
+      }
     }
   
     function startAutoSlide() {
-      autoSlideInterval = setInterval(autoSlide, 3000); // cambia cada 3s
+      autoSlideInterval = setInterval(autoSlide, 3000);
     }
   
     function pauseAutoSlide() {
@@ -363,7 +369,7 @@
       startAutoSlide();
     }
   
-    startAutoSlide(); // iniciar en cuanto cargue
+    startAutoSlide(); // Iniciar cuando cargue
   </script>
 </body>
 </html>
