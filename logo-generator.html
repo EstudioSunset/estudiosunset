@@ -11,8 +11,58 @@
   <meta property="og:url" content="https://estudiosunset.com" />
   <title>Generador de Logos Express | Estudio Sunset</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/styles.css" />
   <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(to top, #87ceeb, #fff8e1);
+      color: #007c91;
+    }
+    .navbar {
+      background: #007c91;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .navbar .logo img {
+      height: 40px;
+    }
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      background: none;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .navbar-links {
+      display: flex;
+      gap: 2rem;
+    }
+    .navbar-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .navbar-links a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      .navbar-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1rem;
+      }
+      .navbar-links.active {
+        display: flex;
+      }
+    }
     main {
       padding: 2rem;
       max-width: 900px;
@@ -55,12 +105,18 @@
       text-align: center;
       margin-top: 2rem;
     }
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #555;
+      padding: 2rem 0;
+    }
   </style>
 </head>
 <body>
   <nav class="navbar">
     <a href="/index.html" class="logo">
-      <img src="/assets/estudio-sunset-transparent.png" alt="Estudio Sunset Logo" style="height: 40px;" />
+      <img src="/assets/estudio-sunset-transparent.png" alt="Estudio Sunset Logo" />
     </a>
     <button class="menu-toggle" onclick="document.querySelector('.navbar-links').classList.toggle('active')">
       &#9776;
@@ -96,10 +152,8 @@
   </main>
 
   <footer>
-    <div style="text-align:center; font-size: 0.9rem; color: #555; padding:2rem 0;">
-      © 2025 Estudio Sunset · Creatividad con sabor a mar<br>
-      <a href="/gracias.html" style="color:#007c91; text-decoration: underline;">Ir a página de agradecimiento</a>
-    </div>
+    © 2025 Estudio Sunset · Creatividad con sabor a mar<br>
+    <a href="/gracias.html" style="color:#007c91; text-decoration: underline;">Ir a página de agradecimiento</a>
   </footer>
 
   <script>
