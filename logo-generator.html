@@ -12,51 +12,15 @@
   <title>Generador de Logos Express | Estudio Sunset</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css" />
-  <style>
-    .logo-generator {
-      max-width: 600px;
-      margin: 4rem auto;
-      background: #fff;
-      padding: 2rem;
-      border-radius: 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    .logo-generator h2 {
-      text-align: center;
-      margin-bottom: 1.5rem;
-    }
-    .logo-generator input, .logo-generator select {
-      width: 100%;
-      padding: 0.8rem;
-      margin-bottom: 1rem;
-      border-radius: 10px;
-      border: 1px solid #ccc;
-      font-family: inherit;
-    }
-    .logo-generator button {
-      background: #007c91;
-      color: #fff;
-      padding: 0.8rem 2rem;
-      border: none;
-      border-radius: 50px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    .logo-output {
-      margin-top: 2rem;
-      text-align: center;
-    }
-    .logo-output svg {
-      max-width: 100%;
-      height: auto;
-      margin-top: 1rem;
-    }
-  </style>
 </head>
 <body>
   <nav class="navbar">
-    <div class="logo">Estudio Sunset</div>
-    <button class="menu-toggle" onclick="document.querySelector('.navbar-links').classList.toggle('active')">&#9776;</button>
+    <a href="/index.html" class="logo">
+      <img src="/assets/estudio-sunset-transparent.png" alt="Estudio Sunset Logo" style="height: 40px;" />
+    </a>
+    <button class="menu-toggle" onclick="document.querySelector('.navbar-links').classList.toggle('active')">
+      &#9776;
+    </button>
     <div class="navbar-links">
       <a href="/index.html">Inicio</a>
       <a href="/bundles-pricing.html">Paquetes</a>
@@ -68,27 +32,31 @@
   </nav>
 
   <main>
-    <section class="logo-generator">
-      <h2>Generador de Logos Express</h2>
-      <p>Tu primer logo es gratuito. El segundo cuesta $20 USD e incluye el archivo editable.</p>
-      <input type="text" id="brandName" placeholder="Nombre de la marca" required />
-      <select id="industry">
-        <option value="">Selecciona tu industria</option>
-        <option value="comida">Comida y Bebidas</option>
-        <option value="tecnologia">Tecnología</option>
-        <option value="moda">Moda</option>
-        <option value="salud">Salud y Bienestar</option>
-        <option value="otro">Otro</option>
-      </select>
-      <input type="color" id="primaryColor" value="#f15e10" />
-      <button onclick="generateLogo()">Generar Logo</button>
-      <div class="logo-output" id="logoResult"></div>
+    <section style="padding: 2rem; max-width: 800px; margin: auto;">
+      <h2 style="text-align:center; color: #007c91;">Generador de Logos Express</h2>
+      <p style="text-align:center;">Tu primer logo es gratuito. El segundo cuesta $20 USD e incluye el archivo editable.</p>
+      <div style="background:#fff; padding:2rem; border-radius:20px; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+        <input type="text" id="brandName" placeholder="Nombre de la marca" required style="width:100%; padding:0.8rem; margin-bottom:1rem; border-radius:10px; border:1px solid #ccc; font-family:inherit;" />
+        <select id="industry" style="width:100%; padding:0.8rem; margin-bottom:1rem; border-radius:10px; border:1px solid #ccc; font-family:inherit;">
+          <option value="">Selecciona tu industria</option>
+          <option value="comida">Comida y Bebidas</option>
+          <option value="tecnologia">Tecnología</option>
+          <option value="moda">Moda</option>
+          <option value="salud">Salud y Bienestar</option>
+          <option value="otro">Otro</option>
+        </select>
+        <input type="color" id="primaryColor" value="#f15e10" style="margin-bottom:1rem; display:block;" />
+        <button onclick="generateLogo()" class="button">Generar Logo</button>
+        <div id="logoResult" style="text-align:center; margin-top:2rem;"></div>
+      </div>
     </section>
   </main>
 
   <footer>
-    © 2025 Estudio Sunset · Creatividad con sabor a mar<br>
-    <a href="/gracias.html" style="color:#007c91; text-decoration: underline;">Ir a página de agradecimiento</a>
+    <div style="text-align:center; font-size: 0.9rem; color: #555; padding:2rem 0;">
+      © 2025 Estudio Sunset · Creatividad con sabor a mar<br>
+      <a href="/gracias.html" style="color:#007c91; text-decoration: underline;">Ir a página de agradecimiento</a>
+    </div>
   </footer>
 
   <script>
