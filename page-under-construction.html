@@ -1,94 +1,199 @@
-<body style="margin:0; background:linear-gradient(to bottom, #FF914D, #FF7D00); color:#fff; font-family:'Courier New', Courier, monospace; display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:100vh; overflow-x:hidden; text-align:center; padding: 2rem;">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sitio en Construcción</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Courier New', Courier, monospace;
+      background: linear-gradient(to bottom, #FF0000, #FF7D00);
+      color: white;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1.5rem;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    p, #countdown {
+      font-size: 1.1rem;
+      text-align: center;
+    }
+
+    #typing {
+      font-size: 0.95rem;
+      color: #000000;
+      white-space: pre-wrap;
+      text-align: left;
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    form {
+      background-color: rgba(0, 0, 0, 0.2);
+      padding: 1.5rem;
+      border-radius: 10px;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    form h3 {
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    button {
+      background: #fff;
+      color: #FF7D00;
+      border: none;
+      padding: 0.7rem 1.5rem;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 1rem;
+      width: 100%;
+    }
+
+    button:hover {
+      background: #eee;
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.6rem;
+      }
+
+      p, #countdown {
+        font-size: 1rem;
+      }
+
+      #typing {
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
     <div>
-      <h1 style="margin-bottom: 1rem; font-size: 2rem;">🚧 Sitio en construcción 🚧</h1>
-      <p style="font-size: 1.2rem; color:#fff;">Estamos trabajando para traerte algo genial</p>
-  
-      <div id="countdown" style="margin: 1.5rem auto; font-size: 1.1rem; color: #fff;"></div>
-  
-      <div id="typing" style="margin-top:1rem; font-size:1rem; color:rgb(0, 0, 0); white-space:pre;"></div>
+      <h1>🚧 Sitio en construcción 🚧</h1>
+      <p>Estamos trabajando para traerte algo genial</p>
+      <div id="countdown"></div>
+      <div id="typing"></div>
     </div>
-  
-    <!-- Formulario de contacto -->
-    <form id="contactForm" style="margin-top:3rem; background:rgba(0,0,0,0.2); padding:1.5rem; border-radius:10px; max-width:400px; width:100%;">
-      <h3 style="margin-bottom:1rem;">Contáctanos</h3>
-      <input type="text" id="name" placeholder="Tu nombre" required style="width:100%; padding:0.5rem; margin-bottom:1rem; border:none; border-radius:5px;" />
-      <input type="email" id="email" placeholder="Tu correo" required style="width:100%; padding:0.5rem; margin-bottom:1rem; border:none; border-radius:5px;" />
-      <textarea id="message" placeholder="Tu mensaje" required style="width:100%; padding:0.5rem; margin-bottom:1rem; border:none; border-radius:5px;"></textarea>
-      
-      <!-- Antispam simple -->
-      <label for="math" style="display:block; margin-bottom:0.5rem;">¿Cuánto es 3 + 4?</label>
-      <input type="number" id="math" placeholder="Tu respuesta" required style="width:100%; padding:0.5rem; margin-bottom:1rem; border:none; border-radius:5px;" />
-      
-      <button type="submit" style="background:#fff; color:#FF7D00; border:none; padding:0.5rem 1rem; border-radius:5px; font-weight:bold; cursor:pointer;">
-        Enviar
-      </button>
-  
-      <p id="response" style="margin-top:1rem; font-size:0.9rem;"></p>
+
+    <form id="contactForm">
+      <h3>Contáctanos</h3>
+      <input type="text" id="name" placeholder="Tu nombre" required />
+      <input type="email" id="email" placeholder="Tu correo" required />
+      <textarea id="message" placeholder="Tu mensaje" required></textarea>
+
+      <label for="math">¿Cuánto es 3 + 4?</label>
+      <input type="number" id="math" placeholder="Tu respuesta" required />
+
+      <button type="submit">Enviar</button>
+      <p id="response"></p>
     </form>
-  
-    <script>
-      // Cuenta regresiva
-      const countdownEl = document.getElementById("countdown");
-      const targetDate = new Date();
-      targetDate.setMonth(targetDate.getMonth() + 3);
-      function updateCountdown() {
-        const now = new Date().getTime();
-        const distance = targetDate - now;
-        if (distance < 0) {
-          countdownEl.textContent = "¡Ya casi terminamos!";
-          return;
-        }
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        countdownEl.textContent = `Lanzamiento estimado en: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+  </div>
+
+  <script>
+    // Cuenta regresiva
+    const countdownEl = document.getElementById("countdown");
+    const targetDate = new Date();
+    targetDate.setMonth(targetDate.getMonth() + 3);
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+      if (distance < 0) {
+        countdownEl.textContent = "¡Ya casi terminamos!";
+        return;
       }
-      setInterval(updateCountdown, 1000);
-      updateCountdown();
-  
-      // Typing effect
-      const lines = [
-        "Inicializando servidor...",
-        "Compilando componentes...",
-        "Optimizando diseño responsive...",
-        "Conectando base de datos...",
-        "Building pages..."
-      ];
-      const target = document.getElementById("typing");
-      let line = 0, char = 0;
-      function typeLine() {
-        if (line >= lines.length) return;
-        if (char < lines[line].length) {
-          target.textContent += lines[line][char];
-          char++;
-          setTimeout(typeLine, 50);
-        } else {
-          target.textContent += "\n";
-          line++;
-          char = 0;
-          setTimeout(typeLine, 400);
-        }
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      countdownEl.textContent = `Lanzamiento estimado en: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // Texto tipo código
+    const lines = [
+      "Inicializando servidor...",
+      "Compilando componentes...",
+      "Optimizando diseño responsive...",
+      "Conectando base de datos...",
+      "Building pages..."
+    ];
+    const typingTarget = document.getElementById("typing");
+    let line = 0, char = 0;
+    function typeLine() {
+      if (line >= lines.length) return;
+      if (char < lines[line].length) {
+        typingTarget.textContent += lines[line][char];
+        char++;
+        setTimeout(typeLine, 50);
+      } else {
+        typingTarget.textContent += "\n";
+        line++;
+        char = 0;
+        setTimeout(typeLine, 400);
       }
-      typeLine();
-  
-      // Validación y simulación de envío
-      document.getElementById('contactForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const mathAnswer = parseInt(document.getElementById('math').value);
-        const response = document.getElementById('response');
-  
-        if (mathAnswer !== 7) {
-          response.style.color = "red";
-          response.textContent = "Respuesta incorrecta. Intenta otra vez.";
-          return;
-        }
-  
-        // Aquí puedes conectar con Formspree o tu backend
-        response.style.color = "lime";
-        response.textContent = "Gracias por tu mensaje. Te responderemos pronto a info@estudiosunset.com";
-        this.reset();
-      });
-    </script>
-  </body>
-  
+    }
+    typeLine();
+
+    // Formulario con verificación matemática
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const mathAnswer = parseInt(document.getElementById('math').value);
+      const response = document.getElementById('response');
+
+      if (mathAnswer !== 7) {
+        response.style.color = "red";
+        response.textContent = "Respuesta incorrecta. Intenta otra vez.";
+        return;
+      }
+
+      response.style.color = "lime";
+      response.textContent = "Gracias por tu mensaje. Te responderemos pronto a info@estudiosunset.com";
+      this.reset();
+    });
+  </script>
+</body>
+</html>
