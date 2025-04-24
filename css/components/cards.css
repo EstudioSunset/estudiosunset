@@ -1,0 +1,52 @@
+/* ——  Carousel wrapper  —— */
+.products{
+    display:flex;
+    gap:2rem;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    padding-bottom:1rem;
+  
+    /* ocultar scrollbar */
+    scrollbar-width:none;          /* Firefox */
+    -ms-overflow-style:none;       /* IE 10+ */
+  }
+  .products::-webkit-scrollbar{display:none;}   /* WebKit */
+  
+  /* ——  Card  —— */
+  .card{
+    flex:0 0 auto;                 /* ancho fijo dentro del carrusel */
+    min-width:300px;
+    background:#fff;
+    border-radius:20px;
+    padding:1rem;
+    text-align:center;
+    box-shadow:0 8px 16px rgba(0,0,0,.1);
+    scroll-snap-align:start;
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 12px 24px rgba(0,0,0,.15);
+  }
+  
+  .card img{
+    width:100%;
+    border-radius:20px;
+    object-fit:cover;
+  }
+  .card h3{
+    margin:.5rem 0;
+    color:var(--accent,#f15e10);
+    font-weight:700;
+  }
+  .card p{
+    color:#333;
+    font-size:1rem;
+    line-height:1.4;
+  }
+  
+  /* ——  Mobile tweaks  —— */
+  @media (max-width:500px){
+    .card{min-width:90vw;}         /* evita desbordar el viewport */
+  }
+  

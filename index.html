@@ -12,227 +12,163 @@
   <title>Estudio Sunset – Marketing que se siente como vacaciones</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet" />
   <style>
-    .navbar {
-      background: #007c91;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
+    /* ————— BASE ————— */
+    body{
+      margin:0;
+      font-family:'Montserrat',sans-serif;
+      background:linear-gradient(to top,#87ceeb,#fff8e1);
+      color:#007c91;
     }
-    .navbar .logo {
-      font-weight: 800;
-      color: white;
-      font-size: 1.2rem;
+    header,section,footer{
+      padding:2rem;
+      max-width:1200px;
+      margin:auto;
     }
-    .navbar .menu-toggle {
-      display: none;
-      font-size: 1.5rem;
-      background: none;
-      color: white;
-      border: none;
-      cursor: pointer;
+    
+    /* ————— HERO ————— */
+    header{
+      text-align:center;
+      background:url('/assets/banner-beach-sunset.png') no-repeat center/cover;
+      border-bottom:5px solid #ff7d70;
+      overflow:hidden;
+      color:#fff;
+      padding:6rem 2rem;
     }
-    .navbar-links {
-      display: flex;
-      gap: 2rem;
+    .hero-overlay{
+      background:rgba(0,0,0,.35);
+      padding:2rem;
+      border-radius:20px;
+      display:inline-block;
     }
-    .navbar-links a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
+    header h1{font-size:2.5rem;margin-bottom:1rem;}
+    header p {font-size:1.2rem;}
+    
+    /* ————— BOTÓN ————— */
+    .button{
+      display:inline-block;
+      margin-top:1.5rem;
+      padding:.8rem 2rem;
+      background:#007c91;
+      color:#fff;
+      text-decoration:none;
+      border-radius:50px;
+      font-weight:bold;
     }
-    .navbar-links a:hover {
-      text-decoration: underline;
+    
+    /* ————— TITULARES DE SECCIÓN ————— */
+    section h2{
+      text-align:center;
+      font-size:2rem;
+      margin-bottom:1rem;
     }
-    @media (max-width: 768px) {
-      .navbar .menu-toggle {
-        display: block;
-      }
-      .navbar-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        margin-top: 1rem;
-      }
-      .navbar-links.active {
-        display: flex;
-      }
+    
+    /* ————— CAROUSEL & CARDS ————— */
+    .products{
+      display:flex;
+      gap:2rem;
+      overflow-x:auto;
+      scroll-snap-type:x mandatory;
+      padding-bottom:1rem;
+      scrollbar-width:none;         /* Firefox */
+      -ms-overflow-style:none;      /* IE10+ */
     }
-    .logo img {
-  height: 40px;
-  vertical-align: middle;
-}
-
-
-    body {
-      margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      background: linear-gradient(to top, #87ceeb, #fff8e1);
-      color: #007c91;
+    .products::-webkit-scrollbar{display:none;} /* WebKit */
+    
+    .card{
+      flex:0 0 auto;
+      min-width:300px;
+      background:#fff;
+      border-radius:20px;
+      padding:1rem;
+      text-align:center;
+      box-shadow:0 8px 16px rgba(0,0,0,.1);
+      scroll-snap-align:start;
+      transition:transform .25s ease,box-shadow .25s ease;
     }
-
-    header, section, footer {
-      padding: 2rem;
-      max-width: 1200px;
-      margin: auto;
+    .card:hover{
+      transform:translateY(-4px);
+      box-shadow:0 12px 24px rgba(0,0,0,.15);
     }
-
-    header {
-      text-align: center;
-      background: url('/assets/banner-beach-sunset.png') no-repeat center center;
-      background-size: cover;
-      border-bottom: 5px solid #ff7d70;
-      overflow: hidden;
-      color: white;
-      padding: 6rem 2rem;
+    .card img{width:100%;border-radius:20px;object-fit:cover;}
+    .card h3{margin:.5rem 0;color:#f15e10;font-weight:700;}
+    .card p {font-size:1rem;color:#333;line-height:1.4;}
+    
+    /* ————— FORMULARIO ————— */
+    form{
+      max-width:500px;
+      margin:2rem auto;
+      background:#fff;
+      padding:2rem;
+      border-radius:20px;
+      box-shadow:0 4px 10px rgba(0,0,0,.1);
     }
-
-    .hero-overlay {
-      background: rgba(0, 0, 0, 0.35);
-      padding: 2rem;
-      border-radius: 20px;
-      display: inline-block;
+    form input,
+    form textarea{
+      width:100%;
+      margin-bottom:1rem;
+      padding:.8rem;
+      border:1px solid #ccc;
+      border-radius:10px;
+      font-family:inherit;
     }
-
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
+    form button{
+      background:#007c91;
+      color:#fff;
+      border:none;
+      padding:.8rem 2rem;
+      border-radius:50px;
+      font-weight:bold;
+      cursor:pointer;
     }
-    header p {
-      font-size: 1.2rem;
+    
+    /* ————— FOOTER ————— */
+    footer{
+      text-align:center;
+      font-size:.9rem;
+      color:#555;
+      padding:2rem 1rem 3rem;
+      background:linear-gradient(to top,rgba(0,124,145,.05) 0%,transparent 100%);
     }
-
-    .button {
-      display: inline-block;
-      margin-top: 1.5rem;
-      padding: 0.8rem 2rem;
-      background: #007c91;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 50px;
-      font-weight: bold;
+    footer a{
+      color:#007c91;
+      text-decoration:underline;
+      transition:opacity .2s ease;
     }
-
-    section h2 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 1rem;
+    footer a:hover{opacity:.8;}
+    
+    /* ————— DECORATIVOS ————— */
+    .decor{
+      position:absolute;
+      top:20px;
+      width:80px;
+      transition:transform .3s ease;
     }
-
-    .products {
-      display: flex;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      gap: 2rem;
-      padding-bottom: 1rem;
+    .decor.left  {left:0;}
+    .decor.right {right:0;}
+    .decor:hover {transform:scale(1.1) rotate(2deg);}
+    .decor.bird{
+      top:10px;
+      left:50%;
+      transform:translateX(-50%);
+      width:60px;
+      animation:float 3s ease-in-out infinite;
     }
-    .products {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE 10+ */
-}
-.products::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
-}
-
-
-    .card {
-      background: #fff;
-      border-radius: 20px;
-      padding: 1rem;
-      min-width: 300px;
-      scroll-snap-align: start;
-      flex: 0 0 auto;
-      text-align: center;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    @keyframes float{
+      0%,100%{transform:translate(-50%,0);}
+      50%    {transform:translate(-50%,-10px);}
     }
-
-    .card img {
-      width: 100%;
-      border-radius: 20px;
+    
+    /* ————— UTILIDADES & FIXES ————— */
+    html,body{overflow-x:hidden;}  /* evita desbordes */
+    
+    @media(max-width:768px){
+      button[onclick^="scrollCarousel"]{display:none;} /* oculta flechas grandes */
     }
-
-    .card h3 {
-      margin: 0.5rem 0;
-      color: #f15e10;
+    @media(max-width:500px){
+      .card{min-width:90vw;}        /* cartas adaptables */
     }
-
-    .card p {
-      font-size: 1rem;
-      color: #333;
-    }
-
-    form {
-      max-width: 500px;
-      margin: 2rem auto;
-      background: #fff;
-      padding: 2rem;
-      border-radius: 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-
-    form input, form textarea {
-      width: 100%;
-      margin-bottom: 1rem;
-      padding: 0.8rem;
-      border-radius: 10px;
-      border: 1px solid #ccc;
-      font-family: inherit;
-    }
-
-    form button {
-      background: #007c91;
-      color: #fff;
-      border: none;
-      padding: 0.8rem 2rem;
-      border-radius: 50px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    footer {
-      text-align: center;
-      font-size: 0.9rem;
-      color: #555;
-      padding-top: 2rem;
-    }
-
-    .decor {
-      position: absolute;
-      top: 20px;
-      width: 80px;
-      transition: transform 0.3s ease;
-    }
-
-    .decor.left {
-      left: 0;
-    }
-
-    .decor.right {
-      right: 0;
-    }
-
-    .decor:hover {
-      transform: scale(1.1) rotate(2deg);
-    }
-
-    .decor.bird {
-      top: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      animation: float 3s ease-in-out infinite;
-    }
-
-    @keyframes float {
-      0%, 100% {
-        transform: translate(-50%, 0);
-      }
-      50% {
-        transform: translate(-50%, -10px);
-      }
-    }
-  </style>
+    </style>
+    
 </head>
 <body>
   <nav class="navbar">

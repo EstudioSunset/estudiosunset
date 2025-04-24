@@ -1,0 +1,14 @@
+footer{
+    text-align:center;
+    font-size:.9rem;
+    color:#555;
+    padding:2rem 1rem 3rem;
+    background:linear-gradient(to top,rgba(0,124,145,.05) 0%,transparent 100%);
+  }
+  footer a{
+    color:var(--primary,#007c91);
+    text-decoration:underline;
+    transition:opacity .2s ease;
+  }
+  footer a:hover{opacity:.8;}
+  

@@ -5,80 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Comparativa de Paquetes – Estudio Sunset</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet" />
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      background: #fff8e1;
-      color: #004d40;
-    }
-    header, section, footer {
-      padding: 2rem;
-      max-width: 1200px;
-      margin: auto;
-    }
-    header {
-      text-align: center;
-      background: linear-gradient(to right, #ff7643, #ffb347);
-      color: white;
-      padding: 4rem 2rem;
-      border-radius: 0 0 40px 40px;
-    }
-    header h1 {
-      margin-bottom: 1rem;
-      font-size: 2.5rem;
-    }
-    .comparison-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 2rem;
-    }
-    .comparison-table th,
-    .comparison-table td {
-      padding: 1rem;
-      border: 1px solid #ccc;
-      text-align: center;
-    }
-    .comparison-table th {
-      background: #007c91;
-      color: white;
-    }
-    .comparison-table td:first-child {
-      text-align: left;
-      font-weight: bold;
-      background: #f9f9f9;
-    }
-    .highlight {
-      background: #e0f7fa;
-    }
-    .faq {
-      margin-top: 3rem;
-    }
-    .faq h2 {
-      text-align: center;
-      margin-bottom: 1rem;
-    }
-    .faq-item {
-      background: #fff;
-      margin-bottom: 1rem;
-      padding: 1rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    }
-    footer {
-      text-align: center;
-      font-size: 0.9rem;
-      color: #555;
-      padding-top: 2rem;
-    }
-  </style>
+  <!-- Estilos globales y componentes -->
+  <link rel="stylesheet" href="/css/base.css" />
 </head>
 <body>
   <header>
     <h1>Comparativa de Paquetes</h1>
     <p>Elige el bundle ideal para tu negocio.</p>
   </header>
-
+  <div id="navbar"></div>
   <section>
     <table class="comparison-table">
       <tr>
@@ -136,9 +71,7 @@
     </div>
   </section>
 
-  <footer>
-    <p>© 2025 Estudio Sunset · Comparativa de bundles</p>
-    <a href="/index.html" style="color:#007c91; text-decoration: underline;">Volver al inicio</a>
-  </footer>
+  <div id="footer"></div>
+  <script src="/js/injectPartials.js" type="module"></script>
 </body>
 </html>
