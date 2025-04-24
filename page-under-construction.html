@@ -1,0 +1,94 @@
+<body style="margin:0; background:linear-gradient(to bottom, #FF914D, #FF7D00); color:#fff; font-family:'Courier New', Courier, monospace; display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:100vh; overflow-x:hidden; text-align:center; padding: 2rem;">
+    <div>
+      <h1 style="margin-bottom: 1rem; font-size: 2rem;">🚧 Sitio en construcción 🚧</h1>
+      <p style="font-size: 1.2rem; color:#fff;">Estamos trabajando para traerte algo genial</p>
+  
+      <div id="countdown" style="margin: 1.5rem auto; font-size: 1.1rem; color: #fff;"></div>
+  
+      <div id="typing" style="margin-top:1rem; font-size:1rem; color:rgb(0, 0, 0); white-space:pre;"></div>
+    </div>
+  
+    <!-- Formulario de contacto -->
+    <form id="contactForm" style="margin-top:3rem; background:rgba(0,0,0,0.2); padding:1.5rem; border-radius:10px; max-width:400px; width:100%;">
+      <h3 style="margin-bottom:1rem;">Contáctanos</h3>
+      <input type="text" id="name" placeholder="Tu nombre" required style="width:100%; padding:0.5rem; margin-bottom:1rem; border:none; border-radius:5px;" />
+      <input type="email" id="email" placeholder="Tu correo" required style="width:100%; padding:0.5rem; margin-bottom:1rem; border:none; border-radius:5px;" />
+      <textarea id="message" placeholder="Tu mensaje" required style="width:100%; padding:0.5rem; margin-bottom:1rem; border:none; border-radius:5px;"></textarea>
+      
+      <!-- Antispam simple -->
+      <label for="math" style="display:block; margin-bottom:0.5rem;">¿Cuánto es 3 + 4?</label>
+      <input type="number" id="math" placeholder="Tu respuesta" required style="width:100%; padding:0.5rem; margin-bottom:1rem; border:none; border-radius:5px;" />
+      
+      <button type="submit" style="background:#fff; color:#FF7D00; border:none; padding:0.5rem 1rem; border-radius:5px; font-weight:bold; cursor:pointer;">
+        Enviar
+      </button>
+  
+      <p id="response" style="margin-top:1rem; font-size:0.9rem;"></p>
+    </form>
+  
+    <script>
+      // Cuenta regresiva
+      const countdownEl = document.getElementById("countdown");
+      const targetDate = new Date();
+      targetDate.setMonth(targetDate.getMonth() + 3);
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+        if (distance < 0) {
+          countdownEl.textContent = "¡Ya casi terminamos!";
+          return;
+        }
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        countdownEl.textContent = `Lanzamiento estimado en: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+      }
+      setInterval(updateCountdown, 1000);
+      updateCountdown();
+  
+      // Typing effect
+      const lines = [
+        "Inicializando servidor...",
+        "Compilando componentes...",
+        "Optimizando diseño responsive...",
+        "Conectando base de datos...",
+        "Building pages..."
+      ];
+      const target = document.getElementById("typing");
+      let line = 0, char = 0;
+      function typeLine() {
+        if (line >= lines.length) return;
+        if (char < lines[line].length) {
+          target.textContent += lines[line][char];
+          char++;
+          setTimeout(typeLine, 50);
+        } else {
+          target.textContent += "\n";
+          line++;
+          char = 0;
+          setTimeout(typeLine, 400);
+        }
+      }
+      typeLine();
+  
+      // Validación y simulación de envío
+      document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const mathAnswer = parseInt(document.getElementById('math').value);
+        const response = document.getElementById('response');
+  
+        if (mathAnswer !== 7) {
+          response.style.color = "red";
+          response.textContent = "Respuesta incorrecta. Intenta otra vez.";
+          return;
+        }
+  
+        // Aquí puedes conectar con Formspree o tu backend
+        response.style.color = "lime";
+        response.textContent = "Gracias por tu mensaje. Te responderemos pronto a info@estudiosunset.com";
+        this.reset();
+      });
+    </script>
+  </body>
+  
