@@ -39,6 +39,19 @@ header{
   padding:6rem 2rem;
 }
 .hero-overlay {
+  animation: fadeSlideIn 1s ease-out forwards;
+  opacity: 0; /* empieza oculto */
+  transform: translateY(20px);
+}
+
+@keyframes fadeSlideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-overlay {
   background: rgba(0, 0, 0, 0.35);
   padding: 2rem;
   border-radius: 20px;
@@ -50,6 +63,18 @@ header{
   max-width: 100%;
   box-sizing: border-box;
 }
+.hero-logo {
+  width: 300px;
+  max-width: 80%;
+  height: auto;
+}
+@media (max-width: 500px) {
+  .hero-logo {
+    width: 200px;
+  }
+}
+
+
 
 header h1{font-size:2.5rem;margin-bottom:1rem;}
 header p {font-size:1.2rem;}
