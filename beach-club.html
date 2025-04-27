@@ -5,59 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Beach Club – Estudio Sunset</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet" />
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      background: linear-gradient(to top, #e0f7fa, #ffffff);
-      color: #006064;
-    }
-    header, section, footer {
-      padding: 2rem;
-      max-width: 1000px;
-      margin: auto;
-    }
-    header {
-      text-align: center;
-      background: url('/assets/banner-beach-sunset.png') no-repeat center center;
-      background-size: cover;
-      color: white;
-      padding: 6rem 2rem;
-    }
-    .overlay {
-      background-color: rgba(0, 0, 0, 0.4);
-      padding: 2rem;
-      border-radius: 20px;
-      display: inline-block;
-    }
-    h1, h2 {
-      margin-bottom: 1rem;
-    }
-    .service-section {
-      background: white;
-      border-radius: 20px;
-      padding: 2rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    .service-section h3 {
-      color: #f15e10;
-    }
-    footer {
-      text-align: center;
-      font-size: 0.9rem;
-      color: #555;
-      padding-top: 2rem;
-    }
-  </style>
+ <!-- Hoja de estilos principal -->
+ <link rel="stylesheet" href="/css/base.css" />
 </head>
 <body>
-  <header>
-    <div class="overlay">
-      <h1>Beach Club</h1>
-      <p>Para marcas establecidas que necesitan un equipo externo completo, creativo y orientado a resultados.</p>
+   <!-- ========== NAVBAR ========== -->
+   <nav class="navbar">
+    <a href="/index.html" class="logo">
+      <img src="/assets/estudio-sunset-transparent.png" alt="Estudio Sunset logo">
+    </a>
+
+    <button class="menu-toggle" aria-label="Abrir / cerrar menú">
+      &#9776;
+    </button>
+
+    <div class="navbar-links">
+      <a href="/index.html">Home</a>
+      <a href="/logo-generator.html">Logo Generator</a>
+      <a href="/bundles-pricing.html">Bundles</a>
+      <a href="/servicios.html">Services</a>
+      <a href="#contacto">Contact</a>
+      <a href="/blog.html">Blog</a>
     </div>
-  </header>
+  </nav>
+  
+<!-- ========== HERO ========== -->
+<header class="hero">
+    <div class="overlay">
+      <h1 style="text-align: center;">Beach Club</h1>
+      <p style="text-align: center;">Para marcas establecidas que necesitan un equipo externo completo, creativo y orientado a resultados.</p>
+    </div>
+</header>
 
   <section class="service-section">
     <h2>¿Qué incluye este paquete?</h2>

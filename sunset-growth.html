@@ -5,82 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sunset Growth – Estudio Sunset</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet" />
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      background: linear-gradient(to top, #fff3e0, #e0f2f1);
-      color: #004d40;
-    }
-    header, section, footer {
-      padding: 2rem;
-      max-width: 1000px;
-      margin: auto;
-    }
-    header {
-      text-align: center;
-      background: url('/assets/banner-beach-sunset.png') no-repeat center center;
-      background-size: cover;
-      color: white;
-      padding: 6rem 2rem;
-    }
-    .overlay {
-      background-color: rgba(0, 0, 0, 0.4);
-      padding: 2rem;
-      border-radius: 20px;
-      display: inline-block;
-    }
-    h1, h2 {
-      margin-bottom: 1rem;
-    }
-    .service-section {
-      background: white;
-      border-radius: 20px;
-      padding: 2rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    .service-section h3 {
-      color: #f15e10;
-    }
-    .testimonial-section {
-      background: #fff;
-      border-radius: 20px;
-      padding: 2rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    }
-    .testimonial {
-      font-style: italic;
-      color: #555;
-    }
-    .cta-section {
-      background: #007c91;
-      color: white;
-      text-align: center;
-      padding: 2rem;
-      border-radius: 20px;
-      margin-bottom: 2rem;
-    }
-    .cta-section a {
-      background: white;
-      color: #007c91;
-      padding: 0.8rem 1.5rem;
-      display: inline-block;
-      margin-top: 1rem;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 30px;
-    }
-    footer {
-      text-align: center;
-      font-size: 0.9rem;
-      color: #555;
-      padding-top: 2rem;
-    }
-  </style>
+  <!-- Hoja de estilos principal -->
+  <link rel="stylesheet" href="/css/base.css" />
 </head>
+
 <body>
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar">
+    <a href="/index.html" class="logo">
+      <img src="/assets/estudio-sunset-transparent.png" alt="Estudio Sunset logo">
+    </a>
+
+    <button class="menu-toggle" aria-label="Abrir / cerrar menú">
+      &#9776;
+    </button>
+
+    <div class="navbar-links">
+      <a href="/index.html">Home</a>
+      <a href="/logo-generator.html">Logo Generator</a>
+      <a href="/bundles-pricing.html">Bundles</a>
+      <a href="/servicios.html">Services</a>
+      <a href="#contacto">Contact</a>
+      <a href="/blog.html">Blog</a>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <header class="hero">
+    <img src="/assets/estudio-sunset-transparent.png"
+         alt="Estudio Sunset logo"
+         class="hero-logo">
+  
+         <p id="tagline" class="tagline">Rising your brand everyday</p>
+  
+    <a href="#contacto" class="cta-btn">Contact Us</a>
+  </header>
   <header>
     <div class="overlay">
       <h1>Sunset Growth</h1>

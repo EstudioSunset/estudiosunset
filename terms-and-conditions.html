@@ -11,24 +11,44 @@
   <meta property="og:url" content="https://estudiosunset.com" />
   <title>Estudio Sunset – Marketing que se siente como vacaciones</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/styles.css" />
+  <!-- Hoja de estilos principal -->
+  <link rel="stylesheet" href="/css/base.css" />
 </head>
+
 <body>
-    <nav class="navbar">
-        <div class="logo">Estudio Sunset</div>
-        <button class="menu-toggle" onclick="document.querySelector('.navbar-links').classList.toggle('active')">&#9776;</button>
-        <div class="navbar-links">
-          <a href="/index.html">Inicio</a>
-          <a href="/bundles-pricing.html">Paquetes</a>
-          <a href="/servicios.html">Servicios</a>
-          <a href="/index.html#contacto">Contacto</a>
-          <a href="/blog.html">Blog</a>
-          <a href="/terms.html">Términos</a>
-        </div>
-      </nav>
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar">
+    <a href="/index.html" class="logo">
+      <img src="/assets/estudio-sunset-transparent.png" alt="Estudio Sunset logo">
+    </a>
+
+    <button class="menu-toggle" aria-label="Abrir / cerrar menú">
+      &#9776;
+    </button>
+
+    <div class="navbar-links">
+      <a href="/index.html">Home</a>
+      <a href="/logo-generator.html">Logo Generator</a>
+      <a href="/bundles-pricing.html">Bundles</a>
+      <a href="/servicios.html">Services</a>
+      <a href="#contacto">Contact</a>
+      <a href="/blog.html">Blog</a>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <header class="hero">
+    <img src="/assets/estudio-sunset-transparent.png"
+         alt="Estudio Sunset logo"
+         class="hero-logo">
+  
+         <p id="tagline" class="tagline">Rising your brand everyday</p>
+  
+    <a href="#contacto" class="cta-btn">Contact Us</a>
+  </header>
   <section id="terminos-condiciones">
     <h2>Términos y Condiciones – Estudio Sunset</h2>
-    <p><strong>Última actualización:</strong> [Coloca la fecha aquí]</p>
+    <p><strong>Última actualización:</strong> 4/26/2025</p>
 
     <h3>1. Servicios Ofrecidos</h3>
     <ul>
