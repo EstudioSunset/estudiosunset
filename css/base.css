@@ -217,3 +217,45 @@ html, body { overflow-x: hidden; }
 @media (max-width: 500px) {
   .card { min-width: 90vw; }
 }
+.hoja {
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+  transform-origin: center;
+  animation: brisa 6s ease-in-out infinite;
+}
+
+/* Posicionamiento específico por hoja */
+.hoja-izq-abajo    { left: 0; bottom: 0; width: 180px; }
+.hoja-der          { right: 0; top: 0; width: 180px; }
+.hoja-med          { left: 50%; bottom: 10px; width: 160px; transform: translateX(-50%); }
+.hoja-arriba-der   { right: 40px; top: 40px; width: 150px; }
+.hoja-izq-up       { left: 40px; top: 30px; width: 140px; }
+.hoja-izq          { left: 0; top: 50%; width: 150px; transform: translateY(-50%); }
+
+/* Flores */
+.flor              { animation: brisaFlores 8s ease-in-out infinite; }
+.flor-der          { right: 10px; bottom: 40px; width: 80px; }
+.flor-centro       { left: 45%; bottom: 20px; width: 90px; }
+
+/* Brisa general */
+@keyframes brisa {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(2deg); }
+}
+
+@keyframes brisaFlores {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.05) rotate(1deg); }
+}
+@media (max-width: 600px) {
+  .hoja,
+  .flor {
+    width: 80px !important;
+    opacity: 0.8;
+  }
+
+  .hero-banner {
+    height: 320px;
+  }
+}

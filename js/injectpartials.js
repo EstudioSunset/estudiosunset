@@ -64,3 +64,25 @@ window.addEventListener('DOMContentLoaded', () => {
     autoSlide();
   }
 });
+document.getElementById("logoResult").innerHTML = svgLogo;
+logosGenerated++;
+
+const blob = new Blob([svgLogo], { type: "image/svg+xml" });
+const url = URL.createObjectURL(blob);
+const downloadBtn = document.getElementById("downloadBtn");
+downloadBtn.href = url;
+downloadBtn.style.display = "inline-block";
+
+function generateLogo() {
+  const brand = document.getElementById("brandName").value;
+  const industry = document.getElementById("industry").value;
+
+  if (!brand || !industry) {
+    alert("Por favor completa todos los campos.");
+    return;
+  }
+
+  const query = encodeURIComponent(`${brand} logo ${industry}`);
+  const iframe = document.getElementById("recraftFrame");
+  iframe.src = `https://www.recraft.ai/?search=${query}`;
+}

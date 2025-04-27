@@ -35,7 +35,8 @@
   <main>
     <section class="logo-generator">
       <h2>Generador de Logos Express</h2>
-      <p>Tu primer logo es gratuito. El segundo cuesta $20 USD e incluye el archivo editable.</p>
+      <p align="center">Tu primer logo es gratuito. El segundo cuesta $50 USD e incluye el archivo editable.</p>
+      <div align="center" class="logo-generator-form">
       <input type="text" id="brandName" placeholder="Nombre de la marca" required />
       <select id="industry">
         <option value="">Selecciona tu industria</option>
@@ -45,47 +46,74 @@
         <option value="salud">Salud y Bienestar</option>
         <option value="otro">Otro</option>
       </select>
-      <label for="primaryColor">Color principal</label>
-      <input type="color" id="primaryColor" value="#f15e10" />
-      <button onclick="generateLogo()" class="button">Generar Logo</button>
-      <div id="logoResult"></div>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: 10px; margin-bottom: 10px;"></div>
+        <label for="primaryColor">Color principal</label>
+        <input type="color" id="primaryColor" value="#f15e10" />
+      </div>
+      <div align="center">
+        <button onclick="generateLogo()" class="button">Generar Logo</button>
+      </div>
+      <div id="recraftEmbed" style="width:100%; height:700px; margin-top:2rem;">
+        <iframe id="recraftFrame"
+          src=""
+          style="width:100%; height:100%; border: none; border-radius: 10px;"
+          loading="lazy"
+          title="Recraft Logo Generator">
+        </iframe>
+      </div>
+    </div>
     </section>
   </main>
-
+  <div id="emailCapture" style="margin-top:1rem;" align="center">
+    <input type="email" id="userEmail" placeholder="Tu correo" required />
+    <button onclick="sendEmail()">Enviar y Descargar</button>
+  </div>
+  <button id="recraftBtn" style="display:none;" class="button" target="_blank">
+    Ver ideas con IA en Recraft
+  </button>
   <footer>
     © 2025 Estudio Sunset · Creatividad con sabor a mar<br>
     <a href="/gracias.html" style="color:#007c91; text-decoration: underline;">Ir a página de agradecimiento</a>
   </footer>
 
   <script>
-    let logosGenerated = 0;
-
     function generateLogo() {
       const brand = document.getElementById("brandName").value;
       const industry = document.getElementById("industry").value;
-      const color = document.getElementById("primaryColor").value;
-
+  
       if (!brand || !industry) {
         alert("Por favor completa todos los campos.");
         return;
       }
-
-      if (logosGenerated >= 1) {
-        alert("Tu logo gratuito ya fue generado. El siguiente cuesta $20 USD. Escríbenos para solicitarlo.");
+  
+      const query = encodeURIComponent(`${brand} logo ${industry}`);
+      const recraftURL = `https://www.recraft.ai/?search=${query}`;
+      window.open(recraftURL, "_blank");
+  
+      // Si quieres mostrar el botón de recraft como alternativa a redirigir directamente:
+      // const recraftBtn = document.getElementById("recraftBtn");
+      // recraftBtn.href = recraftURL;
+      // recraftBtn.style.display = "inline-block";
+    }
+  
+    // Opcional: para capturar correo si decides hacerlo
+    function sendEmail() {
+      const email = document.getElementById("userEmail").value;
+      if (!email) {
+        alert("Por favor ingresa tu correo.");
         return;
       }
-
-      const svgLogo = `
-        <svg width="300" height="100" xmlns="http://www.w3.org/2000/svg">
-          <rect width="300" height="100" fill="white" />
-          <circle cx="50" cy="50" r="30" fill="${color}" />
-          <text x="100" y="60" font-size="24" fill="${color}" font-family="Montserrat">${brand}</text>
-        </svg>
-      `;
-
-      document.getElementById("logoResult").innerHTML = svgLogo;
-      logosGenerated++;
+  
+      fetch("https://formspree.io/f/mldjqkrw", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email })
+      }).then(() => {
+        alert("Gracias. Te enviaremos más ideas y promociones pronto.");
+      });
     }
   </script>
+  
+
 </body>
 </html>

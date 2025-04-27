@@ -40,10 +40,27 @@
     </div>
   </nav>
   
-  <header>
+  <header class="hero-banner">
+    <!-- Fondo PNG -->
+    <img src="/assets/hero-banner-background-palms.jpg" alt="Fondo tropical" class="hero-background" loading="lazy" />
+  
+    <!-- Hojas animadas -->
+    <img src="/assets/hoja-palm-izq-abajo.svg" class="hoja hoja-izq-abajo" alt="Hoja Izquierda Abajo" />
+    <img src="/assets/hoja-palm-derecha.svg" class="hoja hoja-der" alt="Hoja Derecha" />
+    <img src="/assets/hoja-med.svg" class="hoja hoja-med" alt="Hoja Central" />
+    <img src="/assets/hoja-arriba-der.svg" class="hoja hoja-arriba-der" alt="Hoja Arriba Derecha" />
+    <img src="/assets/hoja-izq-up.svg" class="hoja hoja-izq-up" alt="Hoja Izquierda Superior" />
+    <img src="/assets/hojas-palm-izq.svg" class="hoja hoja-izq" alt="Hojas Palma Izquierda" />
+  
+    <!-- Flores (opcionalmente animables) -->
+    <img src="/assets/flor-hoja-der.svg" class="hoja flor flor-der" alt="Flor Derecha" />
+    <img src="/assets/flor.svg" class="hoja flor flor-centro" alt="Flor Centro" />
+  
+    <!-- Contenido -->
     <div class="hero-overlay">
-      <img src="/assets/estudio-sunset-transparent.png" alt="Estudio Sunset Logo" class="hero-logo" />
-      <p>Bringing your brand to the golden hour</p>
+      <img src="/assets/estudio-sunset-transparent.png" class="hero-logo" alt="Logo Estudio Sunset" />
+      <h1>Bringing your brand to the golden hour</h1>
+      <p>Diseño creativo y marketing digital con frescura tropical</p>
       <a href="#contacto" class="button">Contáctanos</a>
     </div>
   </header>
@@ -51,7 +68,8 @@
 
   <section>
     <h2>Bundles and Services</h2>
-  <div style="position: relative;">
+    <div class="products" id="carousel" onmouseover="pauseAutoSlide()" onmouseout="resumeAutoSlide()">
+
     <button onclick="scrollCarousel(-1)" style="position:absolute;left:-2rem;top:40%;z-index:10;background:#007c91;color:white;border:none;padding:0.5rem 1rem;border-radius:50%;cursor:pointer;font-size:1.5rem;">◀</button>
     <div class="products" id="carousel" onmouseover="pauseAutoSlide()" onmouseout="resumeAutoSlide()">
 
