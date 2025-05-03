@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Carrito de compras Estudio Sunset – Impulsa tu marca con estilo tropical." />
+  <title>Carrito de Compras | Estudio Sunset</title>
+  <link rel="stylesheet" href="/css/base.css" />
+  <!-- Hoja de estilos principal -->
+  <link rel="stylesheet" href="/css/base.css" />
+</head>
+
+<body>
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar">
+    <a href="/index.html" class="logo">
+      <img src="/assets/estudio-sunset-transparent.png" alt="Estudio Sunset Logo" height="40px" />
+    </a>
+  
+    <button class="menu-toggle" aria-label="Abrir/Cerrar menú">&#9776;</button>
+    <div class="navbar-links">
+      <a href="/index.html">Home</a>
+      <a href="/logo-generator.html">Logo Generator</a>
+      <a href="/bundles-pricing.html">Bundles</a>
+      <a href="/servicios.html">Services</a>
+      <a href="/portfolio.html">Portfolio</a>
+      <a href="#contacto">Contact</a>      
+    </div>
+    <div class="cart" id="open-cart">
+      🛒 <span id="cart-count">0</span>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <header class="hero">
+    <h1>Tu Carrito</h1>
+    <p>Impulsa tu marca. Deja tu huella 🌴</p>
+  
+    <a href="#contacto" class="cta-btn">Contact Us</a>
+  </header>
+  
+  <section class="cart-section">
+    
+    <div class="cart-summary">
+      <div class="cart-items" id="cart-items">
+        <!-- Aquí se insertan los productos dinámicamente -->
+      </div>
+
+      <div class="checkout-actions">
+        <a href="/index.html" class="btn-secondary">Seguir Comprando</a>
+        <button id="checkout-button" class="btn-primary">Proceder al Pago</button>
+      </div>
+    </div>
+
+    <aside class="cart-sidebar">
+      <h2>Resumen de Compra</h2>
+      <ul class="cart-totals">
+        <li>Subtotal: <span id="subtotal">$0.00</span></li>
+        <li>Envío: <span id="shipping">Calculado en Checkout</span></li>
+        <li>Total: <span id="total">$0.00</span></li>
+      </ul>
+
+      <div class="trust-badges">
+        <img src="/assets/secure-payment.png" alt="Pago Seguro">
+        <p>Pago 100% Seguro | SSL Certificado 🔒</p>
+      </div>
+
+      <div class="urgency-message">
+        🚚 ¡Compra hoy y enviamos mañana!
+      </div>
+    </aside>
+
+  </section>
+<!-- ========== SUGGESTED PRODUCTS REEL ========== -->
+<section class="suggested-products">
+    <h2>Productos Sugeridos</h2>
+    <div class="product-reel" style="display: flex; gap: 1rem; overflow-x: auto;">
+        <div class="product-card" style="flex: 0 0 auto; text-align: center; width: 200px;">
+            <img src="/assets/product1.jpg" alt="Producto 1" style="width: 100%; height: auto;">
+            <h3>Producto 1</h3>
+            <p>$19.99</p>
+            <button class="btn-secondary">Añadir al Carrito</button>
+        </div>
+        <div class="product-card" style="flex: 0 0 auto; text-align: center; width: 200px;">
+            <img src="/assets/product2.jpg" alt="Producto 2" style="width: 100%; height: auto;">
+            <h3>Producto 2</h3>
+            <p>$29.99</p>
+            <button class="btn-secondary">Añadir al Carrito</button>
+        </div>
+        <div class="product-card" style="flex: 0 0 auto; text-align: center; width: 200px;">
+            <img src="/assets/product3.jpg" alt="Producto 3" style="width: 100%; height: auto;">
+            <h3>Producto 3</h3>
+            <p>$39.99</p>
+            <button class="btn-secondary">Añadir al Carrito</button>
+        </div>
+        <div class="product-card" style="flex: 0 0 auto; text-align: center; width: 200px;">
+            <img src="/assets/product3.jpg" alt="Producto 3" style="width: 100%; height: auto;">
+            <h3>Producto 3</h3>
+            <p>$39.99</p>
+            <button class="btn-secondary">Añadir al Carrito</button>
+        </div>
+        <div class="product-card" style="flex: 0 0 auto; text-align: center; width: 200px;">
+            <img src="/assets/product3.jpg" alt="Producto 3" style="width: 100%; height: auto;">
+            <h3>Producto 3</h3>
+            <p>$39.99</p>
+            <button class="btn-secondary">Añadir al Carrito</button>
+        </div>
+        <div class="product-card" style="flex: 0 0 auto; text-align: center; width: 200px;">
+            <img src="/assets/product3.jpg" alt="Producto 3" style="width: 100%; height: auto;">
+            <h3>Producto 3</h3>
+            <p>$39.99</p>
+            <button class="btn-secondary">Añadir al Carrito</button>
+        </div>
+    </div>
+</section>
+  <footer>
+    © 2025 Estudio Sunset · Creatividad con sabor a mar
+  </footer>
+
+  <script type="module" src="/js/inject.js"></script>
+</body>
+</html>

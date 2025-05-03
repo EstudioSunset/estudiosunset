@@ -1,121 +1,203 @@
-/* ========== RESET BÁSICO ========== */
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%;scroll-behavior:smooth;font-family:'Montserrat',sans-serif}
-body{background:linear-gradient(to top,#87ceeb,#fff8e1);color:#007c91;overflow-x:hidden}
+/* ========== RESET Y TIPOGRAFÍA ========== */
+*,
+*::before,
+*::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; scroll-behavior: smooth; font-family: 'Montserrat', sans-serif; }
+body { background: linear-gradient(to top, #87ceeb, #fff8e1); color: #007c91; overflow-x: hidden; }
 
-/* helpers */
-.center{text-align:center}
+/* ========== UTILIDADES ========== */
+.center { text-align: center; }
+
+/* ========== BOTONES ========== */
+.btn {
+  display: inline-block;
+  margin: 1rem auto;
+  padding: 0.6rem 1.6rem;
+  background: #ffa630;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 700;
+  text-align: center;
+}
 
 /* ========== NAVBAR ========== */
-.navbar{
-  background:linear-gradient(to bottom,#FF914D,#FF7D00);
-  padding:.6rem 1.5rem;
-  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(to bottom, #FF914D, #FF7D00);
+  padding: 0.6rem 1rem;
+  display: flex;
+  align-items: center;
+  z-index: 50;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
-.navbar img{height:40px}
-.navbar a{color:#fff;text-decoration:none;font-weight:600;margin-right:1.5rem}
-.menu-toggle{
-  display:none;background:none;border:none;font-size:1.8rem;color:#fff;cursor:pointer
+.navbar .logo img { height: 40px; }
+.menu-toggle {
+  margin-left: auto;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: #fff;
+  cursor: pointer;
+  display: none;
 }
-@media(max-width:768px){
-  .menu-toggle{display:block}
-  .navbar-links{display:none;flex-direction:column;width:100%;margin-top:.5rem}
-  .navbar-links.active{display:flex}
-  .navbar-links a{margin:0.75rem 0}
+.navbar-links {
+  display: flex;
+  gap: 1rem;
+  margin-left: auto;
 }
+.navbar-links a {
+  padding: 0.4rem 0.8rem;
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 20px;
+  transition: background .3s;
+}
+.navbar-links a:hover { background: #ffa630; }
 
-/* ========== HERO BANNER ========== */
-
-.hero{
-  width:100%;
-  height:280px;                /* alto compacto */
-  background:url('/assets/hero-banner-background-palms.jpg') center/cover no-repeat;
-  border-bottom:5px solid #ff7d70;
-
-  display:flex;                /* centrado perfecto */
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  gap:1rem;
+/* ========== HERO ========== */
+.hero {
+  width: 100%;
+  height: 320px;
+  background: url('/assets/hero-banner-background-palms.jpg') center/cover no-repeat;
+  border-bottom: 5px solid #ff7d70;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
 }
+.hero-logo { max-width: 220px; width: 55vw; height: auto; }
+.tagline { color: #fff; font-size: 1rem; }
 
-.hero-logo{width:220px;max-width:55vw;height:auto}
-.tagline  {color:#fff;font-size:1rem;text-align:center}
-.cta-btn  {
-  display:inline-block;
-  padding:.6rem 1.6rem;
-  background:#ffa630;color:#fff;
-  text-decoration:none;border-radius:50px;
-  font-weight:700;font-size:.9rem
+/* ========== BUNDLES ========== */
+.bundles {
+  padding: 2rem 1rem;
+  background: #87ceeb;
 }
+.bundles h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+.cards {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  scroll-snap-type: x mandatory;
+}
+.cards::-webkit-scrollbar { display: none; }
+.cards { scrollbar-width: none; }
+.card {
+  flex: 0 0 auto;
+  width: 240px;
+  background: #fff;
+  border-radius: 20px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  scroll-snap-align: start;
+  transition: transform .25s, box-shadow .25s;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+.card img {
+  width: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+  margin-bottom: .8rem;
+}
+.card h3 { color: #f15e10; margin: .3rem 0; font-weight: 700; }
+.card p  { font-size: .9rem; line-height: 1.4; color: #333; }
 
-/* móvil aún más compacto */
-@media(max-width:600px){
-  .hero      {height:240px;}
-  .hero-logo {width:190px;}
+/* ========== CONTACTO ========== */
+.contacto {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem 1rem;
+  background: #fff8e1;
+  text-align: center;
+  border-radius: 12px;
 }
-
-/* Logo y texto escalan suavemente */
-.hero-logo{max-width:220px}
-.tagline   {font-size:.95rem}
-.cta-btn   {font-size:.85rem;padding:.55rem 1.4rem}
-
-@keyframes fadeSlideIn{
-  from{opacity:0;transform:translate(-50%,20px)}
-  to{opacity:1;transform:translate(-50%,0)}
+.contacto h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: #007c91;
 }
-@media(max-width:600px){
-  .hero{height:320px}                     /* 🔧 altura móvil revisada */
-  .hero-overlay{top:20px;width:90%;max-height:260px}
+.contacto p {
+  margin-bottom: 1rem;
+  color: #007c91;
 }
-
-/* ========== SECTION LAYOUT ========== */
-section,footer{max-width:1200px;margin:0 auto;padding:2rem 2rem}
-section h2{font-size:2rem;margin-bottom:1rem;text-align:center}
-
-/* ========== CAROUSEL ========== */
-.carousel-wrapper{position:relative}
-.carousel-btn{
-  position:absolute;top:50%;transform:translateY(-50%);
-  background:#007c91;color:#fff;border:none;border-radius:50%;width:40px;height:40px;
-  font-size:1.25rem;cursor:pointer;z-index:5
+.contacto input,
+.contacto textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  font-family: inherit;
 }
-.prev{left:-2rem}.next{right:-2rem}
-.products{
-  display:flex;gap:2rem;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:1rem
-}
-.products::-webkit-scrollbar{display:none} /* Chrome */
-.products{scrollbar-width:none}            /* Firefox */
-
-/* ========== CARD ========== */
-.card{
-  flex:0 0 auto;scroll-snap-align:start;
-  width:280px;background:#fff;border-radius:20px;text-align:center;padding:1rem;
-  box-shadow:0 8px 16px rgba(0,0,0,.1);transition:transform .25s,box-shadow .25s
-}
-.card:hover{transform:translateY(-4px);box-shadow:0 12px 24px rgba(0,0,0,.15)}
-.card img{width:100%;border-radius:20px;object-fit:cover;margin-bottom:.8rem}
-.card h3{color:#f15e10;margin:.3rem 0;font-weight:700}
-.card p{font-size:.95rem;line-height:1.4;color:#333}
-
-/* ========== FORMULARIO ========== */
-form{
-  max-width:500px;margin:2rem auto;background:#fff;border-radius:20px;padding:2rem;
-  box-shadow:0 4px 10px rgba(0,0,0,.1)
-}
-form input,form textarea{
-  width:100%;margin-bottom:1rem;padding:.8rem;border:1px solid #ccc;border-radius:10px;font-family:inherit
-}
-form button.cta-btn{width:100%;text-align:center}
 
 /* ========== FOOTER ========== */
-footer{font-size:.9rem;color:#555;text-align:center}
-footer a{color:#007c91;text-decoration:underline}
-
-/* cursor parpadeante */
-#tagline::after{
-  content:"|";
-  margin-left:4px;
-  animation:blink .8s steps(2,start) infinite;
+footer {
+  padding: 1.5rem 1rem;
+  text-align: center;
+  background: linear-gradient(to top, rgba(0,124,145,0.05), transparent);
+  font-size: 0.9rem;
 }
-@keyframes blink{ to{visibility:hidden;} }
+footer a { color: #007c91; text-decoration: underline; }
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .menu-toggle { display: block; }
+  .navbar-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: linear-gradient(to bottom, #FF914D, #FF7D00);
+    padding: 1rem;
+    display: none;
+  }
+  .navbar-links.active { display: flex; }
+  .cards { flex-wrap: wrap; overflow-x: hidden; }
+  .card { flex: 1 1 calc(50% - 1rem); width: auto; }
+}
+/* ───── Flat Navbar Buttons ───── */
+.navbar-links a {
+  background: none;        /* sin fondo */
+  color: #fff;             /* mantén el color */
+  padding: 0.5rem 0.75rem; /* ajuste ligero */
+  border-radius: 0;        /* sin esquinas redondeadas */
+  transition: color .3s;
+}
+.navbar-links a:hover {
+  color: #ffa630;          /* cambio de color al pasar */
+  text-decoration: underline;
+}
+
+/* ───── Center Bundles Section ───── */
+.bundles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* centra el h2 y el contenedor de cards */
+  padding: 2rem 1rem;
+  background: #87ceeb;
+}
+.bundles h2 {
+  margin-bottom: 1rem;
+}
+.cards {
+  justify-content: center; /* centra las tarjetas */
+  margin: 0 auto;          /* asegura que el flex container quede centrado */
+  max-width: 900px;        /* opcional: límite de ancho */
+}

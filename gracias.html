@@ -11,183 +11,109 @@
   <meta property="og:url" content="https://estudiosunset.com" />
   <title>Estudio Sunset – Marketing que se siente como vacaciones</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet" />
+  <!-- Hoja de estilos principal -->
+  <link rel="stylesheet" href="/css/base.css" />
+</head>
+
+<body>
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar">
+    <a href="/index.html" class="logo">
+      <img src="/assets/estudio-sunset-transparent.png" alt="Estudio Sunset logo">
+    </a>
+
+    <button class="menu-toggle" aria-label="Abrir / cerrar menú">
+      &#9776;
+    </button>
+
+    <div class="navbar-links">
+      <a href="/index.html">Home</a>
+      <a href="/logo-generator.html">Logo Generator</a>
+      <a href="/bundles-pricing.html">Bundles</a>
+      <a href="/servicios.html">Services</a>
+      <a href="/portfolio.html">Portfolio</a>
+      <a href="#contacto">Contact</a>
+      <a href="/blog.html">Blog</a>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <header class="hero">
+    <img src="/assets/estudio-sunset-transparent.png"
+         alt="Estudio Sunset logo"
+         class="hero-logo">
+  
+         <p id="tagline" class="tagline">Rising your brand everyday</p>
+  
+    <a href="#contacto" class="cta-btn">Contact Us</a>
+  </header>
+
+  <section class="thank-you" style="text-align: center;">
+    <h1>¡Gracias por contactarnos!</h1>
+    <p>Hemos recibido tu mensaje y nos pondremos en contacto contigo lo antes posible.</p>
+    <p>Mientras tanto, puedes explorar más sobre nosotros en nuestros <a href="/portfolio.html">proyectos</a> o leer nuestro <a href="/blog.html">blog</a>.</p>
+    <a href="/index.html" class="button">Volver al inicio</a>
+  </section>
+
+  <section class="product-promo">
+    <h2 style="text-align: center;">Promociones Especiales</h2>
+    <div class="promo-reel">
+      <div class="product">
+        <h3>Producto 1</h3>
+        <p><span class="price-before">Antes: $50</span> Ahora: <span class="price-now">$35</span></p>
+      </div>
+      <div class="product">
+        <h3>Producto 2</h3>
+        <p><span class="price-before">Antes: $75</span> Ahora: <span class="price-now">$50</span></p>
+      </div>
+      <div class="product">
+        <h3>Producto 3</h3>
+        <p><span class="price-before">Antes: $100</span> Ahora: <span class="price-now">$80</span></p>
+      </div>
+      <div class="product">
+        <h3>Producto 4</h3>
+        <p><span class="price-before">Antes: $40</span> Ahora: <span class="price-now">$25</span></p>
+      </div>
+      <div class="product">
+        <h3>Producto 5</h3>
+        <p><span class="price-before">Antes: $60</span> Ahora: <span class="price-now">$45</span></p>
+      </div>
+      <div class="product">
+        <h3>Producto 6</h3>
+        <p><span class="price-before">Antes: $90</span> Ahora: <span class="price-now">$70</span></p>
+      </div>
+    </div>
+  </section>
+
   <style>
-    body {
-      margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      background: linear-gradient(to top, #87ceeb, #fff8e1);
-      color: #007c91;
-    }
-    header, section, footer {
-      padding: 2rem;
+    .product-promo {
+      margin: 2rem auto;
+      padding: 1rem;
       max-width: 1200px;
-      margin: auto;
     }
-    header {
-      text-align: center;
-      background: #ffcf6b;
-      border-bottom: 5px solid #ff7d70;
-      position: relative;
-      overflow: hidden;
-    }
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-    header p {
-      font-size: 1.2rem;
-    }
-    .button {
-      display: inline-block;
-      margin-top: 1.5rem;
-      padding: 0.8rem 2rem;
-      background: #007c91;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 50px;
-      font-weight: bold;
-    }
-    section h2 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-    .products {
+    .promo-reel {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 2rem;
+      gap: 1rem;
     }
-    .card {
-      background: #fff;
-      border-radius: 20px;
+    .product {
+      border: 1px solid #ddd;
+      border-radius: 8px;
       padding: 1rem;
-      width: 300px;
       text-align: center;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      width: 150px;
+      background-color: #f9f9f9;
     }
-    .card img {
-      width: 100%;
-      border-radius: 20px;
+    .price-before {
+      text-decoration: line-through;
+      color: #888;
     }
-    .card h3 {
-      margin: 0.5rem 0;
-      color: #f15e10;
-    }
-    .card p {
-      font-size: 1rem;
-      color: #333;
-    }
-    form {
-      max-width: 500px;
-      margin: 2rem auto;
-      background: #fff;
-      padding: 2rem;
-      border-radius: 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    form input, form textarea {
-      width: 100%;
-      margin-bottom: 1rem;
-      padding: 0.8rem;
-      border-radius: 10px;
-      border: 1px solid #ccc;
-      font-family: inherit;
-    }
-    form button {
-      background: #007c91;
-      color: #fff;
-      border: none;
-      padding: 0.8rem 2rem;
-      border-radius: 50px;
+    .price-now {
+      color: #007c91;
       font-weight: bold;
-      cursor: pointer;
-    }
-    footer {
-      text-align: center;
-      font-size: 0.9rem;
-      color: #555;
-      padding-top: 2rem;
-    }
-    .decor {
-      position: absolute;
-      top: 20px;
-      width: 80px;
-      transition: transform 0.3s ease;
-    }
-    .decor.left {
-      left: 0;
-    }
-    .decor.right {
-      right: 0;
-    }
-    .decor:hover {
-      transform: scale(1.1) rotate(2deg);
-    }
-    .decor.bird {
-      top: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      animation: float 3s ease-in-out infinite;
-    }
-    @keyframes float {
-      0%, 100% {
-        transform: translate(-50%, 0);
-      }
-      50% {
-        transform: translate(-50%, -10px);
-      }
     }
   </style>
-</head>
-<body>
-  <header>
-    <img src="/assets/palm-left.svg" class="decor left" alt="Palmera Izquierda">
-    <img src="/assets/palm-right.svg" class="decor right" alt="Palmera Derecha">
-    <img src="/assets/bird.svg" class="decor bird" alt="Gaviota">
-    <h1>Bienvenido a Estudio Sunset</h1>
-    <p>Convierte tu marca en la puesta de sol más vista. Creamos experiencias digitales frescas como vacaciones.</p>
-    <a href="#contacto" class="button">Contáctanos</a>
-  </header>
-
-  <section>
-    <h2>Nuestros Servicios</h2>
-    <div class="products">
-      <div class="card">
-        <img src="/assets/sunrise-essential-bundle-logo.png" alt="Landing Pages">
-        <h3>Landing Pages</h3>
-        <p>Diseños que convierten. Pensados para captar leads y generar ventas.</p>
-      </div>
-      <div class="card">
-        <img src="/assets/sunset-growth-bundle-logo.png" alt="Redes Sociales">
-        <h3>Redes Sociales</h3>
-        <p>Contenido creativo, manejo de comunidad y campañas con impacto.</p>
-      </div>
-      <div class="card">
-        <img src="/assets/beach-club.png" alt="Email Marketing">
-        <h3>Email Marketing</h3>
-        <p>Automatización, diseño atractivo y resultados medibles.</p>
-      </div>
-    </div>
-    <div style="text-align:center; margin-top: 2rem;">
-      <a href="/bundles-pricing.html" class="button">Ver Paquetes</a>
-    </div>
-  </section>
-
-  <section id="contacto">
-    <h2>¿Listo para despegar?</h2>
-    <p style="text-align:center;">Escríbenos a <a href="mailto:info@estudiosunset.com">info@estudiosunset.com</a> o agenda tu diagnóstico.</p>
-    <div style="text-align:center;">
-      <a class="button" href="https://calendly.com/estudiosunset/30min" target="_blank">Agendar ahora</a>
-    </div>
-    <form action="https://formspree.io/f/mldjqkrw" method="POST">
-      <input type="text" name="name" placeholder="Tu nombre" required>
-      <input type="email" name="email" placeholder="Tu correo electrónico" required>
-      <textarea name="message" rows="5" placeholder="Escribe tu mensaje..." required></textarea>
-      <button type="submit">Enviar</button>
-    </form>
-  </section>
 
   <footer>
     © 2025 Estudio Sunset · Creatividad con sabor a mar<br>

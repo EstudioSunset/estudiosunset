@@ -5,166 +5,127 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Diseño creativo y marketing digital con frescura tropical. Estudio Sunset te lleva al siguiente nivel." />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Estudio Sunset – Marketing que se siente como vacaciones" />
+  <meta property="og:title" content="Estudio Sunset – Digital Marketing" />
   <meta property="og:description" content="Tu marca al nivel del atardecer más visto. Webs, redes, campañas y más." />
   <meta property="og:image" content="https://estudiosunset.com/assets/preview.jpg" />
-  <meta property="og:url" content="https://estudiosunset.com" />
-  <title>Estudio Sunset – Marketing que se siente como vacaciones</title>
-
+  <meta property="og:url"   content="https://estudiosunset.com" />
+  <title>Estudio Sunset – Digital Marketing</title>
+  
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet" />
-
-  <!-- Hoja de estilos principal -->
+  <!-- CSS Principal -->
   <link rel="stylesheet" href="/css/base.css" />
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-M6XVQXG8');</script>
+  <!-- End Google Tag Manager -->
 </head>
 
 <body>
-  <!-- ========== NAVBAR ========== -->
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M6XVQXG8"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S4091PLBK9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-S4091PLBK9');
+</script>
+
+  <!-- NAVBAR -->
   <nav class="navbar">
-    <a href="/index.html" class="logo">
-      <img src="/assets/estudio-sunset-transparent.png" alt="Estudio Sunset logo">
+    <a href="/" class="logo">
+      <img src="/assets/estudio-sunset-transparent.png" alt="Logo Estudio Sunset">
     </a>
-
-    <button class="menu-toggle" aria-label="Abrir / cerrar menú">
-      &#9776;
-    </button>
-
+    <button class="menu-toggle" aria-label="Abrir/Cerrar menú">&#9776;</button>
     <div class="navbar-links">
-      <a href="/index.html">Home</a>
-      <a href="/logo-generator.html">Logo Generator</a>
+      <a href="/">Home</a>
       <a href="/bundles-pricing.html">Bundles</a>
-      <a href="/servicios.html">Services</a>
+      <a href="/servicios.html">Express Services</a>
       <a href="/portfolio.html">Portfolio</a>
+      <a href="/es-blog.html">Blog</a>
+      <a href="/about-us.html">About Us</a>
+      <a href="/contact-us.html">Contact</a>
+      <a href="/logo-generator.html">Logo Generator</a>      
+      
+      
       <a href="#contacto">Contact</a>
-      <a href="/blog.html">Blog</a>
     </div>
   </nav>
 
-  <!-- ========== HERO ========== -->
+  <!-- HERO -->
   <header class="hero">
-    <img src="/assets/estudio-sunset-transparent.png"
-         alt="Estudio Sunset logo"
-         class="hero-logo">
-  
-         <p id="tagline" class="tagline">Rising your brand everyday</p>
-  
-    <a href="#contacto" class="cta-btn">Contact Us</a>
+    <img src="/assets/estudio-sunset-transparent.png" alt="Logo" class="hero-logo">
+    <p class="tagline">Rising your brand everyday</p>
+    <a href="#contacto" class="btn">Contact Us</a>
   </header>
 
-  <!-- ========== BUNDLES / SERVICES ========== -->
+  <!-- BUNDLES -->
   <section class="bundles">
     <h2>Bundles and Services</h2>
-
-    <div class="carousel-wrapper">
-      <button class="carousel-btn prev" onclick="scrollCarousel(-1)">◀</button>
-
-      <div class="products" id="carousel"
-           onmouseover="pauseAutoSlide()" onmouseout="resumeAutoSlide()">
-
-        <a href="/sunrise-essentials.html" class="card">
-          <img src="/assets/sunrise-essential-bundle-logo.png" alt="Sunrise Essentials">
-          <h3>Sunrise Essentials</h3>
-          <p>Landing pages que convierten prospectos en clientes.</p>
-        </a>
-
-        <a href="/sunset-growth.html" class="card">
-          <img src="/assets/sunset-growth-bundle-logo.png" alt="Sunset Growth">
-          <h3>Sunset Growth</h3>
-          <p>Contenido, comunidad y campañas con impacto real.</p>
-        </a>
-
-        <a href="/beach-club.html" class="card">
-          <img src="/assets/beach-club.png" alt="Beach Club">
-          <h3>Beach Club</h3>
-          <p>Email marketing automatizado y mensurable.</p>
-        </a>
-
-        <a href="/video-production.html" class="card">
-          <img src="/assets/30-sec-video-es.png" alt="Video 30 seg">
-          <h3>Video 30 seg.</h3>
-          <p>Un clip que atrapa miradas en redes sociales.</p>
-        </a>
-
-        <a href="/flyer-design.html" class="card">
-          <img src="/assets/flyer-design-es.png" alt="Diseño de flyer">
-          <h3>Diseño de Flyer</h3>
-          <p>Desde flyers hasta catálogos con foco en conversión.</p>
-        </a>
-
-        <a href="/logo-design.html" class="card">
-          <img src="/assets/logo-design-es-2.png" alt="Diseño de logo">
-          <h3>Diseño de Logo</h3>
-          <p>Identidad visual única y memorable.</p>
-        </a>
-
-        <a href="/web-design.html" class="card">
-          <img src="/assets/logo-design-icon-es.png" alt="Sitio web">
-          <h3>Creación de Sitio Web</h3>
-          <p>Desarrollo moderno y adaptado a tu negocio.</p>
-        </a>
-
-        <a href="/jingle-production.html" class="card">
-          <img src="/assets/jingle-prod-es.png" alt="Jingle">
-          <h3>Producción de Jingle</h3>
-          <p>Tu propio “hook” sonoro en 30 segundos.</p>
-        </a>
-      </div>
-
-      <button class="carousel-btn next" onclick="scrollCarousel(1)">▶</button>
+    <div class="cards">
+      <a href="/sunrise-essentials.html" class="card">
+        <img src="/assets/sunrise-essential-bundle-logo.png" alt="Sunrise Essentials">
+        <h3>Sunrise Essentials</h3>
+        <p>Landing pages que convierten prospectos en clientes.</p>
+      </a>
+      <a href="/sunset-growth.html" class="card">
+        <img src="/assets/sunset-growth-bundle-logo.png" alt="Sunset Growth">
+        <h3>Sunset Growth</h3>
+        <p>Contenido, comunidad y campañas con impacto real.</p>
+      </a>
+      <a href="/beach-club.html" class="card">
+        <img src="/assets/beach-club.png" alt="Beach Club">
+        <h3>Beach Club</h3>
+        <p>Email marketing automatizado y mensurable.</p>
+      </a>
     </div>
-
-    <div class="center">
-      <a href="/bundles-pricing.html" class="cta-btn">Ver Paquetes</a>
-    </div>
+    <a href="/bundles-pricing.html" class="btn">Ver Paquetes</a>
   </section>
 
-  <!-- ========== CONTACTO ========== -->
+  <!-- CONTACTO -->
   <section id="contacto" class="contacto">
-    <div class="contacto-header">
-      <h2>¿Listo para despegar?</h2>
-      <p class="center">Escríbenos a <a href="mailto:
-    <h2>¿Listo para despegar?</h2>
-    <p class="center">Escríbenos a <a href="mailto:info@estudiosunset.com">info@estudiosunset.com</a> o agenda tu diagnóstico.</p>
-  </div>
-    <div class="center" style="padding-top: 20px;">
-      <a class="cta-btn" href="https://calendly.com/estudiosunset/30min" target="_blank">Agendar ahora</a>
-    </div>
-
+    <h2>Ready to launch your campaign?</h2>
+    <p>Contact us at <a href="mailto:info@estudiosunset.com">info@estudiosunset.com</a> or completa el formulario:</p>
     <form action="https://formspree.io/f/mldjqkrw" method="POST">
-      <input type="text" name="name" placeholder="Tu nombre" required>
-      <input type="email" name="email" placeholder="Tu correo electrónico" required>
-      <textarea name="message" rows="5" placeholder="Escribe tu mensaje..." required></textarea>
-      <button type="submit" class="cta-btn">Enviar</button>
+      <input type="text"  name="name"    placeholder="Name"     required>
+      <input type="tel"   name="phone"   placeholder="Cellphone">
+      <input type="email" name="email"   placeholder="Email"    required>
+      <textarea name="message" rows="5" placeholder="Message..." required></textarea>
+      <button type="submit" class="btn">Enviar</button>
     </form>
   </section>
 
-  <!-- ========== FOOTER ========== -->
+  <!-- FOOTER -->
   <footer>
     © 2025 Estudio Sunset · Creatividad con sabor a mar<br>
-    <a href="/gracias.html">Ir a página de agradecimiento</a>
+    <a href="/gracias.html">Página de agradecimiento</a>
   </footer>
 
-  <!-- ========== JS ========== -->
+  <!-- JS MÍNIMO -->
   <script>
-    /* --- NAV MOBILE --- */
-    document.querySelector('.menu-toggle').addEventListener('click', () => {
-      document.querySelector('.navbar-links').classList.toggle('active');
-    });
+    // Toggle menú móvil
+    document.querySelector('.menu-toggle')
+      .addEventListener('click', () =>
+        document.querySelector('.navbar-links').classList.toggle('active')
+      );
 
-    /* --- CAROUSEL --- */
-    const carousel = document.getElementById('carousel');
-    let autoSlide;
+    // Auto-scroll bundles
+    const cards = document.querySelector('.cards'),
+          interval = 4000,
+          scrollByAmount = () => cards.querySelector('.card').offsetWidth + 16;
 
-    function scrollCarousel(dir) {
-      const cardWidth = carousel.querySelector('.card').offsetWidth + 32; // ancho + gap
-      carousel.scrollBy({ left: dir * cardWidth, behavior: 'smooth' });
-    }
-
-    function pauseAutoSlide() { clearInterval(autoSlide); }
-    function resumeAutoSlide() {
-      autoSlide = setInterval(() => scrollCarousel(1), 4000);
-    }
-    resumeAutoSlide();
+    let auto = setInterval(() => cards.scrollBy({ left: scrollByAmount(), behavior: 'smooth' }), interval);
+    cards.addEventListener('mouseenter', () => clearInterval(auto));
+    cards.addEventListener('mouseleave', () => auto = setInterval(() =>
+      cards.scrollBy({ left: scrollByAmount(), behavior: 'smooth' }), interval));
   </script>
 </body>
 </html>
