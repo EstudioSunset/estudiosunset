@@ -9,7 +9,12 @@ h1, h2, h3 {
   font-family: 'Jost', sans-serif;
   font-weight: 800;
 }
-
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
 
 /* ========== UTILIDADES ========== */
 .center { text-align: center; }
@@ -441,3 +446,66 @@ footer a { color: #007c91; text-decoration: underline; }
 }
 h1 { font-size: 40px; }
 h2 { font-size: 28px; }
+
+/* ========== bundles table ========== */
+.table-section {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+  font-family: 'Inter', sans-serif;
+}
+
+.table-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.package-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.package-table th,
+.package-table td {
+  padding: 0.85rem;
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.package-table th:first-child,
+.package-table td:first-child {
+  text-align: left;
+}
+
+.package-table thead {
+  background-color: #f0f8ff;
+  font-weight: 600;
+}
+
+.package-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.cta-custom {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.cta-custom a {
+  background-color: #007BFF;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-block;
+}

@@ -93,7 +93,7 @@
     </div>
   </div>
     <div style="text-align: center;">
-      <a href="/bundles-pricing.html" class="btn">Ver Paquetes</a>
+      <a href="/all-services.html" class="btn">See All Services</a>
     </div>
   </section>
 
@@ -246,14 +246,39 @@
   <!-- CONTACTO -->
   <section id="contacto" class="contacto">
     <h2>Ready to launch your campaign?</h2>
-    <p>Contact us at <a href="mailto:info@estudiosunset.com">info@estudiosunset.com</a> or completa el formulario:</p>
-    <form action="https://formspree.io/f/mldjqkrw" method="POST">
+    <p>Contact us at <a href="mailto:info@estudiosunset.com">info@estudiosunset.com</a> or fill the form below:</p>
+    <form action="https://formspree.io/f/mldjqkrw" method="POST" id="contactForm"></form>
       <input type="text"  name="name"    placeholder="Name"     required>
       <input type="tel"   name="phone"   placeholder="Cellphone">
       <input type="email" name="email"   placeholder="Email"    required>
       <textarea name="message" rows="5" placeholder="Message..." required></textarea>
+      
+      <!-- Security Question -->
+      <div class="security-question">
+        <label id="securityLabel"></label>
+        <input type="number" id="securityAnswer" placeholder="Your answer" required>
+      </div>
+      
       <button type="submit" class="btn">Enviar</button>
     </form>
+    <script>
+      // Generate random numbers for the security question
+      const num1 = Math.floor(Math.random() * 10);
+      const num2 = Math.floor(Math.random() * 10);
+      const correctAnswer = num1 + num2;
+
+      // Display the question
+      document.getElementById('securityLabel').innerText = `What is ${num1} + ${num2}?`;
+
+      // Validate the security question before submitting the form
+      document.getElementById('contactForm').addEventListener('submit', function(event) {
+        const userAnswer = parseInt(document.getElementById('securityAnswer').value, 10);
+        if (userAnswer !== correctAnswer) {
+          event.preventDefault();
+          alert('Incorrect answer to the security question. Please try again.');
+        }
+      });
+    </script>
   </section>
 
   <!-- FOOTER -->
