@@ -509,3 +509,89 @@ h2 { font-size: 28px; }
   font-weight: 500;
   display: inline-block;
 }
+button,
+input[type="submit"],
+input[type="button"],
+.btn {
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+button:active,
+input[type="submit"]:active,
+input[type="button"]:active,
+.btn:active {
+  transform: translateY(2px) scale(0.98);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* ========== MENU OF SERVICES ========== */
+/* DETAIL STYLES */
+.service-detail {
+  background: white;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.service-detail .back-btn {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  color: #007c91;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+.service-detail .detail-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.service-detail .detail-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+.service-detail .detail-image {
+  flex: 1 1 400px;
+}
+.service-detail .detail-text {
+  flex: 1 1 400px;
+}
+.service-detail .detail-text h2 {
+  margin-top: 0;
+}
+.service-detail .detail-actions {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+.service-detail .btn {
+  padding: 10px 20px;
+}
+
+.service-block {
+  /* transición suave en transform, sombra, fondo, color y borde */
+  transition: 
+    transform 0.1s ease, 
+    box-shadow 0.1s ease, 
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+  cursor: pointer;
+}
+
+/* Al posar el ratón resaltan */
+.service-block:hover {
+  background-color: #f0fcfb;      /* ligero tintado */
+  border-color: #007c91;          /* color de tu marca */
+  color: #007c91;                 /* texto a tono */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+/* Efecto “presionado” al hacer click */
+.service-block:active {
+  transform: translateY(2px) scale(0.98);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}

@@ -55,7 +55,7 @@
     <div class="navbar-links">
       <a href="/">Home</a>
       <a href="/bundles.html">Bundles</a>
-      <a href="/servicios.html">Express Services</a>
+      <a href="/all-services.html">All Services</a>
       <a href="/portfolio.html">Portfolio</a>
       <a href="/es-blog.html">Blog</a>
       <a href="/about-us.html">About Us</a>
@@ -66,7 +66,7 @@
   <!-- HERO -->
   <header class="hero">
     <img src="/assets/estudio-sunset-transparent.png" alt="Logo" class="hero-logo">
-    <p class="tagline">Rising your brand everyday</p>
+    <h2 class="tagline">Rising your brand everyday</h2>
     <a href="#contacto" class="btn">Contact Us</a>
   </header>
 
@@ -104,7 +104,7 @@
   
       <div class="faq-item">
         <button class="faq-question">Can I hire just one service separately?</button>
-        <div class="faq-answer">Yes. Although Sunset 360 is designed as a comprehensive solution, you can start with one or several modules and scale as needed.</div>
+        <div class="faq-answer">Yes. Although Sunset 360 is designed as a comprehensive solution, you can start with one or several modules and scale as needed. Visit our <a href="/all-services.html"> Menu of Services</a></div>
       </div>
   
       <div class="faq-item">
@@ -244,42 +244,50 @@
   </script>
   
   <!-- CONTACTO -->
-  <section id="contacto" class="contacto">
-    <h2>Ready to launch your campaign?</h2>
-    <p>Contact us at <a href="mailto:info@estudiosunset.com">info@estudiosunset.com</a> or fill the form below:</p>
-    <form action="https://formspree.io/f/mldjqkrw" method="POST" id="contactForm"></form>
-      <input type="text"  name="name"    placeholder="Name"     required>
-      <input type="tel"   name="phone"   placeholder="Cellphone">
-      <input type="email" name="email"   placeholder="Email"    required>
-      <textarea name="message" rows="5" placeholder="Message..." required></textarea>
-      
-      <!-- Security Question -->
-      <div class="security-question">
-        <label id="securityLabel"></label>
-        <input type="number" id="securityAnswer" placeholder="Your answer" required>
-      </div>
-      
-      <button type="submit" class="btn">Enviar</button>
-    </form>
-    <script>
-      // Generate random numbers for the security question
-      const num1 = Math.floor(Math.random() * 10);
-      const num2 = Math.floor(Math.random() * 10);
-      const correctAnswer = num1 + num2;
+<section id="contacto" class="contacto">
+  <h2>Ready to launch your campaign?</h2>
+  <p>
+    Contact us at
+    <a href="mailto:info@estudiosunset.com">info@estudiosunset.com</a>
+    or fill the form below:
+  </p>
 
-      // Display the question
-      document.getElementById('securityLabel').innerText = `What is ${num1} + ${num2}?`;
+  <!-- Abres el form aquí y lo cierras abajo -->
+  <form action="https://formspree.io/f/mldjqkrw" method="POST" id="contactForm">
+    <input type="text"  name="name"    placeholder="Name"     required>
+    <input type="tel"   name="phone"   placeholder="Cellphone">
+    <input type="email" name="email"   placeholder="Email"    required>
+    <textarea name="message" rows="5" placeholder="Message..." required></textarea>
 
-      // Validate the security question before submitting the form
-      document.getElementById('contactForm').addEventListener('submit', function(event) {
-        const userAnswer = parseInt(document.getElementById('securityAnswer').value, 10);
-        if (userAnswer !== correctAnswer) {
-          event.preventDefault();
-          alert('Incorrect answer to the security question. Please try again.');
-        }
-      });
-    </script>
-  </section>
+    <!-- Security Question -->
+    <div class="security-question">
+      <label id="securityLabel"></label>
+      <input type="number" id="securityAnswer" placeholder="Your answer" required>
+    </div>
+
+    <button type="submit" class="btn">Enviar</button>
+  </form>
+
+  <script>
+    // Genera dos números aleatorios
+    const num1 = Math.floor(Math.random() * 10);
+    const num2 = Math.floor(Math.random() * 10);
+    const correctAnswer = num1 + num2;
+
+    // Muestra la pregunta
+    document.getElementById('securityLabel').innerText = `What is ${num1} + ${num2}?`;
+
+    // Valida al enviar
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+      const userAnswer = parseInt(document.getElementById('securityAnswer').value, 10);
+      if (userAnswer !== correctAnswer) {
+        event.preventDefault();
+        alert('Incorrect answer to the security question. Please try again.');
+      }
+    });
+  </script>
+</section>
+
 
   <!-- FOOTER -->
   <footer>

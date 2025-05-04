@@ -61,7 +61,7 @@
       <a href="/contact-us.html">Contact</a>
     </div>
   </nav>
-<section class="services-container">
+  <section class="services-container" id="servicesList">
     <h2>All services</h2>
     <div class="services-grid">
         <div class="service-block">Logo Creation</div>
@@ -88,6 +88,28 @@
         <div class="service-block"><strong>Request a Especial Service</strong></div>
     </div>
 </section>
+<!-- Detalle de servicio (oculto por defecto) -->
+<section class="service-detail" id="serviceDetail" style="display:none;">
+  <button class="back-btn">&larr; Back</button>
+  <div class="detail-content">
+    <div class="detail-image">
+      <img src="/Assets/sample-image-placeholder-800x500.jpg" alt="Service Image">
+    </div>
+    <div class="detail-text">
+      <!-- Nuevo: primer título corto -->
+      <h1 id="detailTitle1">Title1</h1>
+      <!-- Nuevo: subtítulo más pequeño -->
+      <h3 id="detailTitle2">Title2</h3>
+      <!-- Párrafo descriptivo -->
+      <p id="detailDesc">Descripción…</p>
+      <div class="detail-actions">
+        <a href="/contact-us.html" class="btn btn-primary">Contact Us</a>
+        <a href="tel:+17722071143" class="btn btn-secondary">Call Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <style>
     .services-container {
@@ -130,6 +152,159 @@
         <a href="/gracias.html">Página de agradecimiento</a>
       </footer>
     
+      <script>
+        // 1) Tu data de servicios
+        const serviceInfo = {
+  "Logo Creation": {
+    title1: "Logo Design",
+    title2: "Custom Brand Marks",
+    text: "Con nuestro servicio de Logo Creation diseñamos identidades visuales únicas que reflejan la esencia de tu marca. Utilizamos técnicas de diseño vectorial para crear logotipos escalables y versátiles, listos para usar en web, redes sociales, papelería y merchandising. Trabajamos de cerca contigo en el briefing y revisiones hasta perfeccionar cada detalle: tipografía, color y estilo. El resultado es un símbolo profesional, memorable y coherente con tus valores, que te ayudará a destacar frente a la competencia y reforzar el reconocimiento de tu negocio."  
+  },
+  "Bussines Cards Design": {
+    title1: "Business Cards",
+    title2: "Premium Card Design",
+    text: "Nuestro Business Cards Design combina creatividad y funcionalidad para entregar tarjetas de presentación que causan impacto. Creamos composiciones equilibradas entre tu logotipo, tipografía y datos de contacto, cuidando márgenes y legibilidad. Empleamos plantillas profesionales o maquetamos desde cero en formatos listos para imprenta. Puedes elegir acabados mate, brillo o detalles especiales (hot‑stamp, barniz selectivo). El resultado: piezas de papel que no solo transmiten tu información, sino también la calidad, estilo y profesionalismo de tu marca en cada apretón de manos."
+  },
+  "Promotional Flyers": {
+    title1: "Flyer Design",
+    title2: "Eye‑Catching Prints",
+    text: "Con Promotional Flyers diseñamos volantes promocionales que captan la atención al instante. Estructuramos la información clave —oferta, fechas, llamado a la acción— en un layout dinámico y legible. Utilizamos imágenes de alta calidad, iconografía coherente y colores de tu branding para reforzar tu identidad. Adaptamos el diseño tanto para impresión offset como digital en formatos A5, A6 o flyer doblado. Ideal para eventos, lanzamientos de producto o campañas locales, nuestro servicio te garantiza piezas gráficas atractivas, optimizadas para generar conversiones y aumentar tu alcance."
+  },
+  "Web banners (static or animated)": {
+    title1: "Web Banners",
+    title2: "Static & Animated Ads",
+    text: "Nuestro servicio de Web banners cubre desde banners estáticos hasta animaciones ligeras en GIF o HTML5. Diseñamos piezas adaptadas a los estándares de Google Ads, Facebook Ads, Instagram Stories y display en sitios web. Trabajamos la jerarquía visual para destacar tu oferta, CTA y marca sin saturar el espacio. En animaciones, empleamos efectos sutiles (fade, move, scale) para atraer la mirada sin distraer al usuario. Entregamos archivos optimizados para carga rápida, con tamaños y pesos compatibles con tus campañas de marketing digital."
+  },
+  "Product cut sheets": {
+    title1: "Cut Sheets",
+    title2: "Product Spec Sheets",
+    text: "Creamos Product cut sheets o hojas técnicas de producto con diseño claro y profesional. Organizamos la información de dimensiones, materiales y uso en tablas, diagramas e iconografía explicativa. Usamos tu branding para mantener coherencia visual y empleamos estilos tipográficos que facilitan la lectura técnica. Ideal para catálogos, ferias o fichas de venta, nuestras cut sheets ayudan a tus clientes a comprender características y beneficios de manera rápida. Te entregamos archivos listos para impresión PDF o para descarga en tu sitio web."
+  },
+  "Product tags or packaging inserts": {
+    title1: "Product Tags",
+    title2: "Labels & Inserts",
+    text: "Diseñamos Product tags y packaging inserts que complementan tu empaque y refuerzan tu marca. Creamos etiquetas colgantes, stickers y folletos insertables con papeles especiales y acabados (barniz UV, troquelados). Cada pieza se integra a tu sistema de packaging cuidando la proporción, la jerarquía de información (marca, descripción, código) y la estética general. Además preparamos los archivos en formatos listos para imprenta o imprenta bajo demanda, asegurando resultados profesionales que suman valor percibido al momento de abrir el producto."
+  },
+  "PDF catalogs": {
+    title1: "PDF Catalogs",
+    title2: "Interactive Product Catalogs",
+    text: "Nuestro servicio de PDF catalogs produce catálogos digitales interactivos y de alta calidad. Maquetamos páginas en formato A4 o carta, con índices enlazados y hotspots para navegación ágil. Integramos tu branding, paleta de colores y fotografía profesional, organizando secciones de productos, precios y descripciones. Agregamos botones de enlace a tu e‑commerce o formularios de contacto. El resultado es un documento optimizado para web y correo, ligero en peso y fácil de compartir con clientes potenciales y distribuidores."
+  },
+  "Social media creatives": {
+    title1: "Social Creatives",
+    title2: "Engaging Posts",
+    text: "Con Social media creatives diseñamos publicaciones para Instagram, Facebook, LinkedIn y TikTok que generan interacción. Creamos gráficos estáticos, carousels y plantillas adaptables a historias y feeds. Combinamos fotografías, iconos y tipografías consistentes con tu marca, y aplicamos jerarquía visual para destacar mensajes clave y CTA. Optimizamos cada activo al tamaño requerido y al peso ideal para carga rápida. Además entregamos versiones redimensionables para campañas de ads y formatos editables en Canva o PSD."
+  },
+  "Reels and short video graphics": {
+    title1: "Reels Graphics",
+    title2: "Dynamic Video Assets",
+    text: "Nuestro servicio de Reels and short video graphics incluye overlays, end cards y animaciones de texto para TikTok e Instagram Reels. Diseñamos elementos gráficos en After Effects o Premiere que mejoran la narración y el branding de tus videos. Creamos intros, lower thirds y transiciones personalizadas. Entregamos archivos en MP4 o formatos nativos para cada plataforma, con codecs optimizados para redes sociales. Potencia el engagement de tus videos con gráficos profesionales que capturan la atención del espectador."
+  },
+  "Editable social media templates (Canva, PSD)": {
+    title1: "Editable Templates",
+    title2: "Canva & PSD Files",
+    text: "Creamos Editable social media templates en Canva y PSD para que puedas actualizar textos, imágenes y colores sin depender de un diseñador. Desarrollamos plantillas en varios formatos (post cuadrado, historia, banner) y las organizamos en carpetas con capas etiquetadas. Incluimos tipografías gratuitas y un manual breve de uso. Ideal para equipos de marketing que necesitan mantener consistencia visual y agilidad en la publicación de contenidos, nuestros templates facilitan la creación de nuevas piezas bajo tu identidad de marca."
+  },
+  "Ad copywriting": {
+    title1: "Ad Copy",
+    title2: "Persuasive Headlines",
+    text: "Con nuestro servicio de Ad copywriting redactamos textos publicitarios enfocados en conversiones. Creamos titulares (headlines), descripciones y llamados a la acción (CTAs) optimizados para Google Ads, Facebook Ads y email marketing. Empleamos técnicas de copy persuasivo como AIDA y PAS, enfocándonos en beneficios y diferenciadores clave de tu producto o servicio. Además realizamos keyword research básico para mejorar tu Quality Score y maximizar el ROI en campañas de PPC."
+  },
+  "Product descriptions": {
+    title1: "Product Copy",
+    title2: "SEO‑Friendly Descriptions",
+    text: "Redactamos Product descriptions optimizadas para SEO, diseñadas para convertir visitas en ventas. Creamos textos claros y atractivos que describen beneficios, características y usos, integrando keywords estratégicas sin sacrificar la naturalidad del mensaje. Adaptamos el tono según tu público objetivo —formal, cercano o técnico— y respetamos tu voice‑brand guide. Ideal para e‑commerce, marketplaces y catálogos online, nuestras descripciones ayudan a mejorar tu posicionamiento en buscadores y a ofrecer una experiencia de usuario profesional."
+  },
+  "Scripts for reels or promo videos": {
+    title1: "Video Scripts",
+    title2: "Reels & Promo Copy",
+    text: "Con Scripts for reels or promo videos desarrollamos guiones cortos y efectivos para TikTok, Reels e Instagram Stories. Estructuramos tu mensaje en tres actos: hook, contenido y CTA, procurando ritmo dinámico y lenguaje cercano. Añadimos sugerencias de planos, música y gráficos para facilitar la producción. Nuestros scripts están optimizados para mantener la atención del espectador en los primeros segundos y guiarlo hacia la acción deseada, sea visitar tu web, suscribirse o comprar."
+  },
+  "Email marketing templates": {
+    title1: "Email Templates",
+    title2: "Responsive Campaign Designs",
+    text: "Diseñamos Email marketing templates responsivos para Mailchimp, Sendinblue o tu plataforma favorita. Creamos layouts modulares que combinan imágenes, botones y texto con jerarquía clara. Incorporamos tu paleta de marca y tipografías web‑safe. Probamos compatibilidad en clientes como Gmail, Outlook y Apple Mail. Además preparamos versiones para dark mode y dispositivos móviles. El resultado son newsletters profesionales que capturan clics y reducen el churn, con un diseño optimizado para conversiones y métricas de apertura."
+  },
+  "Static landing page design (UI only)": {
+    title1: "Landing Page",
+    title2: "UI‑Only Mockup",
+    text: "Nuestro servicio de Static landing page design crea maquetas de alta fidelidad en Figma o Adobe XD, enfocadas en la conversión. Diseñamos la estructura y jerarquía visual: hero, beneficios, testimonios y CTA. Utilizamos grids responsivos y sistemas de diseño que facilitan la posterior implementación en tu CMS o framework. Esta UI‑only mockup te permite validar el flujo de usuario y la estética antes de tocar código, reduciendo tiempo y costo en el desarrollo front‑end."
+  },
+  "Web copy editing and optimization": {
+    title1: "Web Copy",
+    title2: "Edit & Optimize",
+    text: "Con Web copy editing and optimization revisamos y pulimos el contenido de tu sitio web para mejorar claridad, SEO y persuasión. Corregimos ortografía y gramática, ajustamos la voz de marca y reorganizamos párrafos para potenciar la experiencia de lectura. Integramos keywords estratégicas y optimizamos meta­tags, headings y llamados a la acción. El resultado es un copy ágil, coherente con tu identidad y enfocado en conversiones, que ayuda a tus usuarios a comprender rápidamente tu propuesta de valor."
+  },
+  "Pitch deck design": {
+    title1: "Pitch Deck",
+    title2: "Investor‑Ready Slides",
+    text: "Nuestro Pitch deck design crea presentaciones de alto impacto para inversores y clientes. Diseñamos slides coherentes, combinando tu información financiera, roadmap y equipo con gráficos y diagramas claros. Aplicamos tu branding, jerarquía tipográfica y un storytelling visual que guía a la audiencia. Entregamos archivos en PowerPoint, Keynote o Google Slides, listos para exportar a PDF. Con este servicio comunicas tu propuesta de valor de manera profesional y persuasiva."
+  },
+  "Ebook or guide cover design": {
+    title1: "Guide Cover",
+    title2: "Ebook & Guide Arts",
+    text: "Diseñamos Ebook or guide cover design llamativos y profesionales, adaptados a tu tema y público. Creamos composiciones tipográficas y gráficas en Photoshop o Illustrator, cuidando el contraste y la legibilidad en miniaturas. Entregamos archivos listos para publicación en plataformas como Amazon KDP o tu propio sitio web, en formatos JPG y PDF de alta resolución. Aumenta el atractivo de tu contenido descargable con portadas que transmiten autoridad y calidad."
+  },
+  "Custom icon design": {
+    title1: "Icon Design",
+    title2: "Bespoke Icon Sets",
+    text: "Con Custom icon design creamos sets de iconos vectoriales exclusivos para tu sitio web, app o material impreso. Definimos un estilo coherente —outline, filled o two‑tone— y diseñamos cada icono en Illustrator asegurando proporción y legibilidad en tamaños pequeños. Entregamos archivos SVG, PNG y EPS listos para uso digital e impresión. Refuerza la usabilidad y la identidad visual de tu proyecto con iconografía profesional que encaja perfectamente con tu branding."
+  },
+  "Express branding consultation (1 session)": {
+    title1: "Brand Consult",
+    title2: "1‑Hour Fast Audit",
+    text: "Nuestro Express branding consultation es una sesión de 60 minutos enfocada en evaluar tu identidad de marca. Revisamos logo, paleta de colores, tipografías y tono de voz, y te ofrecemos recomendaciones concretas para mejorar coherencia y percepción. Durante la llamada analizamos tu presencia online y offline, identificamos puntos de mejora y definimos acciones prioritarias. Al final recibes un resumen con tareas claras para optimizar tu branding sin perder tiempo."
+  },
+  "Visual content cleanup or redesign": {
+    title1: "Content Redesign",
+    title2: "Clean & Modern Graphics",
+    text: "Con Visual content cleanup or redesign transformamos tus materiales gráficos anticuados o desordenados en piezas modernas y profesionales. Revisamos maquetas, ilustraciones y fotografías, ajustamos colores, alineaciones y espaciados, y aplicamos estilos de diseño actual. El servicio incluye optimización para web y print, exportando archivos listos para uso inmediato. Ideal para presentaciones, folletos o activos digitales, garantizamos cohesión visual y una apariencia renovada que refuerza la credibilidad de tu marca."
+  },
+  "Request a Especial Service": {
+    title1: "Custom Request",
+    title2: "Tailored Solutions",
+    text: "¿Necesitas un servicio a medida? Con Request a Especial Service puedes describir tu proyecto y requerimientos, y nuestro equipo te preparará una propuesta personalizada. Desde desarrollos gráficos específicos hasta campañas integrales de marketing digital, analizamos tus objetivos y presupuesto para ofrecerte un plan de trabajo detallado, cronograma y cotización. Escríbenos con la mayor cantidad de detalles y nos pondremos en contacto para definir alcances y entregables, garantizando soluciones que se adapten perfectamente a tus necesidades."
+  }
+};
+
+      
+        // 2) Elementos del DOM
+        const blocks      = document.querySelectorAll('.service-block');
+        const listSection = document.getElementById('servicesList');
+        const detailSec   = document.getElementById('serviceDetail');
+        const title1El    = document.getElementById('detailTitle1');
+        const title2El    = document.getElementById('detailTitle2');
+        const descEl      = document.getElementById('detailDesc');
+        const backBtn     = detailSec.querySelector('.back-btn');
+      
+        // 3) Asignar evento a cada bloque
+        blocks.forEach(block => {
+          block.addEventListener('click', () => {
+            const name = block.textContent.trim();
+            const info = serviceInfo[name];
+      
+            if (!info) return; // si no hay data, no hace nada
+      
+            // Rellenar campos dinámicamente
+            title1El.textContent = info.title1;
+            title2El.textContent = info.title2;
+            descEl.textContent   = info.text;
+      
+            // Mostrar detalle y ocultar lista
+            listSection.style.display = 'none';
+            detailSec.style.display   = 'block';
+            window.scrollTo(0,0);
+          });
+        });
+      
+        // 4) Botón Back
+        backBtn.addEventListener('click', () => {
+          detailSec.style.display   = 'none';
+          listSection.style.display = 'block';
+        });
+      </script>
+      
+
       <!-- JS MÍNIMO -->
       <script>
         // Toggle menú móvil
@@ -148,5 +323,34 @@
         cards.addEventListener('mouseleave', () => auto = setInterval(() =>
           cards.scrollBy({ left: scrollByAmount(), behavior: 'smooth' }), interval));
       </script>
+      <script>
+        const detailTitle = document.getElementById('detailTitle');
+        const detailDesc  = document.getElementById('detailDesc');
+        // Removed duplicate declaration of backBtn
+      
+        blocks.forEach(block => {
+          block.addEventListener('click', () => {
+            const name = block.textContent.trim();
+            // Si tienes descripciones por servicio, puedes mapearlas aquí:
+            const descriptions = {
+              "Logo Creation": "Creamos logos a medida para tu marca...",
+              "Promotional Flyers": "Diseño de flyers que convierten...",
+              // ...y así con cada servicio
+            };
+            detailTitle.textContent = name;
+            detailDesc.textContent  = descriptions[name] || "Descripción genérica para " + name;
+            // alterna visibilidad
+            listSection.style.display = 'none';
+            detailSec.style.display   = 'block';
+            window.scrollTo(0,0);
+          });
+        });
+      
+        backBtn.addEventListener('click', () => {
+          detailSec.style.display   = 'none';
+          listSection.style.display = 'block';
+        });
+      </script>
+      
     </body>
     </html>
