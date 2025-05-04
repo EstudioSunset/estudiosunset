@@ -12,10 +12,12 @@
   <title>Estudio Sunset – Digital Marketing</title>
   
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 <style>
   body {
-    font-family: 'Inter', sans-serif;
+    font-family: "Quicksand", sans-serif;
   }
 </style>
   <!-- CSS Principal -->
@@ -69,8 +71,9 @@
   </header>
 
   <!-- BUNDLES -->
-  <section class="bundles">
-    <h2>Bundles and Services</h2>
+  <section id="bundles" class="bundle-section">
+    <div class="container">
+    <h2 style="text-align: center; color: #FFFFFF; margin-bottom: 20px; font-weight: bold; font-size: 30px;">Explore Our Bundles</h2>
     <div class="cards">
       <a href="/sunrise-essentials.html" class="card">
         <img src="/assets/es-sunrise-essentials-bundle-logo.jpg" alt="Sunrise Essentials">
@@ -88,62 +91,65 @@
         <p>Web completa + CRO avanzado + Campañas premium</p>
       </a>
     </div>
-    <a href="/bundles-pricing.html" class="btn">Ver Paquetes</a>
+  </div>
+    <div style="text-align: center;">
+      <a href="/bundles-pricing.html" class="btn">Ver Paquetes</a>
+    </div>
   </section>
 
   <!--FAQ SECTION-->
   <section id="faqs" class="faq-section">
     <div class="container">
-      <h2>Preguntas Frecuentes</h2>
+      <h2>Frequently Asked Questions</h2>
   
       <div class="faq-item">
-        <button class="faq-question">¿Puedo contratar solo un servicio por separado?</button>
-        <div class="faq-answer">Sí. Aunque Sunset 360 está diseñado como solución integral, puedes iniciar con uno o varios módulos y escalar cuando lo necesites.</div>
+        <button class="faq-question">Can I hire just one service separately?</button>
+        <div class="faq-answer">Yes. Although Sunset 360 is designed as a comprehensive solution, you can start with one or several modules and scale as needed.</div>
       </div>
   
       <div class="faq-item">
-        <button class="faq-question">¿Cuánto tiempo toma implementar el paquete completo?</button>
-        <div class="faq-answer">El tiempo varía según el alcance y la colaboración del cliente, pero en promedio, la implementación inicial toma entre 4 y 8 semanas.</div>
+        <button class="faq-question">How long does it take to implement the full package?</button>
+        <div class="faq-answer">The time varies depending on the scope and client collaboration, but on average, the initial implementation takes between 4 and 8 weeks.</div>
       </div>
   
       <div class="faq-item">
-        <button class="faq-question">¿Necesito tener conocimientos técnicos?</button>
-        <div class="faq-answer">No. Nos encargamos de todo el proceso técnico y te entregamos un sistema fácil de administrar. También ofrecemos capacitación si lo deseas.</div>
+        <button class="faq-question">Do I need technical knowledge?</button>
+        <div class="faq-answer">No. We handle the entire technical process and deliver an easy-to-manage system. We also offer training if desired.</div>
       </div>
   
       <div class="faq-item">
-        <button class="faq-question">¿Qué pasa si ya tengo logo o sitio web?</button>
-        <div class="faq-answer">Evaluamos lo que ya tienes y adaptamos nuestro trabajo a tus activos actuales, optimizándolos si es necesario.</div>
+        <button class="faq-question">What if I already have a logo or website?</button>
+        <div class="faq-answer">We evaluate what you already have and adapt our work to your current assets, optimizing them if necessary.</div>
       </div>
   
       <div class="faq-item">
-        <button class="faq-question">¿Cuáles son los costos y formas de pago?</button>
-        <div class="faq-answer">Ofrecemos precios por paquete o personalizados, y opciones de pago mensual o por proyecto. Todo se define con transparencia en la propuesta.</div>
+        <button class="faq-question">What are the costs and payment options?</button>
+        <div class="faq-answer">We offer package or custom pricing, with options for monthly or project-based payments. Everything is transparently defined in the proposal.</div>
       </div>
   
       <div class="faq-item">
-        <button class="faq-question">¿Tienen experiencia con mi industria?</button>
-        <div class="faq-answer">Probablemente sí. Hemos trabajado con negocios de tecnología, educación, salud, retail y más. Si tu industria es muy específica, hacemos una fase de investigación previa.</div>
+        <button class="faq-question">Do you have experience with my industry?</button>
+        <div class="faq-answer">Most likely, yes. We have worked with businesses in technology, education, healthcare, retail, and more. If your industry is very specific, we conduct a preliminary research phase.</div>
       </div>
   
       <div class="faq-item">
-        <button class="faq-question">¿Puedo ver ejemplos de trabajos anteriores?</button>
-        <div class="faq-answer">Claro. Consulta nuestra sección de portafolio o pídenos un caso de éxito cercano a tus objetivos.</div>
+        <button class="faq-question">Can I see examples of previous work?</button>
+        <div class="faq-answer">Of course. Check out our portfolio section or ask us for a success story related to your goals.</div>
       </div>
   
       <div class="faq-item">
-        <button class="faq-question">¿Qué tan involucrado debo estar en el proceso?</button>
-        <div class="faq-answer">Tú eliges el nivel. Algunas marcas prefieren validar hitos clave, otras delegan todo el proceso. Nos adaptamos a tu estilo de trabajo.</div>
+        <button class="faq-question">How involved do I need to be in the process?</button>
+        <div class="faq-answer">You choose the level. Some brands prefer to validate key milestones, while others delegate the entire process. We adapt to your working style.</div>
       </div>
   
       <div class="faq-item">
-        <button class="faq-question">¿Qué soporte ofrecen después de lanzar el proyecto?</button>
-        <div class="faq-answer">Incluimos mantenimiento, ajustes y mejoras trimestrales, además de soporte vía email o chat según el plan que contrates.</div>
+        <button class="faq-question">What support do you offer after launching the project?</button>
+        <div class="faq-answer">We include maintenance, quarterly adjustments and improvements, as well as support via email or chat depending on the plan you choose.</div>
       </div>
   
       <div class="faq-item">
-        <button class="faq-question">¿Cómo empiezo?</button>
-        <div class="faq-answer">Solo necesitas agendar una llamada o llenar el formulario. Evaluamos tu situación actual y te proponemos un roadmap personalizado sin compromiso.</div>
+        <button class="faq-question">How do I get started?</button>
+        <div class="faq-answer">You just need to schedule a call or fill out the form. We evaluate your current situation and propose a personalized roadmap with no obligation.</div>
       </div>
     </div>
   </section>
