@@ -12,7 +12,12 @@
   <title>Estudio Sunset – Digital Marketing</title>
   
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  body {
+    font-family: 'Inter', sans-serif;
+  }
+</style>
   <!-- CSS Principal -->
   <link rel="stylesheet" href="/css/base.css" />
   <!-- Google Tag Manager -->
@@ -47,16 +52,12 @@
     <button class="menu-toggle" aria-label="Abrir/Cerrar menú">&#9776;</button>
     <div class="navbar-links">
       <a href="/">Home</a>
-      <a href="/bundles-pricing.html">Bundles</a>
+      <a href="/bundles.html">Bundles</a>
       <a href="/servicios.html">Express Services</a>
       <a href="/portfolio.html">Portfolio</a>
       <a href="/es-blog.html">Blog</a>
       <a href="/about-us.html">About Us</a>
       <a href="/contact-us.html">Contact</a>
-      <a href="/logo-generator.html">Logo Generator</a>      
-      
-      
-      <a href="#contacto">Contact</a>
     </div>
   </nav>
 
@@ -72,24 +73,127 @@
     <h2>Bundles and Services</h2>
     <div class="cards">
       <a href="/sunrise-essentials.html" class="card">
-        <img src="/assets/sunrise-essential-bundle-logo.png" alt="Sunrise Essentials">
+        <img src="/assets/es-sunrise-essentials-bundle-logo.jpg" alt="Sunrise Essentials">
         <h3>Sunrise Essentials</h3>
-        <p>Landing pages que convierten prospectos en clientes.</p>
+        <p>Landing page optimizada + SEO básico + Analytics</p>
       </a>
       <a href="/sunset-growth.html" class="card">
-        <img src="/assets/sunset-growth-bundle-logo.png" alt="Sunset Growth">
-        <h3>Sunset Growth</h3>
-        <p>Contenido, comunidad y campañas con impacto real.</p>
+        <img src="/assets/es-sun-peak-elevate-bundle-logo.jpg" alt="Sunset Growth">
+        <h3>Sun-Peak Elevate</h3>
+        <p>Contenido mensual + Email marketing + Reportes</p>
       </a>
       <a href="/beach-club.html" class="card">
-        <img src="/assets/beach-club.png" alt="Beach Club">
-        <h3>Beach Club</h3>
-        <p>Email marketing automatizado y mensurable.</p>
+        <img src="/assets/es-sunset-supreme-bundle-logo.jpg" alt="Beach Club">
+        <h3>Sunset Sumpreme</h3>
+        <p>Web completa + CRO avanzado + Campañas premium</p>
       </a>
     </div>
     <a href="/bundles-pricing.html" class="btn">Ver Paquetes</a>
   </section>
+<!-- DIAGNOSTICO -->
+  <section id="mini-diagnostico" class="diagnostico-cta">
+    <div class="container">
+      <h2>¿Listo para escalar tu marca?</h2>
+      <p>Responde estas 3 preguntas rápidas para recibir una recomendación gratuita.</p>
+  
+      <form id="diagnosticoForm">
+        <div class="pregunta">
+          <label><strong>1. ¿Tienes una identidad visual definida?</strong></label><br>
+          <input type="radio" name="identidad" value="sí" required> Sí
+          <input type="radio" name="identidad" value="no"> No
+        </div>
+  
+        <div class="pregunta">
+          <label><strong>2. ¿Tu sitio web refleja tu propuesta de valor actual?</strong></label><br>
+          <input type="radio" name="sitio" value="sí" required> Sí
+          <input type="radio" name="sitio" value="no"> No
+        </div>
+  
+        <div class="pregunta">
+          <label><strong>3. ¿Tienes una estrategia activa de captación y conversión?</strong></label><br>
+          <input type="radio" name="estrategia" value="sí" required> Sí
+          <input type="radio" name="estrategia" value="no"> No
+        </div>
+  
+        <button type="submit" class="cta-button">Ver recomendación →</button>
+      </form>
+  
+      <div id="resultadoDiagnostico" class="resultado" style="display:none;"></div>
+    </div>
+    <div id="resultadoDiagnostico" class="resultado" style="display:none;"></div>
+<div id="ctaFinal" style="display:none; margin-top:1.5rem;">
+  <a id="ctaLink" href="#contacto" class="cta-button">Contactar ahora</a>
+</div>
 
+  </section>
+  
+  <style>
+  .diagnostico-widget {
+    background: #f3f3f3;
+    padding: 2rem 1rem;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 3rem;
+  }
+  .diagnostico-widget .pregunta {
+    margin: 1.5rem 0;
+  }
+  .diagnostico-widget input[type="radio"] {
+    margin: 0 10px;
+  }
+  .cta-button {
+    margin-top: 1rem;
+    background-color: #ff6b00;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  .resultado {
+    margin-top: 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  </style>
+  
+  <script>
+  document.getElementById("diagnosticoForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+  const identidad = document.querySelector('input[name="identidad"]:checked').value;
+  const sitio = document.querySelector('input[name="sitio"]:checked').value;
+  const estrategia = document.querySelector('input[name="estrategia"]:checked').value;
+
+  let mensaje = "";
+  let ctaTexto = "";
+  let ctaHref = "";
+
+  if (identidad === "no" && sitio === "no") {
+    mensaje = "Recomendamos comenzar con nuestro bundle de Branding + Web, ideal para construir tu base digital desde cero.";
+    ctaTexto = "Ver bundle Branding + Web";
+    ctaHref = "#bundle-branding-web";
+  } else if (estrategia === "no") {
+    mensaje = "Tu marca ya está en marcha. Te sugerimos el bundle de Marketing + Automatización para maximizar conversiones.";
+    ctaTexto = "Explorar Marketing + Automatización";
+    ctaHref = "#bundle-marketing-auto";
+  } else {
+    mensaje = "¡Buen trabajo! Tu base está sólida. Hablemos de escalar con publicidad, contenido y CRO.";
+    ctaTexto = "Agenda una consultoría estratégica";
+    ctaHref = "#contacto";
+  }
+
+  document.getElementById("resultadoDiagnostico").innerText = mensaje;
+  document.getElementById("resultadoDiagnostico").style.display = "block";
+
+  const ctaLink = document.getElementById("ctaLink");
+  ctaLink.innerText = ctaTexto;
+  ctaLink.href = ctaHref;
+  document.getElementById("ctaFinal").style.display = "block";
+});
+
+  </script>
+  
   <!-- CONTACTO -->
   <section id="contacto" class="contacto">
     <h2>Ready to launch your campaign?</h2>
