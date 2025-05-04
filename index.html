@@ -90,42 +90,66 @@
     </div>
     <a href="/bundles-pricing.html" class="btn">Ver Paquetes</a>
   </section>
-<!-- DIAGNOSTICO -->
-  <section id="mini-diagnostico" class="diagnostico-cta">
-    <div class="container">
-      <h2>¿Listo para escalar tu marca?</h2>
-      <p>Responde estas 3 preguntas rápidas para recibir una recomendación gratuita.</p>
-  
-      <form id="diagnosticoForm">
-        <div class="pregunta">
-          <label><strong>1. ¿Tienes una identidad visual definida?</strong></label><br>
-          <input type="radio" name="identidad" value="sí" required> Sí
-          <input type="radio" name="identidad" value="no"> No
-        </div>
-  
-        <div class="pregunta">
-          <label><strong>2. ¿Tu sitio web refleja tu propuesta de valor actual?</strong></label><br>
-          <input type="radio" name="sitio" value="sí" required> Sí
-          <input type="radio" name="sitio" value="no"> No
-        </div>
-  
-        <div class="pregunta">
-          <label><strong>3. ¿Tienes una estrategia activa de captación y conversión?</strong></label><br>
-          <input type="radio" name="estrategia" value="sí" required> Sí
-          <input type="radio" name="estrategia" value="no"> No
-        </div>
-  
-        <button type="submit" class="cta-button">Ver recomendación →</button>
-      </form>
-  
-      <div id="resultadoDiagnostico" class="resultado" style="display:none;"></div>
-    </div>
-    <div id="resultadoDiagnostico" class="resultado" style="display:none;"></div>
-<div id="ctaFinal" style="display:none; margin-top:1.5rem;">
-  <a id="ctaLink" href="#contacto" class="cta-button">Contactar ahora</a>
-</div>
 
+  <!--FAQ SECTION-->
+  <section id="faqs" class="faq-section">
+    <div class="container">
+      <h2>Preguntas Frecuentes</h2>
+  
+      <div class="faq-item">
+        <button class="faq-question">¿Puedo contratar solo un servicio por separado?</button>
+        <div class="faq-answer">Sí. Aunque Sunset 360 está diseñado como solución integral, puedes iniciar con uno o varios módulos y escalar cuando lo necesites.</div>
+      </div>
+  
+      <div class="faq-item">
+        <button class="faq-question">¿Cuánto tiempo toma implementar el paquete completo?</button>
+        <div class="faq-answer">El tiempo varía según el alcance y la colaboración del cliente, pero en promedio, la implementación inicial toma entre 4 y 8 semanas.</div>
+      </div>
+  
+      <div class="faq-item">
+        <button class="faq-question">¿Necesito tener conocimientos técnicos?</button>
+        <div class="faq-answer">No. Nos encargamos de todo el proceso técnico y te entregamos un sistema fácil de administrar. También ofrecemos capacitación si lo deseas.</div>
+      </div>
+  
+      <div class="faq-item">
+        <button class="faq-question">¿Qué pasa si ya tengo logo o sitio web?</button>
+        <div class="faq-answer">Evaluamos lo que ya tienes y adaptamos nuestro trabajo a tus activos actuales, optimizándolos si es necesario.</div>
+      </div>
+  
+      <div class="faq-item">
+        <button class="faq-question">¿Cuáles son los costos y formas de pago?</button>
+        <div class="faq-answer">Ofrecemos precios por paquete o personalizados, y opciones de pago mensual o por proyecto. Todo se define con transparencia en la propuesta.</div>
+      </div>
+  
+      <div class="faq-item">
+        <button class="faq-question">¿Tienen experiencia con mi industria?</button>
+        <div class="faq-answer">Probablemente sí. Hemos trabajado con negocios de tecnología, educación, salud, retail y más. Si tu industria es muy específica, hacemos una fase de investigación previa.</div>
+      </div>
+  
+      <div class="faq-item">
+        <button class="faq-question">¿Puedo ver ejemplos de trabajos anteriores?</button>
+        <div class="faq-answer">Claro. Consulta nuestra sección de portafolio o pídenos un caso de éxito cercano a tus objetivos.</div>
+      </div>
+  
+      <div class="faq-item">
+        <button class="faq-question">¿Qué tan involucrado debo estar en el proceso?</button>
+        <div class="faq-answer">Tú eliges el nivel. Algunas marcas prefieren validar hitos clave, otras delegan todo el proceso. Nos adaptamos a tu estilo de trabajo.</div>
+      </div>
+  
+      <div class="faq-item">
+        <button class="faq-question">¿Qué soporte ofrecen después de lanzar el proyecto?</button>
+        <div class="faq-answer">Incluimos mantenimiento, ajustes y mejoras trimestrales, además de soporte vía email o chat según el plan que contrates.</div>
+      </div>
+  
+      <div class="faq-item">
+        <button class="faq-question">¿Cómo empiezo?</button>
+        <div class="faq-answer">Solo necesitas agendar una llamada o llenar el formulario. Evaluamos tu situación actual y te proponemos un roadmap personalizado sin compromiso.</div>
+      </div>
+    </div>
   </section>
+  
+
+
   
   <style>
   .diagnostico-widget {
@@ -158,6 +182,25 @@
   }
   </style>
   
+  <script>
+    const questions = document.querySelectorAll('.faq-question');
+  
+    questions.forEach(q => {
+      q.addEventListener('click', () => {
+        const isActive = q.classList.contains('active');
+        questions.forEach(el => {
+          el.classList.remove('active');
+          el.nextElementSibling.style.display = 'none';
+        });
+        if (!isActive) {
+          q.classList.add('active');
+          q.nextElementSibling.style.display = 'block';
+        }
+      });
+    });
+  </script>
+  
+
   <script>
   document.getElementById("diagnosticoForm").addEventListener("submit", function(event) {
   event.preventDefault();

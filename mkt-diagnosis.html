@@ -1,0 +1,133 @@
+<section id="diagnostico-avanzado" class="diagnostico-widget">
+    <div class="container">
+      <h2>¿Qué necesita tu marca ahora?</h2>
+      <p>Responde estas preguntas para descubrir qué servicios te ayudarán a lograr tus objetivos.</p>
+  
+      <form id="formDiagnostico">
+        <div class="pregunta">
+          <p><strong>1. ¿Tienes identidad de marca (logo, colores, tipografía)?</strong></p>
+          <label><input type="radio" name="marca" value="no" required> No</label>
+          <label><input type="radio" name="marca" value="parcial"> Parcial</label>
+          <label><input type="radio" name="marca" value="sí"> Sí</label>
+        </div>
+  
+        <div class="pregunta">
+          <p><strong>2. ¿Tu sitio web está actualizado y optimizado para móviles?</strong></p>
+          <label><input type="radio" name="web" value="no" required> No tengo</label>
+          <label><input type="radio" name="web" value="obsoleto"> Lo tengo, pero está desactualizado</label>
+          <label><input type="radio" name="web" value="sí"> Sí</label>
+        </div>
+  
+        <div class="pregunta">
+          <p><strong>3. ¿Generas contenido regularmente?</strong></p>
+          <label><input type="radio" name="contenido" value="no" required> No</label>
+          <label><input type="radio" name="contenido" value="ocasional"> Ocasionalmente</label>
+          <label><input type="radio" name="contenido" value="sí"> Sí</label>
+        </div>
+  
+        <div class="pregunta">
+          <p><strong>4. ¿Usas campañas de publicidad online?</strong></p>
+          <label><input type="radio" name="ads" value="no" required> No</label>
+          <label><input type="radio" name="ads" value="sí"> Sí</label>
+        </div>
+  
+        <div class="pregunta">
+          <p><strong>5. ¿Tienes una base de datos de clientes o leads?</strong></p>
+          <label><input type="radio" name="leads" value="no" required> No</label>
+          <label><input type="radio" name="leads" value="sí"> Sí</label>
+        </div>
+  
+        <div class="pregunta">
+          <p><strong>6. ¿Qué quieres lograr en los próximos 3–6 meses?</strong></p>
+          <label><input type="checkbox" name="objetivos" value="visibilidad"> Aumentar visibilidad</label><br>
+          <label><input type="checkbox" name="objetivos" value="leads"> Captar leads</label><br>
+          <label><input type="checkbox" name="objetivos" value="ventas"> Vender más</label><br>
+          <label><input type="checkbox" name="objetivos" value="fidelizar"> Fidelizar clientes</label><br>
+          <label><input type="checkbox" name="objetivos" value="reposicionar"> Reposicionar la marca</label>
+        </div>
+  
+        <button type="submit" class="cta-button">Ver mi recomendación</button>
+      </form>
+  
+      <div id="resultadoDiagnostico" class="resultado" style="display:none;"></div>
+      <div id="ctaFinal" style="display:none; margin-top:1.5rem;">
+        <a id="ctaLink" href="#contacto" class="cta-button">Habla con nuestro equipo</a>
+      </div>
+    </div>
+  </section>
+  
+  <style>
+  .diagnostico-widget {
+    background: #f3f3f3;
+    padding: 2rem 1rem;
+    border-radius: 10px;
+    margin: 3rem auto;
+    max-width: 700px;
+    font-family: sans-serif;
+  }
+  .diagnostico-widget h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .pregunta {
+    margin-bottom: 1.5rem;
+  }
+  .pregunta p {
+    font-weight: 600;
+  }
+  label {
+    display: inline-block;
+    margin: 0.25rem 1rem 0.25rem 0;
+  }
+  .cta-button {
+    margin-top: 1rem;
+    background-color: #ff6b00;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  .resultado {
+    margin-top: 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  }
+  </style>
+  
+  <script>
+  document.getElementById("formDiagnostico").addEventListener("submit", function(event) {
+    event.preventDefault();
+  
+    const marca = document.querySelector('input[name="marca"]:checked').value;
+    const web = document.querySelector('input[name="web"]:checked').value;
+    const contenido = document.querySelector('input[name="contenido"]:checked').value;
+    const ads = document.querySelector('input[name="ads"]:checked').value;
+    const leads = document.querySelector('input[name="leads"]:checked').value;
+    const objetivos = Array.from(document.querySelectorAll('input[name="objetivos"]:checked')).map(el => el.value);
+  
+    let resultado = "Basado en tus respuestas, te sugerimos empezar por: ";
+    let recomendaciones = [];
+  
+    if (marca !== "sí") recomendaciones.push("Branding & Identidad");
+    if (web !== "sí") recomendaciones.push("Diseño y desarrollo web");
+    if (contenido !== "sí" || objetivos.includes("visibilidad")) recomendaciones.push("Marketing de contenidos");
+    if (ads === "no" && (objetivos.includes("leads") || objetivos.includes("ventas"))) recomendaciones.push("Publicidad online");
+    if (leads === "no" && objetivos.includes("fidelizar")) recomendaciones.push("Email marketing & CRM");
+    if (objetivos.includes("reposicionar")) recomendaciones.push("Rebranding + Estrategia de comunicación");
+  
+    const texto = resultado + "<ul>" + recomendaciones.map(r => `<li>${r}</li>`).join("") + "</ul>";
+  
+    document.getElementById("resultadoDiagnostico").innerHTML = texto;
+    document.getElementById("resultadoDiagnostico").style.display = "block";
+  
+    document.getElementById("ctaFinal").style.display = "block";
+  });
+  </script>
+  
