@@ -57,7 +57,7 @@
       <a href="/bundles.html">Bundles</a>
       <a href="/all-services.html">All Services</a>
       <a href="/portfolio.html">Portfolio</a>
-      <a href="/es-blog.html">Blog</a>
+      <a href="/blog.html">Blog</a>
       <a href="/about-us.html">About Us</a>
       <a href="/contact-us.html">Contact</a>
     </div>
@@ -154,39 +154,6 @@
     </div>
   </section>
   
-
-
-  
-  <style>
-  .diagnostico-widget {
-    background: #f3f3f3;
-    padding: 2rem 1rem;
-    text-align: center;
-    border-radius: 10px;
-    margin-top: 3rem;
-  }
-  .diagnostico-widget .pregunta {
-    margin: 1.5rem 0;
-  }
-  .diagnostico-widget input[type="radio"] {
-    margin: 0 10px;
-  }
-  .cta-button {
-    margin-top: 1rem;
-    background-color: #ff6b00;
-    color: #fff;
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-  }
-  .resultado {
-    margin-top: 2rem;
-    font-size: 1.1rem;
-    font-weight: 600;
-  }
-  </style>
   
   <script>
     const questions = document.querySelectorAll('.faq-question');
@@ -204,43 +171,6 @@
         }
       });
     });
-  </script>
-  
-
-  <script>
-  document.getElementById("diagnosticoForm").addEventListener("submit", function(event) {
-  event.preventDefault();
-  const identidad = document.querySelector('input[name="identidad"]:checked').value;
-  const sitio = document.querySelector('input[name="sitio"]:checked').value;
-  const estrategia = document.querySelector('input[name="estrategia"]:checked').value;
-
-  let mensaje = "";
-  let ctaTexto = "";
-  let ctaHref = "";
-
-  if (identidad === "no" && sitio === "no") {
-    mensaje = "Recomendamos comenzar con nuestro bundle de Branding + Web, ideal para construir tu base digital desde cero.";
-    ctaTexto = "Ver bundle Branding + Web";
-    ctaHref = "#bundle-branding-web";
-  } else if (estrategia === "no") {
-    mensaje = "Tu marca ya está en marcha. Te sugerimos el bundle de Marketing + Automatización para maximizar conversiones.";
-    ctaTexto = "Explorar Marketing + Automatización";
-    ctaHref = "#bundle-marketing-auto";
-  } else {
-    mensaje = "¡Buen trabajo! Tu base está sólida. Hablemos de escalar con publicidad, contenido y CRO.";
-    ctaTexto = "Agenda una consultoría estratégica";
-    ctaHref = "#contacto";
-  }
-
-  document.getElementById("resultadoDiagnostico").innerText = mensaje;
-  document.getElementById("resultadoDiagnostico").style.display = "block";
-
-  const ctaLink = document.getElementById("ctaLink");
-  ctaLink.innerText = ctaTexto;
-  ctaLink.href = ctaHref;
-  document.getElementById("ctaFinal").style.display = "block";
-});
-
   </script>
   
   <!-- CONTACTO -->
