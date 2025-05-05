@@ -122,7 +122,6 @@ h1, h2, h3 {
   width: 100%;
   min-height: 300px; /* ← permite expansión */
   background: url('/assets/hero-banner-background-palms.jpg') center/cover no-repeat;
-  
   padding-top: 0px;   /* Aumenta el espacio superior */
   padding-bottom: 5px; /* Aumenta el espacio inferior */
   display: flex;
@@ -164,7 +163,7 @@ h1, h2, h3 {
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: rgba(255, 125, 0, 0.5);
+  background: rgba(0, 0, 0, 0.4);
   z-index: 0;
 }
 
@@ -649,4 +648,112 @@ input[type="button"]:active,
   transform: translateY(2px) scale(0.98);
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
+
+/* ─── Hero banner mejorado ─── */
+.hero {
+  position: relative;
+  height: 70vh;
+  min-height: 400px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 700px;
+  padding: 0 1rem;
+  animation: fadeInUp 1s ease-out both;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  color: #f0f0f0;
+}
+
+.btn-primary {
+  display: inline-block;
+  background: #ff6b00;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 700;
+  transition: transform .2s, box-shadow .2s;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px; height: 40px;
+  border: 2px solid #fff;
+  border-radius: 12px;
+  z-index: 3;
+  opacity: 0.7;
+}
+.scroll-indicator span {
+  display: block;
+  width: 4px; height: 8px;
+  background: #fff;
+  border-radius: 2px;
+  margin: 6px auto;
+  animation: scrollAnim 1.5s infinite;
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes scrollAnim {
+  0%   { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(16px); }
+}
+
+/* Adaptación móvil */
+@media (max-width: 768px) {
+  .hero {
+    height: 50vh;
+  }
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+}
+
 
