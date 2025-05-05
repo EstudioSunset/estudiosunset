@@ -63,6 +63,18 @@ h1, h2, h3 {
   .hero-content p  { font-size: 1rem; }
 }
 
+.contact-layout {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+.bundles-menu,
+.contacto,
+.image-placeholder {
+  flex: 1;
+}
+
+
 /* ========== UTILIDADES ========== */
 .center { text-align: center; }
 
@@ -354,6 +366,7 @@ h1, h2, h3 {
   font-family: inherit;
 }
 
+
 /* ========== FOOTER ========== */
 footer {
   padding: 1.5rem 1rem;
@@ -389,7 +402,7 @@ footer a { color: #007c91; text-decoration: underline; }
   transition: color .3s;
 }
 .navbar-links a:hover {
-  color: #ffa630;          /* cambio de color al pasar */
+  color: #9d6823;          /* cambio de color al pasar */
   text-decoration: underline;
 }
 
@@ -755,5 +768,32 @@ input[type="button"]:active,
     font-size: 1rem;
   }
 }
+
+@media (max-width: 768px) {
+  .contact-layout {
+    flex-direction: column;
+    padding: 10px;
+  }
+  /* 1º: formulario */
+  .contacto {
+    order: 1;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  /* 2º: menú bundles */
+  .bundles-menu {
+    order: 2;
+    width: 100%;
+    margin-bottom: 20px;
+    border-right: none;  /* opcional: quita bordes laterales */
+    border-left: none;
+  }
+  /* 3º: placeholder */
+  .image-placeholder {
+    order: 3;
+    width: 100%;
+  }
+}
+
 
 

@@ -3,50 +3,140 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Diseño creativo y marketing digital con frescura tropical. Estudio Sunset te lleva al siguiente nivel." />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Estudio Sunset – Digital Marketing" />
-  <meta property="og:description" content="Tu marca al nivel del atardecer más visto. Webs, redes, campañas y más." />
-  <meta property="og:image" content="https://estudiosunset.com/assets/preview.jpg" />
-  <meta property="og:url"   content="https://estudiosunset.com" />
-  <title>Estudio Sunset – Digital Marketing</title>
-  
+  <title>Contacto · Estudio Sunset</title>
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
-<style>
-  body {
-    font-family: "Quicksand", sans-serif;
-  }
-</style>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+
   <!-- CSS Principal -->
   <link rel="stylesheet" href="/css/base.css" />
-  <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-M6XVQXG8');</script>
-  <!-- End Google Tag Manager -->
+
+  <style>
+    /* ─── Layout Contact Us ─── */
+    .contact-section {
+      display: flex;
+      gap: 20px;
+      padding: 40px 20px;
+    }
+    .contact-section > * {
+      flex: 1;
+    }
+
+    /* ─── Sidebar Menú ─── */
+    .sidebar {
+      background: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+    }
+    .sidebar h2 {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      color: #007c91;
+    }
+    .sidebar details {
+      margin-bottom: 1rem;
+    }
+    .sidebar summary {
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .sidebar ul {
+      margin-top: 0.5rem;
+      padding-left: 1.2rem;
+      list-style: disc;
+    }
+
+    /* ─── Formulario ─── */
+    .form-container {
+      background: #fff8e1;
+      border-radius: 8px;
+      padding: 30px 20px;
+    }
+    .form-container h2 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+      color: #007c91;
+      text-align: center;
+    }
+    .form-container p {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #007c91;
+    }
+    .form-container form input,
+    .form-container form textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-family: inherit;
+    }
+    .form-container .btn {
+      display: block;
+      width: 100%;
+      padding: 0.75rem;
+      background: #ff6b00;
+      color: #fff;
+      font-weight: 700;
+      text-align: center;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .form-container .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    }
+
+    /* ─── Placeholder Imagen ─── */
+    .image-container {
+      background: #f0f0f0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 300px;
+      padding: 20px;
+    }
+    .image-container h2 {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      color: #007c91;
+    }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 768px) {
+      .contact-section {
+        flex-direction: column;
+      }
+      /* orden: form ➔ menú ➔ imagen */
+      .form-container    { order: 1; margin-bottom: 20px; }
+      .sidebar           { order: 2; margin-bottom: 20px; }
+      .image-container   { order: 3; }
+    }
+    /* ─── Anchos fijos para sidebar e imagen ─── */
+.sidebar,
+.image-container {
+  flex: 0 0 300px;   /* ancho fijo de 300px */
+  max-width: 300px;
+}
+
+/* ─── Formulario ocupa todo el espacio restante ─── */
+.form-container {
+  flex: 1;
+}
+  </style>
 </head>
 
 <body>
-    <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M6XVQXG8"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-S4091PLBK9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-S4091PLBK9');
-</script>
-
-  <!-- NAVBAR -->
+  <!-- NAVBAR (igual que tu plantilla) -->
   <nav class="navbar">
     <a href="/" class="logo">
       <img src="/assets/estudio-sunset-transparent.png" alt="Logo Estudio Sunset">
@@ -63,143 +153,78 @@
     </div>
   </nav>
 
-<!-- BANNER DINÁMICO -->
-<section id="hero" class="hero">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <h1 id="hero-title">Sunrise Essentials</h1>
-      <p id="hero-subtitle">Impulsa tu marca con diseño fresco y estrategia digital</p>
-      <a href="#contacto" class="btn btn-primary">Contáctanos</a>
-    </div>
-    <img
-      id="hero-image"
-      class="hero-image"
-      src="/assets/banner-sunrise.jpg"
-      alt="Banner Sunrise Essentials"
-    />
-  </section>
+  <!-- CONTACT US SECTION -->
+  <section class="contact-section">
+    <!-- 1. Menú lateral -->
+    <aside class="sidebar">
+      <h2>Bundles</h2>
+      <details>
+        <summary>Sunrise</summary>
+        <ul>
+          <li>Logo Design</li>
+          <li>Basic Website</li>
+          <li>Social Media Setup</li>
+        </ul>
+      </details>
+      <details>
+        <summary>Sun-Peak</summary>
+        <ul>
+          <li>Logo Design</li>
+          <li>Advanced Website</li>
+          <li>Social Media Management</li>
+        </ul>
+      </details>
+      <details>
+        <summary>Sunset</summary>
+        <ul>
+          <li>Brand Strategy</li>
+          <li>Custom Website</li>
+          <li>Marketing Campaigns</li>
+        </ul>
+      </details>
+      <details>
+        <summary>Sunset 360</summary>
+        <ul>
+          <li>Full Branding</li>
+          <li>E-commerce Website</li>
+          <li>Comprehensive Marketing</li>
+        </ul>
+      </details>
+    </aside>
 
-    <!-- CONTACT US SECTION -->
-    <section style="display: flex; padding: 20px; gap: 20px;">
-        <!-- Sidebar with Bundles -->
-        <aside style="flex: 1; border-right: 1px solid #ccc; padding-right: 20px;">
-            <h2>Bundles</h2>
-            <ul style="list-style: none; padding: 0;">
-                <li>
-                    <details>
-                        <summary>Sunrise</summary>
-                        <ul>
-                            <li>Logo Design</li>
-                            <li>Basic Website</li>
-                            <li>Social Media Setup</li>
-                        </ul>
-                    </details>
-                </li>
-                <li>
-                    <details>
-                        <summary>Sun-Peak</summary>
-                        <ul>
-                            <li>Logo Design</li>
-                            <li>Advanced Website</li>
-                            <li>Social Media Management</li>
-                        </ul>
-                    </details>
-                </li>
-                <li>
-                    <details>
-                        <summary>Sunset</summary>
-                        <ul>
-                            <li>Brand Strategy</li>
-                            <li>Custom Website</li>
-                            <li>Marketing Campaigns</li>
-                        </ul>
-                    </details>
-                </li>
-                <li>
-                    <details>
-                        <summary>Sunset 360</summary>
-                        <ul>
-                            <li>Full Branding</li>
-                            <li>E-commerce Website</li>
-                            <li>Comprehensive Marketing</li>
-                        </ul>
-                    </details>
-                </li>
-            </ul>
-        </aside>
-
-        <!-- CONTACTO -->
-<section id="contacto" class="contacto">
-    <h2>Ready to launch your campaign?</h2>
-    <p>
-      Contact us at
-      <a href="mailto:info@estudiosunset.com">info@estudiosunset.com</a>
-      or fill the form below:
-    </p>
-  
-    <!-- Abres el form aquí y lo cierras abajo -->
-    <form action="https://formspree.io/f/mldjqkrw" method="POST" id="contactForm">
-      <input type="text"  name="name"    placeholder="Name"     required>
-      <input type="tel"   name="phone"   placeholder="Cellphone">
-      <input type="email" name="email"   placeholder="Email"    required>
-      <textarea name="message" rows="5" placeholder="Message..." required></textarea>
-  
-      <!-- Security Question -->
-      <div class="security-question">
-        <label id="securityLabel"></label>
-        <input type="number" id="securityAnswer" placeholder="Your answer" required>
-      </div>
-  
-      <button type="submit" class="btn">Enviar</button>
-    </form>
-  
-    <script>
-      // Genera dos números aleatorios
-      const num1 = Math.floor(Math.random() * 10);
-      const num2 = Math.floor(Math.random() * 10);
-      const correctAnswer = num1 + num2;
-  
-      // Muestra la pregunta
-      document.getElementById('securityLabel').innerText = `What is ${num1} + ${num2}?`;
-  
-      // Valida al enviar
-      document.getElementById('contactForm').addEventListener('submit', function(event) {
-        const userAnswer = parseInt(document.getElementById('securityAnswer').value, 10);
-        if (userAnswer !== correctAnswer) {
-          event.preventDefault();
-          alert('Incorrect answer to the security question. Please try again.');
-        }
-      });
-    </script>
-  </section>
-
-        <!-- Image Placeholder -->
-        <div style="flex: 1; text-align: center; border-left: 1px solid #ccc; padding-left: 20px;">
-            <h2>Our Image</h2>
-            <div style="width: 100%; height: 300px; background-color: #f0f0f0; display: flex; align-items: center; justify-content: center;">
-                <span>Image Placeholder</span>
-            </div>
+    <!-- 2. Formulario en el centro -->
+    <div class="form-container">
+      <h2>Ready to launch your campaign?</h2>
+      <p>Contact us at <a href="mailto:info@estudiosunset.com">info@estudiosunset.com</a> or fill the form below:</p>
+      <form action="https://formspree.io/f/mldjqkrw" method="POST" id="contactForm">
+        <input type="text"  name="name"    placeholder="Name"     required>
+        <input type="tel"   name="phone"   placeholder="Cellphone">
+        <input type="email" name="email"   placeholder="Email"    required>
+        <textarea name="message" rows="5" placeholder="Message..." required></textarea>
+        <div class="security-question">
+          <label id="securityLabel"></label>
+          <input type="number" id="securityAnswer" placeholder="Your answer" required>
         </div>
-    </section>
-
-    <!-- Social Media Links -->
-    <div style="text-align: center; margin-top: 20px;">
-        <a href="https://facebook.com" target="_blank" style="margin: 0 10px;">Facebook</a>
-        <a href="https://instagram.com" target="_blank" style="margin: 0 10px;">Instagram</a>
-        <a href="https://pinterest.com" target="_blank" style="margin: 0 10px;">Pinterest</a>
-        <a href="https://linkedin.com" target="_blank" style="margin: 0 10px;">LinkedIn</a>
-        <a href="https://tiktok.com" target="_blank" style="margin: 0 10px;">TikTok</a>
-        <a href="https://youtube.com" target="_blank" style="margin: 0 10px;">YouTube</a>
+        <button type="submit" class="btn">Enviar</button>
+      </form>
     </div>
-</body>
 
-<!-- FOOTER -->
-<footer>
+    <!-- 3. Placeholder de imagen -->
+    <aside class="image-container">
+      <h2>Our Image</h2>
+      <div style="width:100%; height:200px; display:flex; align-items:center; justify-content:center;">
+        <span>Image Placeholder</span>
+      </div>
+    </aside>
+  </section>
+
+  <!-- Footer / Redes Sociales (igual que tu plantilla) -->
+  <footer>
     © 2025 Estudio Sunset · Creatividad con sabor a mar<br>
     <a href="/gracias.html">Página de agradecimiento</a>
   </footer>
 
-  <!-- JS MÍNIMO -->
+  <!-- JS Menú móvil + Security Question -->
   <script>
     // Toggle menú móvil
     document.querySelector('.menu-toggle')
@@ -207,42 +232,17 @@
         document.querySelector('.navbar-links').classList.toggle('active')
       );
 
-    // Auto-scroll bundles
-    const cards = document.querySelector('.cards'),
-          interval = 4000,
-          scrollByAmount = () => cards.querySelector('.card').offsetWidth + 16;
-
-    let auto = setInterval(() => cards.scrollBy({ left: scrollByAmount(), behavior: 'smooth' }), interval);
-    cards.addEventListener('mouseenter', () => clearInterval(auto));
-    cards.addEventListener('mouseleave', () => auto = setInterval(() =>
-      cards.scrollBy({ left: scrollByAmount(), behavior: 'smooth' }), interval));
+    // Genera y valida sumita anti-spam
+    const num1 = Math.floor(Math.random()*10),
+          num2 = Math.floor(Math.random()*10),
+          correct = num1 + num2;
+    document.getElementById('securityLabel').innerText = `What is ${num1} + ${num2}?`;
+    document.getElementById('contactForm').addEventListener('submit', e => {
+      if (parseInt(document.getElementById('securityAnswer').value,10)!== correct) {
+        e.preventDefault();
+        alert('Respuesta incorrecta. Intenta de nuevo.');
+      }
+    });
   </script>
-<script>
-    // JS para cambiar imagen y texto al seleccionar un paquete
-document.querySelectorAll('aside details summary')
-  .forEach(summary => summary.addEventListener('click', () => {
-    const key = summary.textContent.trim().toLowerCase().replace(/\s+/g, '-');
-    const img  = document.getElementById('hero-image');
-    const title = document.getElementById('hero-title');
-    const subtitle = document.getElementById('hero-subtitle');
-
-    // Actualiza la ruta de la imagen (ej: banner-sunrise.jpg, banner-sun-peak.jpg...)
-    img.style.opacity = 0;
-    setTimeout(() => {
-      img.src = `/assets/banner-${key}.jpg`;
-      img.alt = `Banner ${summary.textContent.trim()}`;
-      title.textContent = summary.textContent.trim();
-      subtitle.textContent = {
-        'sunrise':    'Impulsa tu marca con diseño fresco y estrategia digital',
-        'sun-peak':   'Lleva tu presencia online al siguiente nivel',
-        'sunset':     'Campañas creativas con impacto real',
-        'sunset-360': 'Cobertura total: branding, web y marketing'
-      }[key] || '';
-      img.style.opacity = 1;
-    }, 300);
-  }));
-
-</script>
-  
 </body>
 </html>
