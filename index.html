@@ -9,6 +9,8 @@
   <meta property="og:description" content="Tu marca al nivel del atardecer más visto. Webs, redes, campañas y más." />
   <meta property="og:image" content="https://estudiosunset.com/assets/preview.jpg" />
   <meta property="og:url"   content="https://estudiosunset.com" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
   <title>Estudio Sunset – Digital Marketing</title>
   
   <!-- Google Fonts -->
@@ -129,17 +131,17 @@
     <div class="cards">
       <a href="/sunrise-essentials.html" class="card">
         <img src="/assets/es-sunrise-essentials-bundle-logo.jpg" alt="Sunrise Essentials">
-        <h3>Sunrise Essentials</h3>
+        <h3>Sunrise</h3>
         <p>Landing page optimizada + SEO básico + Analytics</p>
       </a>
       <a href="/sunset-growth.html" class="card">
         <img src="/assets/es-sun-peak-elevate-bundle-logo.jpg" alt="Sunset Growth">
-        <h3>Sun-Peak Elevate</h3>
+        <h3>Sun-Peak</h3>
         <p>Contenido mensual + Email marketing + Reportes</p>
       </a>
       <a href="/beach-club.html" class="card">
         <img src="/assets/es-sunset-supreme-bundle-logo.jpg" alt="Beach Club">
-        <h3>Sunset Sumpreme</h3>
+        <h3>Sunset</h3>
         <p>Web completa + CRO avanzado + Campañas premium</p>
       </a>
     </div>
@@ -271,12 +273,19 @@
   </script>
 </section>
 
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+<script>
+  fetch('/partials/footer.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('footer-placeholder').innerHTML = html;
+    });
+</script>
 
-  <!-- FOOTER -->
-  <footer>
-    © 2025 Estudio Sunset · Creatividad desde Las Chicharras ❤️<br>
-    <a href="/gracias.html">Página de agradecimiento</a>
-  </footer>
+
+</body>
+
 
   <!-- JS MÍNIMO -->
   <script>
