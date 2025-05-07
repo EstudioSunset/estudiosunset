@@ -18,6 +18,23 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 <style>
+  .construction-banner {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #ff6b00;
+  color: white;
+  text-align: center;
+  padding: 0.7rem;
+  font-size: 0.95rem;
+  z-index: 9999;
+  animation: fadeOut 0.5s ease 6s forwards;
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; visibility: hidden; }
+}
+
   body {
     font-family: "Quicksand", sans-serif;
   }
@@ -34,6 +51,10 @@
 </head>
 
 <body>
+  <div class="construction-banner" id="constructionBanner">
+    🚧 Este sitio está en construcción. Algunos enlaces pueden no funcionar. Disculpa las molestias.
+  </div>
+  
   <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M6XVQXG8"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -54,6 +75,7 @@
       <img src="/assets/estudio-sunset-transparent.png" alt="Logo Estudio Sunset">
     </a>
     <button class="menu-toggle" aria-label="Abrir/Cerrar menú">&#9776;</button>
+    
     <div class="navbar-links">
       <a href="/">Inicio</a>
       <a href="/all-services.html">Servicios</a>
@@ -62,7 +84,7 @@
       <a href="/blog.html">Blog</a>
       <a href="/about-us.html">Sobre Nosotros</a>
       <a href="/contact-us.html">Contacto</a>
-    </div>
+    </div>    
   </nav>
 
   <!-- HERO BANNER -->
@@ -154,7 +176,7 @@
   <!-- SEO-Optimized FAQ SECTION -->
 <section id="faqs" class="faq-section">
   <div class="container">
-    <h2>Frequently Asked Questions</h2>
+    <h2>Preguntas Frecuentes</h2>
 
     <div class="faq-item">
       <button class="faq-question">¿Qué servicios de marketing digital ofrece Estudio Sunset?</button>
@@ -162,48 +184,48 @@
     </div>
 
     <div class="faq-item">
-      <button class="faq-question">Can you redesign my existing website?</button>
-      <div class="faq-answer">Yes. We audit your current site and offer a complete website redesign that improves UX, SEO performance, and visual appeal—all tailored to your business goals.</div>
+      <button class="faq-question">¿Puedes rediseñar mi sitio web existente?</button>
+      <div class="faq-answer">Sí. Auditamos su sitio web actual y le ofrecemos un rediseño completo que mejora la experiencia de usuario (UX), el rendimiento SEO y el atractivo visual, todo ello adaptado a sus objetivos comerciales.</div>
     </div>
 
     <div class="faq-item">
-      <button class="faq-question">How much does a complete brand and website package cost?</button>
-      <div class="faq-answer">Pricing depends on your business needs, but we offer both modular and full-service packages. We’re transparent and include all costs in our proposal—no surprises.</div>
+      <button class="faq-question">¿Cuánto cuesta un paquete completo de marca y sitio web?</button>
+      <div class="faq-answer">El precio depende de las necesidades de su negocio, pero ofrecemos paquetes modulares y de servicio completo. Somos transparentes e incluimos todos los costos en nuestra propuesta, sin sorpresas.</div>
     </div>
 
     <div class="faq-item">
-      <button class="faq-question">How long does it take to launch a new website or brand?</button>
-      <div class="faq-answer">Most branding and website projects take 4 to 8 weeks depending on scope and client feedback cycles.</div>
+      <button class="faq-question">¿Cuánto tiempo se tarda en lanzar un nuevo sitio web o marca?</button>
+      <div class="faq-answer">La mayoría de los proyectos de marca y sitio web toman entre 4 y 8 semanas dependiendo del alcance y los ciclos de comentarios del cliente.</div>
     </div>
 
     <div class="faq-item">
-      <button class="faq-question">Do you provide SEO with your website services?</button>
-      <div class="faq-answer">Absolutely. Every site we build is SEO-optimized from the ground up, including keyword research, fast load times, responsive design, and structured content.</div>
+      <button class="faq-question">¿Incluyen SEO en sus servicios de diseño web?</button>
+      <div class="faq-answer">Por supuesto. Cada sitio que construimos está optimizado para SEO desde el principio, incluyendo investigación de palabras clave, tiempos de carga rápidos, diseño responsivo y contenido estructurado.</div>
     </div>
 
     <div class="faq-item">
-      <button class="faq-question">Can I start with just one service, like SEO or branding?</button>
-      <div class="faq-answer">Yes. You can begin with a single service and scale up as your needs evolve. Explore individual offerings in our <a href="/all-services.html">services menu</a>.</div>
+      <button class="faq-question">¿Puedo empezar con un solo servicio, como SEO o branding?</button>
+      <div class="faq-answer">Sí. Puedes empezar con un solo servicio y ampliarlo según tus necesidades. Explora las ofertas individuales en nuestro <a href="/all-services.html">menú de servicios</a>.</div>
     </div>
 
     <div class="faq-item">
-      <button class="faq-question">Do I need to be tech-savvy to work with you?</button>
-      <div class="faq-answer">Not at all. We manage the tech, design, and strategy. You stay focused on your business while we handle the digital side.</div>
+      <button class="faq-question">¿Necesito ser experto en tecnología para trabajar contigo?</button>
+      <div class="faq-answer">Para nada. A veces ni nosotros sabemos cómo se sostienen todos esos cables… (es broma). Tú enfócate en tu negocio; nosotros nos ocupamos de la tecnología, el diseño y la estrategia digital.</div>
     </div>
 
     <div class="faq-item">
-      <button class="faq-question">What industries do you work with?</button>
-      <div class="faq-answer">We’ve worked with businesses in healthcare, tech, retail, education, and more. We also research unfamiliar industries to ensure tailored, effective results.</div>
+      <button class="faq-question">Con que tipo de negocios trabajas?</button>
+      <div class="faq-answer">Hemos trabajado con empresas de los sectores de la salud, la tecnología, el comercio minorista, la educación y más. Cuando exploramos un mercado nuevo, investigamos a fondo para ofrecer soluciones adaptadas que realmente funcionen para tu negocio.</div>
     </div>
 
     <div class="faq-item">
-      <button class="faq-question">Is training included after delivery?</button>
-      <div class="faq-answer">Yes. We offer handover training sessions, guides, and optional ongoing support to help you manage your new tools with confidence.</div>
+      <button class="faq-question">¿Incluye capacitación después de la entrega?</button>
+      <div class="faq-answer">Sí. Ofrecemos sesiones de capacitación, guías prácticas y soporte continuo opcional para que puedas aprovechar al máximo tus nuevas herramientas desde el primer día.</div>
     </div>
 
     <div class="faq-item">
-      <button class="faq-question">How do I get started?</button>
-      <div class="faq-answer">Just schedule a free consultation or fill out our form below. We’ll assess your needs and send you a customized plan—no strings attached.</div>
+      <button class="faq-question">¿Cómo empiezo?</button>
+      <div class="faq-answer">Es muy fácil: agenda una consulta gratuita o completa el formulario a continuación. Revisaremos tus objetivos y te enviaremos un plan de acción personalizado, sin compromiso.</div>
     </div>
   </div>
 </section>
@@ -230,11 +252,11 @@
   
   <!-- CONTACTO -->
 <section id="contacto" class="contacto">
-  <h2>Ready to launch your campaign?</h2>
+  <h2>Listo para despegar?</h2>
   <p>
-    Contact us at
+    Contáctanos:
     <a href="mailto:info@estudiosunset.com">info@estudiosunset.com</a>
-    or fill the form below:
+    o si lo prefieres, completa el formulario y nos pondremos en contacto contigo:
   </p>
 
   <!-- Abres el form aquí y lo cierras abajo -->
