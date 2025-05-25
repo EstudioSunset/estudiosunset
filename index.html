@@ -202,73 +202,7 @@
   </div>
 </section>
 
-<style>
-.faq-section {
-  background-color: #fff7ec;
-  padding: 3rem 1rem;
-}
-.faq-container {
-  max-width: 800px;
-  margin: 0 auto;
-}
-.faq-section h2 {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  color: #007c91;
-  font-weight: 800;
-}
-.faq-item {
-  margin-bottom: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  background: white;
-  overflow: hidden;
-  transition: all 0.3s ease;
-}
-.faq-toggle {
-  width: 100%;
-  padding: 1rem 1.2rem;
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #007c91;
-  background: none;
-  border: none;
-  text-align: left;
-  cursor: pointer;
-  position: relative;
-}
-.faq-toggle::after {
-  content: "+";
-  position: absolute;
-  right: 1rem;
-  font-size: 1.2rem;
-  transition: transform 0.3s ease;
-}
-.faq-toggle.active::after {
-  content: "–";
-  transform: rotate(180deg);
-}
-.faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease;
-  padding: 0 1.2rem;
-  font-size: 0.95rem;
-  color: #555;
-}
-.faq-answer.open {
-  padding-top: 0.5rem;
-  padding-bottom: 1rem;
-}
-.faq-answer a {
-  color: #007c91;
-  text-decoration: underline;
-}
-.faq-answer a:hover {
-  color: #f15e10;
-}
-</style>
+
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
@@ -297,48 +231,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   
   <!-- CONTACTO -->
-<section id="contacto" class="contacto">
+<section id="contacto" class="form-wrapper">
   <h2>Listo para despegar?</h2>
   <p>
-    Contáctanos:
-    <a href="mailto:info@estudiosunset.com">info@estudiosunset.com</a>
-    o si lo prefieres, completa el formulario y nos pondremos en contacto contigo:
+    Contáctanos: <a href="mailto:info@estudiosunset.com">info@estudiosunset.com</a> o completa el formulario:
   </p>
-
-  <!-- Abres el form aquí y lo cierras abajo -->
   <form action="https://formspree.io/f/mldjqkrw" method="POST" id="contactForm">
-    <input type="text"  name="name"    placeholder="Name"     required>
-    <input type="tel"   name="phone"   placeholder="Cellphone">
-    <input type="email" name="email"   placeholder="Email"    required>
-    <textarea name="message" rows="5" placeholder="Message..." required></textarea>
+    <input type="text" name="name" placeholder="Nombre completo" required>
+    <input type="tel" name="phone" placeholder="Teléfono">
+    <input type="email" name="email" placeholder="Correo electrónico" required>
+    <textarea name="message" rows="5" placeholder="Tu mensaje..." required></textarea>
 
-    <!-- Security Question -->
-    <div class="security-question">
-      <label id="securityLabel"></label>
-      <input type="number" id="securityAnswer" placeholder="Your answer" required>
-    </div>
+    <input type="text" name="_gotcha" style="display: none;">
 
-    <button type="submit" class="btn">Enviar</button>
+    <button type="submit" class="btn-primary">Enviar</button>
   </form>
-
-  <script>
-    // Genera dos números aleatorios
-    const num1 = Math.floor(Math.random() * 10);
-    const num2 = Math.floor(Math.random() * 10);
-    const correctAnswer = num1 + num2;
-
-    // Muestra la pregunta
-    document.getElementById('securityLabel').innerText = `What is ${num1} + ${num2}?`;
-
-    // Valida al enviar
-    document.getElementById('contactForm').addEventListener('submit', function(event) {
-      const userAnswer = parseInt(document.getElementById('securityAnswer').value, 10);
-      if (userAnswer !== correctAnswer) {
-        event.preventDefault();
-        alert('Incorrect answer to the security question. Please try again.');
-      }
-    });
-  </script>
 </section>
 
 <!-- FOOTER -->
