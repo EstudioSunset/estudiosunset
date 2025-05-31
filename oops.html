@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Error 404 – Página no encontrada</title>
+  <link rel="stylesheet" href="/css/base.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+  <style>
+    canvas {
+      display: block;
+      margin: 2rem auto;
+      border-radius: 12px;
+      background: #222;
+    }
+    .game-instructions {
+      color: #aaa;
+      font-size: 0.95rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div id="navbar"></div>
+  <script type="module" src="/js/injectpartials.js"></script>
+
+  <main class="container center" style="padding: 3rem 1rem;">
+    <h1 style="font-size: 4rem; color: #f15e10;">404</h1>
+    <p style="font-size: 1.5rem;">Oops, esta página se fue con el atardecer...</p>
+    <p><a href="/index.html" class="btn btn-primary">Volver al inicio</a></p>
+    <canvas id="gameCanvas" width="320" height="150"></canvas>
+    <p class="game-instructions">Mini juego: ¡Pulsa <b>Espacio</b> para que el alien salte obstáculos!</p>
+  </main>
+
+  <div id="footer"></div>
+
+  <script>
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
+    let alien = { x: 30, y: 110, w: 30, h: 30, vy: 0, jumping: false };
+    const ground = 140;
+    let obstacles = [];
+    let frame = 0;
+    let score = 0;
+    let gameOver = false;
+    const alienImg = new Image();
+    alienImg.src = '/assets/alien.png';
+
+    function resetGame() {
+      alien.y = 110;
+      alien.vy = 0;
+      alien.jumping = false;
+      obstacles = [];
+      frame = 0;
+      score = 0;
+      gameOver = false;
+    }
+
+    function drawAlien() {
+      ctx.drawImage(alienImg, alien.x, alien.y, alien.w, alien.h);
+    }
+
+    function drawObstacles() {
+      obstacles.forEach(obs => {
+        ctx.fillStyle = obs.color;
+        ctx.fillRect(obs.x, obs.y, obs.w, obs.h);
+      });
+    }
+
+    function update() {
+      if (gameOver) return;
+      frame++;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Alien physics
+      if (alien.jumping) {
+        alien.vy += 0.9;
+        alien.y += alien.vy;
+        if (alien.y >= 110) {
+          alien.y = 110;
+          alien.vy = 0;
+          alien.jumping = false;
+        }
+      }
+
+      // Obstacles
+      if (frame % Math.max(40, 100 - Math.floor(score / 50)) === 0) {
+        let height = 20 + Math.random() * 20;
+        let width = 10 + Math.random() * 15;
+        let colors = ['#fff', '#ff6b00', '#ff914d'];
+        obstacles.push({ x: canvas.width, y: ground - height, w: width, h: height, color: colors[Math.floor(Math.random()*colors.length)] });
+      }
+      obstacles.forEach(obs => obs.x -= 5);
+      obstacles = obstacles.filter(obs => obs.x + obs.w > 0);
+
+      // Collision
+      obstacles.forEach(obs => {
+        if (
+          alien.x < obs.x + obs.w &&
+          alien.x + alien.w > obs.x &&
+          alien.y + alien.h > obs.y
+        ) {
+          gameOver = true;
+        }
+      });
+
+      // Score
+      score++;
+
+      drawAlien();
+      drawObstacles();
+
+      ctx.fillStyle = '#fff';
+      ctx.font = '16px Quicksand';
+      ctx.fillText("Puntos: " + score, 10, 20);
+
+      if (gameOver) {
+        ctx.fillStyle = '#ff4444';
+        ctx.font = 'bold 20px Quicksand';
+        ctx.fillText("¡Game Over!", 100, 70);
+        ctx.font = '16px Quicksand';
+        ctx.fillStyle = '#fff';
+        ctx.fillText("Pulsa Espacio para reiniciar", 60, 100);
+      } else {
+        requestAnimationFrame(update);
+      }
+    }
+
+    document.addEventListener('keydown', function(e) {
+  if (e.code === 'Space') {
+    e.preventDefault(); // <- Detiene el scroll de la página
+    if (gameOver) {
+      resetGame();
+      update();
+    } else if (!alien.jumping) {
+      alien.vy = -13;
+      alien.jumping = true;
+    }
+  }
+});
+
+    update();
+  </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Servicios · Estudio Sunset</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/base.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    .services-container {
+      background: #fff7ec;
+      padding: 3rem 1.5rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+      margin: 2rem auto;
+    }
+
+    .services-container h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      color: #E58006;
+      margin-bottom: 2rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .service-block {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1.5rem;
+      border: 1px solid #F2A611;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      font-size: 1rem;
+      text-align: center;
+      font-weight: 600;
+      color: #5A2A09;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service-block:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+      background: #fffef9;
+    }
+
+    .service-icon {
+      font-size: 2rem;
+      color: #E58006;
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div id="navbar"></div>
+  <script type="module" src="/js/injectpartials.js"></script>
+
+  <main class="services-container container">
+    <h2>Todos los Servicios</h2>
+    <div class="services-grid">
+      <div class="service-block"><div class="service-icon"><i class="fas fa-paint-brush"></i></div>Logo Creation</div>
+      <div class="service-block"><div class="service-icon"><i class="fas fa-id-card"></i></div>Business Cards Design</div>
+      <div class="service-block"><div class="service-icon"><i class="fas fa-bullhorn"></i></div>Promotional Flyers</div>
+      <div class="service-block"><div class="service-icon"><i class="fas fa-image"></i></div>Web banners</div>
+      <div class="service-block"><div class="service-icon"><i class="fas fa-file-alt"></i></div>Product cut sheets</div>
+      <div class="service-block"><div class="service-icon"><i class="fas fa-tags"></i></div>Product tags</div>
+      <div class="service-block"><div class="service-icon"><i class="fas fa-book"></i></div>PDF catalogs</div>
+      <div class="service-block"><div class="service-icon"><i class="fas fa-share-alt"></i></div>Social media creatives</div>
+      <div class="service-block"><div class="service-icon"><i class="fas fa-video"></i></div>Video graphics</div>
+      <div class="service-block"><div class="service-icon"><i class="fas fa-pencil-ruler"></i></div>Editable templates</div>
+      <div class="service-block"><div class="service-icon"><i class="fas fa-pen-nib"></i></div>Ad copywriting</div>
+      <div class="service-block"><div class="service-icon"><i class="fas fa-paragraph"></i></div>Product descriptions</div>
+      <div class="service-block"><div class="service-icon"><i class="fas fa-file-signature"></i></div>Scripts for videos</div>
+      <div class="service-block"><div class="service-icon"><i class="fas fa-envelope-open-text"></i></div>Email templates</div>
+      <div class="service-block"><div class="service-icon"><i class="fas fa-window-maximize"></i></div>Landing page UI</div>
+      <div class="service-block"><div class="service-icon"><i class="fas fa-edit"></i></div>Web copy optimization</div>
+      <div class="service-block"><div class="service-icon"><i class="fas fa-chart-pie"></i></div>Pitch deck design</div>
+      <div class="service-block"><div class="service-icon"><i class="fas fa-book-open"></i></div>Ebook cover design</div>
+      <div class="service-block"><div class="service-icon"><i class="fas fa-icons"></i></div>Custom icon design</div>
+      <div class="service-block"><div class="service-icon"><i class="fas fa-comments"></i></div>Branding consultation</div>
+      <div class="service-block"><div class="service-icon"><i class="fas fa-magic"></i></div>Visual content redesign</div>
+      <div class="service-block"><div class="service-icon"><i class="fas fa-star"></i></div><strong>Request a Special Service</strong></div>
+    </div>
+  </main>
+
+  <div id="footer"></div>
+</body>
+</html>
