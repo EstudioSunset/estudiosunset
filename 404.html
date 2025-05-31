@@ -140,6 +140,18 @@
 });  
 
     update();
+
+    canvas.addEventListener('touchstart', function(e) {
+  e.preventDefault();
+  if (gameOver) {
+    resetGame();
+    update();
+  } else if (!alien.jumping) {
+    alien.vy = -13;
+    alien.jumping = true;
+  }
+}, { passive: false });
+
   </script>
 </body>
 </html>
