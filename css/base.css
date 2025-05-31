@@ -1505,3 +1505,15 @@ input[type="button"]:active,
     min-height: 300px;
   }
 }
+*========== under const banner ========== */
+
+.construction-banner {
+  background: #f7e27f;
+  color: #5a2a09;
+  padding: 0.8rem 1.2rem;
+  font-size: 0.95rem;
+  text-align: center;
+  position: relative; /* ← así no tapa la navbar */
+  width: 100%;
+  z-index: 10;
+}
