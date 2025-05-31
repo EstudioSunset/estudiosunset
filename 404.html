@@ -29,7 +29,7 @@
     <p style="font-size: 1.5rem;">Oops, esta página se fue con el atardecer...</p>
     <p><a href="/index.html" class="btn btn-primary">Volver al inicio</a></p>
     <canvas id="gameCanvas" width="320" height="150"></canvas>
-    <p class="game-instructions">Mini juego: ¡Pulsa <b>Espacio</b> para que el alien salte obstáculos!</p>
+    <p class="game-instructions">Mini juego: ¡Pulsa <b>Espacio</b> o toca la pantalla para que el alien salte obstáculos!</p>
   </main>
 
   <div id="footer"></div>
@@ -46,6 +46,8 @@
     const alienImg = new Image();
     alienImg.src = '/assets/alien.png';
 
+    let gameSpeed = 3;
+
     function resetGame() {
       alien.y = 110;
       alien.vy = 0;
@@ -54,6 +56,7 @@
       frame = 0;
       score = 0;
       gameOver = false;
+      gameSpeed = 3;
     }
 
     function drawAlien() {
@@ -72,7 +75,6 @@
       frame++;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      // Alien physics
       if (alien.jumping) {
         alien.vy += 0.9;
         alien.y += alien.vy;
@@ -83,17 +85,15 @@
         }
       }
 
-      // Obstacles
-      if (frame % Math.max(40, 100 - Math.floor(score / 50)) === 0) {
+      if (frame % Math.max(60, 140 - Math.floor(score / 50)) === 0) {
         let height = 20 + Math.random() * 20;
         let width = 10 + Math.random() * 15;
         let colors = ['#fff', '#ff6b00', '#ff914d'];
         obstacles.push({ x: canvas.width, y: ground - height, w: width, h: height, color: colors[Math.floor(Math.random()*colors.length)] });
       }
-      obstacles.forEach(obs => obs.x -= 5);
+      obstacles.forEach(obs => obs.x -= gameSpeed);
       obstacles = obstacles.filter(obs => obs.x + obs.w > 0);
 
-      // Collision
       obstacles.forEach(obs => {
         if (
           alien.x < obs.x + obs.w &&
@@ -104,8 +104,8 @@
         }
       });
 
-      // Score
       score++;
+      if (score % 100 === 0 && gameSpeed < 8) gameSpeed += 0.5;
 
       drawAlien();
       drawObstacles();
@@ -119,39 +119,37 @@
         ctx.font = 'bold 20px Quicksand';
         ctx.fillText("¡Game Over!", 100, 70);
         ctx.font = '16px Quicksand';
-        ctx.fillStyle = '#fff';
-        ctx.fillText("Pulsa Espacio para reiniciar", 60, 100);
+        ctx.fillText("Pulsa Espacio o toca para reiniciar", 40, 100);
       } else {
         requestAnimationFrame(update);
       }
     }
 
     document.addEventListener('keydown', function(e) {
-  if (e.code === 'Space') {
-    e.preventDefault(); // <- Detiene el scroll de la página
-    if (gameOver) {
-      resetGame();
-      update();
-    } else if (!alien.jumping) {
-      alien.vy = -13;
-      alien.jumping = true;
-    }
-  }
-});  
-
-    update();
+      if (e.code === 'Space') {
+        e.preventDefault();
+        if (gameOver) {
+          resetGame();
+          update();
+        } else if (!alien.jumping) {
+          alien.vy = -13;
+          alien.jumping = true;
+        }
+      }
+    });
 
     canvas.addEventListener('touchstart', function(e) {
-  e.preventDefault();
-  if (gameOver) {
-    resetGame();
-    update();
-  } else if (!alien.jumping) {
-    alien.vy = -13;
-    alien.jumping = true;
-  }
-}, { passive: false });
+      e.preventDefault();
+      if (gameOver) {
+        resetGame();
+        update();
+      } else if (!alien.jumping) {
+        alien.vy = -13;
+        alien.jumping = true;
+      }
+    }, { passive: false });
 
+    update();
   </script>
 </body>
 </html>
