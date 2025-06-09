@@ -2,6 +2,16 @@
 <html lang="en">
 
 <head lang="en">
+	<!-- Google Tag Manager -->
+<script>
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id=GTM-M6XVQXG8'+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M6XVQXG8');
+</script>
+<!-- End Google Tag Manager -->
+
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<title>Estudio Sunset - Marketing Digital</title>
@@ -36,6 +46,11 @@
 
 
 <body class=" ">
+	<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M6XVQXG8"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
 
 	<!-- Preloader -->
 
@@ -81,11 +96,11 @@
 		<div class="container">
 			<div class="top-bar-contact">
 				<div class="contact-item">
-					<img loading="lazy" src="img/united-states-of-america.png" class="flags" alt="flag">
+					<img loading="lazy" src="img/united-states-of-america.png" class="flags" id="flag-icon" alt="flag">
 					<select>
 						<option value="1">English</option>
-						<option value="2">Germany</option>
-						<option value="3">Ukrainian</option>
+						<option value="2">Spanish</option>
+						
 					</select>
 				</div>
 
@@ -102,10 +117,10 @@
 				</div>
 			</div>
 
-			<div class="login-block">
+			<!--<div class="login-block">
 				<img loading="lazy" src="img/signin_dark.png" class="sign-in">
 				<a class="js-window-popup" href="#">Sign up</a>
-			</div>
+			</div>-->
 
 			<div class="follow_us">
 				<span>Follow us:</span>
@@ -2356,6 +2371,27 @@
 	<!-- /jQuery-scripts for Modules (Send Message) -->
 
 	<!-- ...end JS Script -->
+
+	<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const flagIcon = document.getElementById('flag-icon');
+  const languageSwitcher = document.getElementById('language-switcher');
+
+  if (!flagIcon || !languageSwitcher) return;
+
+  languageSwitcher.addEventListener('change', function () {
+    const lang = this.value;
+
+    // Cambiar bandera
+    flagIcon.src = lang === 'es' ? 'img/mexico.png' : 'img/united-states-of-america.png';
+
+    // Redirigir
+    window.location.href = lang === 'es' ? 'index_es.html' : 'index.html';
+  });
+});
+</script>
+
+
 
 </body>
 
