@@ -983,20 +983,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 											<div class="row">
 												<div class="col-lg-8 no-padding col-md-12 col-xs-12 col-sm-12">
 													<input name="website" type="url" class="input-dark site"
-														placeholder="Tu sitio web (ej. https://midominio.com)" required>
+														placeholder="Your website (ej. https://midomain.com)" required>
 												</div>
 												<div class="col-lg-4 no-padding col-md-12 col-xs-12 col-sm-12">
 													<input name="email" type="email" class="input-dark e-mail"
-														placeholder="Tu correo para el reporte" required>
+														placeholder="Your email for the report" required>
 												</div>
 											</div>
 
 											<button type="submit" class="btn btn-medium btn--green btn-hover-shadow">
-												<span class="text">Solicitar Auditoría</span>
+												<span class="text">Request Audit</span>
 												<span class="semicircle"></span>
 											</button><br>
-											<p class="form-helper">Te enviaremos un análisis personalizado hecho por
-												humanos (no bots 😎).</p>
+											<p class="form-helper">We'll send you a personalized analysis done by humans (not bots 😎).</p>
 										</form>
 
 
@@ -2012,7 +2011,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 	<!-- Footer -->
 
-	<footer class="footer js-fixed-footer" id="site-footer">
+	<footer class="footer" id="site-footer">
 		<div class="container">
 			<div class="row">
 
@@ -2385,26 +2384,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<!-- /jQuery-scripts for Modules (Send Message) -->
 
 	<!-- ...end JS Script -->
-
-	<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const flagIcon = document.getElementById('flag-icon');
-  const languageSwitcher = document.getElementById('language-switcher');
-
-  if (!flagIcon || !languageSwitcher) return;
-
-  languageSwitcher.addEventListener('change', function () {
-    const lang = this.value;
-
-    // Cambiar bandera
-    flagIcon.src = lang === 'es' ? 'img/mexico.png' : 'img/united-states-of-america.png';
-
-    // Redirigir
-    window.location.href = lang === 'es' ? 'index_es.html' : 'index.html';
-  });
-});
-</script>
-
 
 
 </body>
