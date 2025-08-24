@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mezcal Brand – Logo Rationale & Launch Campaign</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --agave:#0D6B55; /* main accent */
+      --agave-2:#138D75;
+      --earth:#3E2C1C; /* headlines */
+      --sand:#F3E8D9;  /* soft bg */
+      --ink:#0e0e0e;  /* body text */
+      --smoke:#ffffff; /* white */
+      --gold:#C49A3A;  /* highlight */
+      --shadow: 0 10px 30px rgba(0,0,0,.12);
+      --radius: 18px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0; color:var(--ink); background:#fbfaf8;
+      font-family: Montserrat, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height:1.5; font-size:16px;
+    }
+    /* ---------- Top Navigation ---------- */
+    .nav{position:sticky; top:0; z-index:50; backdrop-filter:saturate(1.1) blur(8px); background:rgba(251,250,248,.8); border-bottom:1px solid #e7e0d6}
+    .nav-inner{max-width:1200px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:10px 20px}
+    .brand{display:flex; align-items:center; gap:12px}
+    .brand .logo-ph{width:42px; height:42px; border-radius:10px; background:linear-gradient(135deg,var(--agave),var(--agave-2)); display:grid; place-items:center; color:#fff; font-weight:800; letter-spacing:.5px}
+    .brand small{opacity:.7}
+    .nav a{color:var(--earth); text-decoration:none; font-weight:600; margin:0 10px; padding:8px 10px; border-radius:10px}
+    .nav a:hover{background:#efe8de}
+    .cta{background:var(--agave); color:#fff !important}
+    .cta:hover{background:#0b5f49}
+
+    /* ---------- Hero ---------- */
+    .hero{position:relative; overflow:hidden;}
+    .hero::before{
+      content:""; position:absolute; inset:0; background:
+       radial-gradient(1200px 600px at 20% 0%, rgba(19,141,117,.18), transparent 60%),
+       radial-gradient(800px 500px at 100% 0%, rgba(196,154,58,.14), transparent 50%);
+      z-index:0;
+    }
+    .hero-wrap{max-width:1200px; margin:0 auto; padding:80px 20px 40px; display:grid; grid-template-columns:1.25fr .9fr; gap:40px; align-items:center}
+    .kicker{color:var(--agave); font-weight:800; letter-spacing:.12em; text-transform:uppercase; font-size:.85rem}
+    h1{font-family:"Playfair Display", serif; color:var(--earth); font-weight:700; font-size:clamp(36px,5vw,56px); line-height:1.08; margin:10px 0 8px}
+    .subtitle{max-width:720px; font-size:1.05rem; opacity:.88}
+    .hero-card{background:var(--sand); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow)}
+    .hero-list{display:grid; gap:10px; margin:10px 0 0}
+    .hero-list li{display:flex; gap:10px; align-items:flex-start}
+    .hero-list b{color:var(--agave)}
+    .btns{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
+    .btn{border:none; background:var(--earth); color:#fff; padding:12px 16px; border-radius:12px; font-weight:700; cursor:pointer}
+    .btn.alt{background:var(--gold); color:#201a12}
+    .btn.light{background:#fff; color:var(--earth); border:1px solid #e7e0d6}
+
+    /* ---------- Sections ---------- */
+    section{max-width:1200px; margin:0 auto; padding:80px 20px}
+    section h2{font-family:"Playfair Display", serif; color:var(--earth); font-size:clamp(28px,3.6vw,40px); margin:0 0 14px}
+    .muted{opacity:.82}
+    .grid{display:grid; gap:24px}
+    .grid-2{grid-template-columns:1fr 1fr}
+    .grid-3{grid-template-columns:repeat(3,1fr)}
+    @media (max-width: 900px){
+      .hero-wrap{grid-template-columns:1fr; padding:64px 16px 32px}
+      .grid-2,.grid-3{grid-template-columns:1fr}
+      .img-row{grid-template-columns:1fr}
+      .nav-inner{flex-wrap:wrap; gap:8px}
+      .nav .brand{width:100%; justify-content:space-between}
+      .nav a{margin:4px 6px; padding:8px 10px; display:inline-block}
+    }
+    /* extra small phones */
+    @media (max-width: 520px){
+      h1{font-size:clamp(28px,8vw,40px)}
+      section{padding:56px 16px}
+      .btns .btn{padding:10px 12px}
+      .nav-inner{padding:8px 12px}
+    }
+    /* responsive tables */
+    table{width:100%; border-collapse:separate; border-spacing:0; overflow:hidden; border-radius:14px; border:1px solid #efe8de}
+    th,td{padding:12px 14px; text-align:left}
+    thead th{background:#f5efe6; font-weight:800; color:#2b261f}
+    tbody tr+tr td{border-top:1px solid #efe8de}
+
+    .card{background:#fff; border:1px solid #eee4d8; border-radius:var(--radius); padding:20px; box-shadow:var(--shadow)}
+    .tag{display:inline-block; font-size:.78rem; background:#e9f6f2; color:#0f6a56; padding:6px 10px; border-radius:999px; font-weight:700; letter-spacing:.02em}
+
+    /* ---------- Image placeholders ---------- */
+    .img-ph{background:repeating-linear-gradient(45deg, #eae6de 0 16px, #efe8de 16px 32px); border-radius:14px; height:260px; display:grid; place-items:center; color:#7b7368; font-weight:700; border:1px dashed #d6cfc4}
+    .img-row{display:grid; grid-template-columns:1fr 1fr; gap:18px}
+    .caption{font-size:.9rem; text-align:center; margin-top:8px; opacity:.8}
+
+    /* ---------- Timeline ---------- */
+    .timeline{display:grid; grid-template-columns:repeat(6,1fr); gap:12px}
+    .milestone{background:#fff; border-radius:14px; padding:16px; border:1px solid #efe8de}
+    .milestone b{color:var(--agave)}
+
+    /* ---------- Table ---------- */
+    table{width:100%; border-collapse:separate; border-spacing:0; overflow:hidden; border-radius:14px; border:1px solid #efe8de}
+    th,td{padding:12px 14px; text-align:left}
+    thead th{background:#f5efe6; font-weight:800; color:#2b261f}
+    tbody tr+tr td{border-top:1px solid #efe8de}
+
+    /* ---------- Reveal on scroll ---------- */
+    .reveal{opacity:0; transform:translateY(22px); transition:opacity .8s ease, transform .8s ease}
+    .reveal.visible{opacity:1; transform:none}
+
+    /* ---------- Floating Tools ---------- */
+    .tools{position:fixed; right:14px; bottom:14px; display:flex; gap:8px; z-index:60}
+    .tools button{background:#fff; border:1px solid #e5dfd5; padding:10px 12px; border-radius:12px; box-shadow:var(--shadow); cursor:pointer; font-weight:700}
+
+    /* ---------- Footer ---------- */
+    footer{padding:40px 20px; text-align:center; color:#6e6559}
+    footer a{color:var(--agave); text-decoration:none; font-weight:700}
+
+    /* ---------- Small badge ---------- */
+    .badge{position:fixed; left:14px; bottom:14px; background:#12251f; color:#bde7db; padding:8px 12px; border-radius:10px; font-size:.8rem; opacity:.9}
+  </style>
+</head>
+<body>
+  <!-- Sticky navigation -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="logo-ph"><img src="img/estudio-sunset-logo-gray.png" width="50px"></div>
+        <div>
+          <strong>3BITE Agave Spirit</strong><br>
+          <small>Logo rationale & launch plan</small>
+        </div>
+      </div>
+      <div>
+        <a href="#logo">Logo</a>
+        <a href="#positioning">Positioning</a>
+        <a href="#audience">Audience</a>
+        <a href="#social">Social</a>
+        <a href="#paid">Paid Media</a>
+        <a href="#website">Website</a>
+        <a href="#video">Video</a>
+        <a href="#timeline">Timeline</a>
+        <a href="#kpis">KPIs</a>
+        <a class="cta" href="#next">Approve</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <section class="hero-wrap">
+      <div>
+        <div class="kicker reveal">Launch Presentation</div>
+        <h1 class="reveal">A bold identity and a clear go‑to‑market for your mezcal</h1>
+        <p class="subtitle reveal">Below you’ll find the logo evolution, the brand’s voice & positioning, and a lean but powerful marketing plan to launch strong across social, paid media, and your website; plus a short video concept to spark awareness.</p>
+        <div class="btns reveal">
+          <a class="btn" href="#logo">See the logo rationale</a>
+          <button class="btn alt" id="printBtn" title="Export to PDF">Export / Print</button>
+          <a class="btn light" href="#next">Approve & next steps</a>
+        </div>
+      </div>
+      
+    </section>
+  </header>
+
+  <!-- Logo Rationale -->
+  <section id="logo" class="reveal">
+    <h2>Logo Rationale — from concept to clarity</h2>
+    <p class="muted">Side‑by‑side comparison to show the reasoning behind the redesign. </p>
+    <div class="img-row">
+      <div class="card">
+        <div class="img-ph"><img src="img/IMG_20250823_184858.jpg" width="250px"></div>
+        <div class="caption">Before — original mark</div>
+      </div>
+      <div class="card">
+        <div class="img-ph">
+            <img src="img/3bite-agave-logo.jpg" width="250px" id="zoomLogo" style="cursor:pointer" alt="3BITE Agave Logo">
+        </div>
+        <!-- Modal for zoomed image -->
+        <div id="imgModal" style="display:none;position:fixed;z-index:1000;left:0;top:0;width:100vw;height:100vh;background:rgba(0,0,0,.7);justify-content:center;align-items:center;">
+            <img src="img/3bite-agave-logo.jpg" style="max-width:90vw;max-height:90vh;border-radius:18px;box-shadow:0 10px 30px rgba(0,0,0,.25)">
+        </div>
+        <script>
+            const zoomLogo = document.getElementById('zoomLogo');
+            const imgModal = document.getElementById('imgModal');
+            zoomLogo.onclick = () => { imgModal.style.display = 'flex'; };
+            imgModal.onclick = () => { imgModal.style.display = 'none'; };
+        </script>
+        <div class="caption">After — refined mark</div>
+      </div>
+    </div>
+
+    <div style="margin-top:16px">
+    <div class="grid grid-2">
+        <div class="card">
+            <h3>Actual Logo</h3>
+            <ul>
+                <li>Typography: The “3 Bite” lettering in red feels playful, but the uneven “B” and “i” reduce legibility.</li>
+                <li>Mascot: The gecko appears in full body with oversized yellow eyes and tongue out. Fun and cartoonish, but a bit too childish for a premium spirit.</li>
+                <li>Composition: The gecko dominates the design, drawing attention away from the brand name.</li>
+                <li>Graphic context: The patterned Mexican frame is colorful, but it makes the design feel busy and less versatile for modern digital or small-scale uses.</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>Proposal</h3>
+            <ul>
+                <li>Typography: The green “3BITE” wordmark is bold, thick, and includes three bite marks; a clever nod to the name. Highly legible even at smaller sizes.</li>
+                <li>Mascot: The gecko is simplified and better integrated. Still friendly and eye-catching with bright yellow eyes, but now in balance with the text.</li>
+                <li>Agave element: The agave plant in the background clearly anchors the brand to mezcal without clutter. Adds authenticity and a premium feel.</li>
+                <li>Composition: The brand name is now the hero, with the gecko as a supporting character, improving recognition.</li>
+                <li>Versatility: This design adapts more effectively across bottle labels, caps, merchandise, and social media.</li>
+            </ul>
+        </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Positioning & Voice -->
+  <section id="positioning" class="reveal">
+    <h2>Brand Positioning & Voice</h2>
+    <div class="grid grid-3">
+      <div class="card">
+        <h3>Essence</h3>
+        <p><b>Tradition meets bold character.</b> An artisanal mezcal crafted with respect for the land; and a confident visual identity built for modern discovery.</p>
+      </div>
+      <div class="card">
+        <h3>Values</h3>
+        <ul>
+          <li>Authenticity & origin</li>
+          <li>Craft & transparency</li>
+          <li>Community & celebration</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Voice & Tone</h3>
+        <ul>
+          <li><b>Tone:</b> warm, confident, grounded.</li>
+          <li><b>Voice:</b> short lines, sensory words, no clichés.</li>
+          <li><b>Tagline ideas:</b> “From agave to soul.” / “Born of smoke & sun.”</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Audience -->
+  <section id="audience" class="reveal">
+    <h2>Target Audience</h2>
+    <div class="grid grid-3">
+      <div class="card">
+        <span class="tag">Persona A</span>
+        <h3>The Explorer (25–40)</h3>
+        <p>Urban professionals who value unique flavors, design, and cultural stories. Shops at specialty stores, follows craft spirits on IG.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Persona B</span>
+        <h3>The Foodie Host</h3>
+        <p>Entertains friends, seeks cocktail recipes & pairings. Will pay more for a bottle that feels like a conversation piece.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Persona C</span>
+        <h3>The Bartender Ally</h3>
+        <p>Local bartenders & mixologists who influence trial with signature cocktails and recommendations at the bar.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Foundations -->
+  <section id="social" class="reveal">
+    <h2>Social Foundations — Instagram & Facebook</h2>
+    <div class="grid grid-2">
+      <div class="card">
+        <h3>Page setup</h3>
+        <ul>
+          <li>Handles aligned to brand name + location (if needed).</li>
+          <li>Bio with origin, tasting notes, and legal age gate.</li>
+          <li>Story highlights: <i>Origin, Process, Cocktails, Events.</i></li>
+          <li>UGC permissions workflow + branded hashtag.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Content pillars</h3>
+        <ul>
+          <li>Craft & terroir (fields, roasting, distillation).</li>
+          <li>Design & culture (label details, artist collabs).</li>
+          <li>Cocktails & pairings (short, tight recipes).</li>
+          <li>People & places (mezcaleros, bars, community).</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card" style="margin-top:16px">
+      <h3>Posting cadence (starter)</h3>
+      <ul>
+        <li>3 posts/week (1 craft, 1 cocktail, 1 people/culture)</li>
+        <li>4–6 stories/week (BTS, polls, events, quick recipes)</li>
+        <li>2 reels/month (signature serve + brand story)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Paid Media Plan -->
+  <section id="paid" class="reveal">
+    <h2>Paid Media — start where attention is highest</h2>
+    <div class="grid grid-2">
+      <div class="card">
+        <h3>Meta (Instagram & Facebook)</h3>
+        <table>
+          <thead><tr><th>Funnel</th><th>Objective</th><th>Creative</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td>Awareness</td><td>Reach / Video Views</td><td>Hero video + bottle macro + tagline</td><td>Broad geo + age 25+</td></tr>
+            <tr><td>Consideration</td><td>Engagement / Traffic</td><td>Cocktail reels, carousel of label details</td><td>Pixel/UTM for site events</td></tr>
+            <tr><td>Conversion</td><td>Sales / Leads</td><td>UGC testimonial + offer (limited edition)</td><td>Retarget engagers & site visitors</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card">
+        <h3>Google (optional, strategic)</h3>
+        <ul>
+          <li><b>Brand search</b> to protect your name (low CPC).</li>
+          <li><b>Non‑brand search</b> (e.g., “buy mezcal online”) — higher CPC; use when site is conversion‑ready.</li>
+          <li><b>Shopping/Performance Max</b> once SKUs & feed are solid.</li>
+        </ul>
+        <p class="muted">Note: Google can be more expensive per click. We start with Meta to validate creatives, then expand to Google when ROAS signals are stable.</p>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:16px">
+      <h3>Starter budget split (editable)</h3>
+      <table>
+        <thead><tr><th>Channel</th><th>Share</th><th>Goal</th></tr></thead>
+        <tbody>
+          <tr><td>Instagram</td><td>40%</td><td>Awareness & Engagement</td></tr>
+          <tr><td>Facebook</td><td>35%</td><td>Traffic & Retargeting</td></tr>
+          <tr><td>Google</td><td>25%</td><td>Brand protection + High‑intent</td></tr>
+        </tbody>
+      </table>
+    
+    </div>
+
+    <div class="card" style="margin-top:16px">
+      <h3>Ad copy starters</h3>
+      <ul>
+        <li><b>Awareness:</b> “Born of smoke & sun. An artisanal mezcal to savor, not rush.”</li>
+        <li><b>Consideration:</b> “Aroma of roasted agave. Notes of citrus & earth. See why bartenders are switching.”</li>
+        <li><b>Conversion:</b> “Limited small batch; try it with our signature cocktail. Order today.”</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Website Strategy -->
+  <section id="website" class="reveal">
+    <h2>Website & E‑commerce — layout & content</h2>
+    <div class="grid grid-2">
+      <div class="card">
+        <h3>Recommended layout</h3>
+        <ul>
+          <li>Hero: bottle on textured background + 1‑line value prop + age gate link.</li>
+          <li>Story: origin, process (roast, mill, ferment, distill) with photos.</li>
+          <li>Product: tasting notes, cocktails, awards, reviews.</li>
+          <li>Retail: store locator or “buy online” with trusted partners.</li>
+          <li>Newsletter: early access to limited releases.</li>
+          <li>Footer: legal, sustainability, contact.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Conversion tips</h3>
+        <ul>
+          <li>Sticky “Buy”/"Where to Buy" on product pages.</li>
+          <li>UGC & expert quotes near CTAs.</li>
+          <li>Structured data for Product, Organization, and FAQ.</li>
+          <li>Fast load, compressed imagery, lazy loading.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:16px">
+      <h3>Content to drive traffic</h3>
+      <ul>
+        <li>How‑to cocktail articles (rank for recipe keywords).</li>
+        <li>Process explainers (e.g., “What is espadín mezcal?”).</li>
+        <li>Event recaps with photos (signals local community).</li>
+        <li>Press kit page with downloadable assets.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Video Concept -->
+  <section id="video" class="reveal">
+    <h2>Awareness Video — concept & structure</h2>
+    <div class="grid grid-2">
+      <div class="card">
+        <h3>Concept: “From Agave to Soul”</h3>
+        <p>A 30‑sec spot that travels from dawn in the agave fields to a night toast. Close‑ups of roasting, hands at work, bottle reveal, and a final clink. Minimal VO, rich sound design.</p>
+        <ul>
+          <li>0–5s: Fields at sunrise, soft percussion.</li>
+          <li>6–15s: Fire, roasting, copper still, pouring into glass.</li>
+          <li>16–25s: Label macro, condensation, cocktail garnish.</li>
+          <li>26–30s: Friends toast. Tagline + URL/QR.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Deliverables</h3>
+        <ul>
+          <li>15s cut (Stories/Reels), 30s master (IG/FB/YouTube).</li>
+          <li>4:5, 9:16, 1:1 crops.</li>
+          <li>Captions open, safe‑area graphics, end card.</li>
+        </ul>
+        <div class="img-ph" style="height:160px">
+          <img src="img/storyboard.jpg" width="170px" id="zoomStoryboard" style="cursor:pointer" alt="Storyboard">
+        </div>
+        <!-- Modal for zoomed storyboard image -->
+        <div id="storyboardModal" style="display:none;position:fixed;z-index:1000;left:0;top:0;width:100vw;height:100vh;background:rgba(0,0,0,.7);justify-content:center;align-items:center;">
+          <img src="img/storyboard.jpg" style="max-width:90vw;max-height:90vh;border-radius:18px;box-shadow:0 10px 30px rgba(0,0,0,.25)">
+        </div>
+        <script>
+          const zoomStoryboard = document.getElementById('zoomStoryboard');
+          const storyboardModal = document.getElementById('storyboardModal');
+          zoomStoryboard.onclick = () => { storyboardModal.style.display = 'flex'; };
+          storyboardModal.onclick = () => { storyboardModal.style.display = 'none'; };
+        </script>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section id="timeline" class="reveal">
+    <h2>Lean Launch Timeline (6 weeks)</h2>
+    <div class="timeline">
+      <div class="milestone"><b>W1</b><br>Finalize logo & labels • Social setup • Pixel/UTMs</div>
+      <div class="milestone"><b>W2</b><br>Photo shoot • First reels • Website hero + product</div>
+      <div class="milestone"><b>W3</b><br>Meta awareness live • Press outreach • Email signup</div>
+      <div class="milestone"><b>W4</b><br>Retargeting live • Cocktail content • PR follow‑ups</div>
+      <div class="milestone"><b>W5</b><br>Event/tasting • UGC push • Limited offer</div>
+      <div class="milestone"><b>W6</b><br>Optimize winners • Consider Google Search</div>
+    </div>
+  </section>
+
+  <!-- KPIs -->
+  <section id="kpis" class="reveal">
+    <h2>KPIs & Reporting</h2>
+    <div class="grid grid-3">
+      <div class="card"><h3>Attention</h3><ul><li>Reach & Video views</li><li>Profile visits</li><li>Impressions on launch week</li></ul></div>
+      <div class="card"><h3>Engagement</h3><ul><li>Comments & shares</li><li>Story interactions</li><li>Save rate on recipes</li></ul></div>
+      <div class="card"><h3>Growth & Sales</h3><ul><li>Follower growth</li><li>Click‑through to “Where to buy”</li><li>Units sold / leads captured</li></ul></div>
+    </div>
+    <div class="card" style="margin-top:16px">
+      <h3>Optional dashboard</h3>
+      <p>Connect Meta Ads + Google Analytics for weekly reporting. Include creative notes so we know <i>why</i> winners win.</p>
+    </div>
+  </section>
+
+  <!-- Assets & Approvals -->
+  <section id="next" class="reveal">
+    <h2>Assets needed + Approvals</h2>
+    <div class="grid grid-2">
+      <div class="card">
+        <h3>Assets checklist</h3>
+        <ul>
+          <li>Final logo files (SVG/PNG) + color specs</li>
+          <li>Bottle renders & lifestyle shots</li>
+          <li>Production details (varietal, ABV, NOM)</li>
+          <li>Brand story & origin highlights</li>
+          <li>Distribution & “Where to buy” info</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Green‑light this plan</h3>
+        <p>Once approved, we lock the logo & labels, schedule the shoot, and push the Week‑1 deliverables. Expect first ads within 14 days from approval.</p>
+        <div class="btns">
+          <a class="btn" 
+     href="mailto:estudiosunsetmgmt@gmail.com?subject=Logo%20Proposal%20Approval&body=Approved.%20Proceed%20with%20the%20next%20steps.">Approve</a>
+           <a class="btn light" 
+     href="mailto:estudiosunsetmgmt@gmail.com?subject=Logo%20Proposal%20-%20Request%20Changes">Request changes</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Built with ❤️ for your mezcal launch • <a href="#">estudiosunset.com</a>
+  </footer>
+
+    <div class="tools">
+    <button id="toTop">↑ Top</button>
+    <button id="theme">Theme</button>
+  </div>
+
+  <script>
+    // Reveal on scroll
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(en=>{
+        if(en.isIntersecting){ en.target.classList.add('visible'); }
+      })
+    },{threshold:.18});
+    document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+    // Print / PDF
+    document.getElementById('printBtn').addEventListener('click',()=>window.print());
+
+    // Smooth top
+    document.getElementById('toTop').addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+    // Theme toggle (earthy / light)
+    let dark=false;
+    document.getElementById('theme').addEventListener('click',()=>{
+      dark=!dark;
+      if(dark){
+        document.documentElement.style.setProperty('--sand','#efe7db');
+        document.documentElement.style.setProperty('--earth','#1f160e');
+        document.documentElement.style.setProperty('--agave','#0b5f49');
+        document.body.style.background='#f7f1e8';
+      }else{
+        document.documentElement.style.setProperty('--sand','#F3E8D9');
+        document.documentElement.style.setProperty('--earth','#3E2C1C');
+        document.documentElement.style.setProperty('--agave','#0D6B55');
+        document.body.style.background='#fbfaf8';
+      }
+    });
+  </script>
+</body>
+</html>
